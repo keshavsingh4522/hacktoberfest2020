@@ -1,0 +1,40 @@
+import java.util.*;
+class TEAM_NAMES
+{
+    public static void main()
+    {
+        Scanner in =new Scanner(System.in);
+        int n,i,j,max;
+        System.out.println("Enter number of the teams");
+        n=in.nextInt();
+        if(n<=2||n>=9)
+        System.out.println("INVALID INPUT");
+        else
+        {
+            String name[]=new String[n];//string array 
+            int len[]=new int[n];
+            System.out.println("Enter the names");
+            for(i=0;i<n;i++)
+            {
+                name[i]=in.next();  // taking input 
+                len[i]=name[i].length();   // calculating length of each name
+            }
+            max=0;
+            for(i=0;i<n;i++)
+            if(len[i]>max)
+            max=len[i];
+            
+            for(i=0;i<max;i++)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(i<len[j])
+                    System.out.print(name[j].charAt(i)+"\t");
+                    else
+                    System.out.print("\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
