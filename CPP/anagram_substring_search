@@ -1,0 +1,51 @@
+
+bool compare(int arr1[], int arr2[])
+{
+    for (int i=0; i<26; i++)
+        if (arr1[i] != arr2[i])
+            return false;
+    return true;
+}
+
+// This function search for all permutations of pat[] in txt[]
+vector<int> search(string &pat, string &txt)
+{
+
+vector<int> ans;
+    int M = pat.size(), N = txt.size();
+    for(auto &it:pat)assert(it>='a'&&it<='z');
+    for(auto &it:txt)assert(it>='a'&&it<='z');
+    assert(N>M);
+
+    // countP[]:  Store count of all characters of pattern
+    // countTW[]: Store count of current window of text
+    int countP[26] = {0}, countTW[26] = {0};
+    for (int i = 0; i < M; i++)
+    {
+        (countP[pat[i]-'a'])++;
+        (countTW[txt[i]-'a'])++;
+    }
+
+    // Traverse through remaining characters of pattern
+    for (int i = M; i < N; i++)
+    {
+        // Compare counts of current window of text with
+        // counts of pattern[]
+        if (compare(countP, countTW))
+            ans.push_back(i - M);
+
+        // Add current character to current window
+        (countTW[txt[i]-'a'])++;
+
+        // Remove the first character of previous window
+        countTW[txt[i-M]-'a']--;
+    }
+
+    // Check for the last window in text
+    if (compare(countP, countTW))
+        ans.push_back(N - M);
+        return ans;
+}
+vector<int> Solution::solve(string A, string B) {
+    return search(B,A);
+}
