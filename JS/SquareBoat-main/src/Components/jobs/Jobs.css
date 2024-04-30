@@ -1,0 +1,43 @@
+.posted {
+  color: #ffffff;
+  position: absolute;
+  left: 150px;
+  align-items: flex-start;
+  top: 105px;
+}
+
+.homie {
+  color: #ffffff;
+  position: absolute;
+  left: 150px;
+  align-items: flex-start;
+  top: 55px;
+}
+
+.hom {
+  color: #ffffff;
+}
+
+.grids {
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  padding-left: 10px;
+  padding-bottom: 50px;
+  text-overflow: unset;
+}
+
+.row {
+  position: absolute;
+  left: 100px;
+  right: 100px;
+  align-items: flex-start;
+  top: 175px;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+}

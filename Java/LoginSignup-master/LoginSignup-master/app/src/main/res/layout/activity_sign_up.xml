@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    tools:context=".SignUp">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya"
+            android:paddingLeft="0sp"
+            android:text="Name"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="name"
+            android:inputType="textPersonName"
+            android:paddingLeft="5sp"
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/rollNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya"
+            android:paddingLeft="0sp"
+            android:text="Roll Number"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextRollNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="roll number"
+            android:inputType="textPersonName"
+            android:paddingLeft="5sp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/registrationNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya"
+            android:paddingLeft="0sp"
+            android:text="Registration Number"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextRegistrationNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="registration number"
+            android:inputType="textPersonName"
+            android:paddingLeft="5sp"
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya"
+            android:paddingLeft="0sp"
+            android:text="Phone Number"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="phone number"
+            android:inputType="textPersonName"
+            android:paddingLeft="5sp"
+            android:textSize="20sp"
+
+            />
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

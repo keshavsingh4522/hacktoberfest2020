@@ -1,0 +1,45 @@
+.form-box {
+  background-color: white;
+  margin: auto auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  height: 330px;
+  color: #fff;
+}
+
+.login {
+  color: #000;
+  position: absolute;
+  left: 50px;
+}
+
+.form-box > .MuiFormControl-root {
+  width: 90%;
+}
+
+.forgot {
+  position: absolute;
+  right: 50px;
+}
+
+.error {
+  color: red;
+  position: absolute;
+  right: 50px;
+}
+
+.register {
+  color: #000;
+}
+
+a {
+  color: #43afff;
+  text-decoration: none;
+}

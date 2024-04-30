@@ -1,0 +1,37 @@
+.scrollable {
+  overflow: scroll;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.header {
+  background-color: white;
+}
+
+.cards {
+  width: 200px;
+}
+
+.apply {
+  position: relative;
+  padding-right: 0px;
+  background-color: #43afff33 !important;
+}
+
+.now {
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.applicants {
+  margin: 10px;
+}
+
+.paper {
+  background-color: #a9afbc !important;
+}

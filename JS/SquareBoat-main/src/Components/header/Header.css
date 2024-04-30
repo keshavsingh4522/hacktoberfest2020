@@ -1,0 +1,35 @@
+.navbox .navbar {
+  background-color: #303f60;
+}
+
+.logins {
+  color: #ffffff;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+}
+.log {
+  color: #ffffff;
+  padding: 10px;
+}
+
+.btn {
+  border: 1px solid #43afff !important;
+  background-color: #43afff33;
+  opacity: 1;
+  padding: 0 !important;
+  text-align: right;
+  position: absolute !important;
+  right: 0px;
+}
+
+.title {
+  position: absolute;
+  left: 50px;
+  align-items: flex-start;
+  font-family: Helvetica Neue;
+}
+
+.job {
+  color: #43afff;
+}
