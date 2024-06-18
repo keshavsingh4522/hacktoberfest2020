@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+# Program to make a simple calculator
+=======
 # Program make a simple calculator
+>>>>>>> cbb568a66c02423e0fbef9aa59bd4541349d156e
 
 # This function adds two numbers
 def add(x, y):
@@ -51,4 +55,8 @@ while True:
           break
     
     else:
+<<<<<<< HEAD
         print("Invalid Input")
+=======
+        print("Invalid Input")
+>>>>>>> cbb568a66c02423e0fbef9aa59bd4541349d156e
