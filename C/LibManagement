@@ -12,7 +12,7 @@ struct library
 int main()
 {
     struct library l[100];
-    char ar_nm[30],bk_nm[30];
+   
     int i,j, keepcount;
     i=j=keepcount = 0;
     while(j!=6)
