@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Club</title>
+    <style>
+      header{
+          position: fixed;
+          background-color: rgba(0, 139, 139,0.9);
+          margin: 2px 10px;
+          /* padding-top: 10px;
+          padding-bottom: 10px; */
+          text-align: center;
+          width:98.5%;
+          z-index: 1;
+          left:0;
+          top:0
+      }
+
+      header h1{
+          color: white;
+          border: 4px solid white;
+          display: inline-block;
+          border-radius: 25px;
+          padding: 0px 10px;
+      }
+
+      .banner img{
+          max-width:100%;
+          height: 887px;
+      }
+
+      nav{
+          background-color: #f4f4f4;
+          padding:10px;
+          position: sticky;
+          top: 90px;
+      }
+
+
+      nav ul{
+          white-space: nowrap;
+          max-width: 1200px;
+          text-align: center;
+      }
+
+      nav li{
+          display: inline-block;
+          width:20%;
+          font-size: 18px;
+      }
+
+      nav a{
+          color:rgb(112, 116, 113);
+          text-decoration: none;
+      } 
+
+       main{
+          max-width:100%;
+          width:1200px;
+          margin:80px auto;
+          padding:0 60px;
+          box-sizing: border-box;
+       }
+
+       article h2{
+           color: rgb(240,150,107);
+           font-size: 33px ;
+       }
+       article p{
+           line-height: 2em;
+           color: rgb(139, 136, 136);
+       }
+       .image{
+           text-align: center;
+           margin:40px 0;
+           white-space: nowrap;
+       }
+       .image li{
+          display: inline-block;
+          width: 40%;
+          margin: 5px;
+       }
+
+       .image li:hover{
+          position: relative;
+          top: -4px;
+      }
+
+      .image img{
+          max-width:100%;
+      }
+
+      .banner{
+          position: relative;
+      }
+
+      .banner .welcome{
+          position: absolute;
+          background-color: rgba(13,137,175,0.3);
+          color: lightcoral;
+          top: 30%;
+          padding: 0px 20px;
+          border-radius: 10px;
+          left:5px; 
+      }
+      .banner h2{
+          font-size: 45px;
+      }
+      .banner h2 span{
+          color: crimson;
+          font-size: 1.3em;
+      } 
+
+      .join{
+          text-align: center;
+          background-color: rgb(243, 241, 241);
+          padding:10px 30px 20px; 
+      }
+      .join h2{
+          color: rgb(112, 104, 104);
+          font-size: 33px;
+      }
+      .join p{
+          color: rgb(139, 136, 136);
+          line-height: 1.5em;
+      }
+      .join input{
+          padding: 3px 10px;
+          margin: 20px 0;
+          font-size: 13px;
+          border-radius: 20px;
+          border: 2px solid white;
+      }
+
+      nav li:hover{
+          font-size:1.2em;
+          text-decoration: underline;
+      }
+
+      @media screen and (max-width:960px) {
+
+          .banner .welcome h2{
+              font-size: 40px;
+          }
+
+      }
+
+      @media screen and (max-width:700px) {
+
+          .banner .welcome {
+              position:relative;
+              text-align: center;
+              padding: 15px;
+          }
+
+          .banner .welcome br{
+              display: none;
+          }
+
+          .banner .welcome h2{
+              font-size: 25px;
+          }
+          .banner .welcome span{
+              font-size: 1em;
+          }
+
+          .image li{
+              width: 100%;
+              margin:20px auto;
+              display: block;
+          }
+          nav{
+              padding: 20px;
+          }
+
+          nav li{
+              font-size: 15px;
+              display: block;
+              width: 100%;
+              margin: 10px;
+              padding:0px 10px;
+              text-align: left;
+              text-decoration: underline;
+          }
+
+
+      }
+     </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Marioclub</h1>
+    </header>
+
+
+    <section class="banner">
+        <img src="images\img_home.jpg" alt="home image">
+        <div class="welcome">
+            <h2>Welcome to <br><span>Marioclub</span></h2>
+        </div>
+    </section>
+
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="https://www.google.com/">Join the club</a></li>
+            <li><a href="https://www.google.com/">Latsest news</a></li>
+            <li><a href="https://www.google.com/">New games</a></li>
+            <li><a href="https://www.google.com/">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <article>
+
+            <h2>It is me, Mario!</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti pariatur, ad eveniet illo          minima voluptas error earum natus molestiae saepe repellat provident quam, soluta reprehenderit culpa similique magni perferendis maiores.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et autem nulla aliquid voluptate debitis, laborum hic soluta quae, fuga in eos excepturi iusto nisi perspiciatis facilis eveniet dignissimos blanditiis expedita?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam commodi porro totam corporis, cupiditate quis ipsa voluptates autem rerum architecto officia nisi voluptatum! Laborum rerum nulla illo culpa Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium vitae dolores excepturi ea nisi nulla dicta ducimus? Debitis, veniam quidem. A soluta possimus beatae qui dolor laborum explicabo esse ut?Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, cum asperiores consequuntur sunt saepe sapiente quas nobis similique. Nulla, saepe blanditiis! Consequuntur molestias laboriosam, magnam id eligendi ipsam architecto fugit.
+            </p>
+
+        </article>
+
+
+        <ul class="image">
+            <li><img src="images/mario2.jpg" alt="mario1"></li>
+            <li><img src="images/mario1.jpg" alt="mario2"></li>
+        </ul>
+
+
+        <section class="join">
+
+            <h2>Join Today</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis impedit sed nam assumenda eveniet, nemo voluptas temporibus, minima dolorum recusandae dolore deserunt aspernatur! Facilis veritatis amet ipsum blanditiis. Ad. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus impedit reprehenderit voluptatum ex maxime, ullam accusantium fugiat aspernatur ipsam laborum, facilis illum ipsa modi obcaecati vel sint tempore qui. Amet?
+            </p>
+
+            <form>
+                <input type="email" name="email" placeholder="Type e-mail and hit enter" required>
+            </form>
+
+        </section>
+
+
+    </main>
+
+</body>
+</html>
