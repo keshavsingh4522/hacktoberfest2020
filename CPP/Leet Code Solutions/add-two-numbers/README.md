@@ -22,6 +22,10 @@
 <strong>Output:</strong> [8,9,9,9,0,0,0,1]
 </pre>
 
+<pre><strong>Input:</strong> l1 = [1,2,3,4,5,6], l2 = [1,2,3,4]
+<strong>Output:</strong> [0,9,6,4,2,1]
+</pre>
+
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
