@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Password Generator</title>
+        <script defer type="text/javascript" src="./password_generator.js"></script>        
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <style>
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+        .centerText {
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div class="center">
+            <h1 class="centerText">Password Generator</h1>
+            <hr>
+            <br><br>
+            <div class="centerText">
+                <input type="checkbox" id="include_symbols" name="include_symbols" checked=true value="include_symbols">
+                <label for="include_symbols">Include Special Symbols</label><br>
+                <br>
+                <label for="password_length">Password Length: </label><br>
+                <input type="number" id="password_length" name="password_length" value="12">
+                <br><br>
+                <input style="width: 250px; background-color:cornflowerblue" onclick="GeneratePassword()" type="submit" id="passwordSubmit" name="passwordSubmit" value="Submit">        
+                <br><br>
+                <hr>
+                <br><br>
+                <p id="password"></p>
+            </div>
+        </div>        
+    </body>
+</html>
