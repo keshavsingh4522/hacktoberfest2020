@@ -6,6 +6,8 @@ const Database = require("@replit/database")
 const db = new Database()
 const client = new Discord.Client()
 
+
+
 const sadWords = ["sad", "depressed", "unhappy", "angry"]
 
 const starterEncouragements = [
