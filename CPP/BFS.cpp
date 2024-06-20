@@ -22,6 +22,16 @@ void solve()
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
+int n ,m,u,v;
+    cin>>n>>m;
+    vector<list<int>> adj(n+1);
+    vector<bool> vis(n+1,false);
+    for(int i = 0; i < n ; i++ ){
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
     queue<int> temp;
     temp.push(1);
     vis[1] = true;
