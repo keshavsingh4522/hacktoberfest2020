@@ -62,7 +62,8 @@ void insert_end(struct Node** head, int new_data)
    //allocate memory for node
    struct Node* newNode = new Node;
   
-   struct Node* last = *head; //set last node value to head
+   //set last node value to head
+   struct Node* last = *head; 
   
    //set data for new node
    newNode->data = new_data;
