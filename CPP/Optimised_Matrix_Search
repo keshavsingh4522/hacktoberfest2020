@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n1,n2;
+    cin>>n1>>n2;
+    int a[n1][n2];
+
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n2;j++)
+            cin>>a[i][j];
+    }
+    cout<<"Enter the element to be found";
+    int k;
+    cin>>k;
+
+
+    int r=0,c=n1-1;
+    bool flag=false;
+    while(r<n2 && c>=0)
+    {
+        if(a[r][c]==k)
+        {
+            cout<<"Element found";
+            flag=true;
+        }
+        if(a[r][c]>k)
+        {
+            c--;
+        }
+        else
+        r++;
+    }
+
+    if(flag==false)
+    cout<<"Element Not Found";
+
+    return 0;
+}
