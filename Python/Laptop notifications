@@ -1,0 +1,11 @@
+Import time
+from plyer import notification
+
+if ____name___=="___main___":
+  while true:
+    notification.notify(
+      title = "ALERT!!!",
+      message = "Wake up! It's 4am!",
+      timeout = 5
+    )
+    time.sleep(3600)
