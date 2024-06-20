@@ -1,61 +1,124 @@
-#include <bits/stdc++.h>
-#include<set>
-
+#include <iostream>
 using namespace std;
+ 
+struct node {
+    int data;
+    struct node* left;
+    struct node* right;
+};
+ 
+void storeInorder(struct node* node, int inorder[], int* index_ptr)
+{
+    // Base Case
+    if (node == NULL)
+        return;
+ 
+    storeInorder(node->left, inorder, index_ptr);
+ 
+    inorder[*index_ptr] = node->data;
+    (*index_ptr)++; // increase index for next entry
+ 
 
-class node {
-	public:
-	int data;
-	node *left, *right;
-}*root;
-
-node* GetNode(int d) {
-	node *nn=new(node);
-	nn->left = NULL;
-	nn->right = NULL;
-	nn->data = d;
-	return nn;
+    storeInorder(node->right, inorder, index_ptr);
 }
+ 
 
-void InOrder(node *root) {
-	if(root == NULL)
-	return ;
-	InOrder(root->left);
-	cout<<root->data<<" ";
-	InOrder(root->right);
+int countNodes(struct node* root)
+{
+    if (root == NULL)
+        return 0;
+    return countNodes(root->left) + countNodes(root->right) + 1;
 }
-
-void StoreData(node *root,set<int> &s){ //&s reference of original set
-	if(root == NULL)
-	return ;
-	StoreData(root->left,s);
-	s.insert(root->data);
-	StoreData(root->right,s);
+ 
+// Following function is needed for library function qsort()
+int compare(const void* a, const void* b)
+{
+    return (*(int*)a - *(int*)b);
 }
+ 
 
-void ConvertToBST(node *root, auto &it) {
-	if(root == NULL)
-	return ;
-	ConvertToBST(root->left, it);
-	root->data = *it;
-	it++;
-	ConvertToBST(root->right, it);
+void arrayToBST(int* arr, struct node* root, int* index_ptr)
+{
+    // Base Case
+    if (root == NULL)
+        return;
+ 
+
+    arrayToBST(arr, root->left, index_ptr);
+ 
+ 
+    root->data = arr[*index_ptr];
+    (*index_ptr)++;
+ 
+  
+    arrayToBST(arr, root->right, index_ptr);
 }
+ 
+// This function converts a given Binary Tree to BST
+void binaryTreeToBST(struct node* root)
+{
+    // base case: tree is empty
+    if (root == NULL)
+        return;
+ 
+  
+    int n = countNodes(root);
+ 
+    // Create a temp array arr[] and store inorder
+    // traversal of tree in arr[]
+    int* arr = new int[n];
+    int i = 0;
+    storeInorder(root, arr, &i);
+ 
+    // Sort the array using library function for quick sort
+    qsort(arr, n, sizeof(arr[0]), compare);
+ 
+    // Copy array elements back to Binary Tree
+    i = 0;
+    arrayToBST(arr, root, &i);
+ 
+    // delete dynamically allocated memory to
+    // avoid memory leak
+    delete[] arr;
+}
+ 
+/* Utility function to create a new Binary Tree node */
+struct node* newNode(int data)
+{
+    struct node* temp = new struct node;
+    temp->data = data;
+    temp->left = NULL;
+    temp->right = NULL;
+    return temp;
+}
+ 
 
+void printInorder(struct node* node)
+{
+    if (node == NULL)
+        return;
+ 
+    
+    printInorder(node->left);
+    cout <<" "<< node->data;
+    printInorder(node->right);
+}
+ 
 int main()
 {
-	root = GetNode(8);
-	root->left = GetNode(3);
-	root->right = GetNode(5);
-	root->left->left = GetNode(10);
-	root->left->right = GetNode(2);
-	root->right->left = GetNode(4);
-	root->right->right = GetNode(6);
-	InOrder(root);
-	
-	set<int> s;
-	StoreData(root,s);
-	auto it = s.begin();
-	ConvertToBST(root,it);
-	InOrder(root);
+    struct node* root = NULL;
+ 
+    root = newNode(10);
+    root->left = newNode(30);
+    root->right = newNode(15);
+    root->left->left = newNode(20);
+    root->right->right = newNode(5);
+ 
+    // convert Binary Tree to BST
+    binaryTreeToBST(root);
+ 
+    cout <<"Following is Inorder Traversal of the converted BST:" << endl ;
+    printInorder(root);
+ 
+    return 0;
 }
