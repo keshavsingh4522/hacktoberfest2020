@@ -1,24 +1,33 @@
-#include<stdio.h>
-int main()
-{
-   int n, temp, i, j;
-   printf ("Enter No of elements in the array \n");
-   scanf("%d",&n);
-   int number[n];
-   printf ("Enter the elements of array \n");
-   for(int i=0;i<n;i++)
-    scanf("%d",&number[i]);
-   for(i=n-2;i>=0;i--){
-      for(j=0;j<=i;j++){
-        if(number[j]>number[j+1]){
-           temp=number[j];
-           number[j]=number[j+1];
-           number[j+1]=temp;
+
+#include <stdio.h>
+
+
+void bubble_sort(int a[],int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-1-i;j++){
+            if(a[j]>a[j+1]){
+                int temp=a[j+1];
+                a[j+1]=a[j];
+                a[j]=temp;
+            }
         }
-      }
-   }
-   printf("Sorted elements: ");
-   for(i=0;i<n;i++)
-      printf(" %d",number[i]);
-   return 0;
+    }
+}
+
+int main() {
+   int n;
+   int arr[n];
+    printf("The size of array:");
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    bubble_sort(arr,n);
+    printf("Sorted array: ");
+    printf("\n");
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    
+    return 0;
 }
