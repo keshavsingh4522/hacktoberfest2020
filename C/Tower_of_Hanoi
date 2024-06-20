@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void Hanoi(int n, char source, char dest, char aux )
+{
+    if (n == 1)
+    {
+        printf("\nMove disk 1 from peg %c to peg %c.", source, dest);
+    }
+    else
+    {
+    Hanoi(n-1, source, aux, dest);
+    printf("\nMove disk %d from peg %c to peg %c", n, source, dest);
+    Hanoi(n-1, aux, dest, source);
+    }
+}
+int main()
+{
+    int n;
+    printf("Enter the number of disks: ");
+    scanf("%d", &n);
+    Hanoi(n, 'A', 'C', 'B');
+}
