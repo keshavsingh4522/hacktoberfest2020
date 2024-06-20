@@ -1,6 +1,5 @@
 
 /**
- * @author      : abhj
  * @created     : Friday Oct 01, 2021 17:31:47 IST
  * @filename    : c.cpp
  */
