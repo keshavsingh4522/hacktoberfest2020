@@ -1,23 +1,31 @@
+// C++ code to demonstrate star pattern
 #include <iostream>
 using namespace std;
- 
+
+// Function to demonstrate printing pattern
+void pypart(int n)
+{
+	// Outer loop to handle number of rows
+	// n in this case
+	for (int i = 0; i < n; i++) {
+
+		// Inner loop to handle number of columns
+		// values changing acc. to outer loop
+		for (int j = 0; j <= i; j++) {
+
+			// Printing stars
+			cout << "* ";
+		}
+
+		// Ending line after each row
+		cout << endl;
+	}
+}
+
+// Driver Function
 int main()
 {
-     int i=0,j=0,k=0,n=5;
-    while (i < n) {
-       
-        while (k <= n - i - 2) {
-            cout << " ";
-            k++;
-        }
-        k = 0;       
-        while (j < 2 * i - 1) {
-            cout << "*";
-            j++;
-        }
-        j = 0;
-        i++;
-        cout << endl;
-    }
-    return 0;
+	int n = 5;
+	pypart(n);
+	return 0;
 }
