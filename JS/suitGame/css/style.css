@@ -1,0 +1,57 @@
+.suit-game {
+  background-color: #9c835f;
+  min-height: 100vh;
+  color: black;
+}
+
+.suit-game .navbar {
+  background: none;
+}
+
+.navbar-brand {
+  color: #724c21;
+}
+
+.game-logo {
+  width: 70%;
+}
+
+.refresh-image {
+  width: 70%;
+}
+
+.suit-image {
+  width: 30%;
+}
+
+.suit-container {
+  /* padding-top: 5%;
+    padding-bottom: 5%; */
+  height: 25vh;
+}
+
+.selected-suit {
+  background: #c4c4c4;
+  border-radius: 10px;
+}
+
+.win-status {
+  background: #4c9654;
+  border-radius: 10px;
+  min-height: 15vh;
+  color: white;
+  transform: rotate(-28.87deg);
+}
+
+.draw-status {
+  background: #035b0c;
+  border-radius: 10px;
+  min-height: 15vh;
+  color: white;
+  transform: rotate(-28.87deg);
+}
+
+.start-status {
+  color: #bd0000;
+  font-size: 8rem;
+}
