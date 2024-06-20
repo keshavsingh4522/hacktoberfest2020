@@ -1,6 +1,7 @@
 // Bucket Sort in C programming
 
 #include <stdio.h>
+#include<stdlib.h>
 int getMax(int array[], int size)
 {
     int max = array[0];
