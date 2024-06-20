@@ -1,28 +1,23 @@
 #include<stdio.h>
-#include<stdbool.h>
-
-bool isPalindrome(int a)
-{
-    int backup = a,rev = 0;
-
-    while(a)
-    {
-        rev = (rev*10) + (a%10);
-        a/=10;
-    }
-
-    return rev == backup;
-}
 
 int main()
 {
-    int n = 122;
-
-    if(isPalindrome(n))
-    printf("%d is a Palindrome Number",n);
+    int n, r, sum=0, temp;
+    printf("Enter the number=");
+    scanf("%d",&n);
+    temp = n;
+    
+    while(n>0)
+    {
+        r = n%10;
+        sum = (sum*10)+r;
+        n = n/10;
+    }
+    
+    if(temp == sum)
+        printf("Palindrome number");
     else
-    printf("%d is not a Palindrome Number",n);
-
+        printf("Not a Palindrome number");
+    
     return 0;
-
 }
