@@ -3,9 +3,10 @@
 void main()
 {
 clrscr();
-int i,n,a[100],search;
+int i,n,search;
 printf("Enter number of elements : ");
 scanf("%d",&n);
+int a[n];
 printf("\nEnter %d elements : \n",n);
 for(i=0;i<n;i++)
  {
@@ -17,7 +18,7 @@ for(i=0;i<n;i++)
  {
  if(a[i]==search)
   {
-  printf("\nFound at %d .",m+1);
+  printf("\nFound at %d .",i+1);
   break;
   }
  }
