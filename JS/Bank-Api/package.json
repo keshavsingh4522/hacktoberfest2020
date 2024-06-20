@@ -1,0 +1,31 @@
+{
+    "name": "simplebanksystem",
+    "version": "1.0.0",
+    "description": "Practicing MongoDB + Nodejs API using a simple bank systems.",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mablds/simple-bank-system.git"
+    },
+    "author": "mablds",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mablds/simple-bank-system/issues"
+    },
+    "homepage": "https://github.com/mablds/simple-bank-system.git#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.0",
+        "http": "0.0.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongodb": "^3.2.5",
+        "mongoose": "^5.6.1",
+        "nodemailer": "^6.4.3",
+        "nodemon": "^1.19.0",
+        "path": "^0.12.7"
+    }
+}
