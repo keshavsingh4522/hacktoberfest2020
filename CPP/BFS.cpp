@@ -6,7 +6,7 @@
 #pragma GCC optimize("unroll-loops")
 const unsigned int M = 1000000007;
 using namespace std;
-// Check
+
 using namespace __gnu_pbds;
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> T_set; // PBDS_set
 typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_node_update> T_multiset; // PBDS_multiset
