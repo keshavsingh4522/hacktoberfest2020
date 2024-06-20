@@ -3,7 +3,7 @@
 </div>
 
 # Special Note For Everyone
-```py
+```psy
 '''
 always make more then 4 pull request
 lets you have made only 4 pull request to different projects
