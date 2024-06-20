@@ -191,6 +191,8 @@ Steps for adding your name below
 <td align="center"><a href="https://github.com/agrajagrawal"><kbd><img src="https://avatars3.githubusercontent.com/agrajagrawal?size=400" width="100px;" alt=""/></kbd><br /><sub><b>Agraj Agrawal</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=agrajagrawal" title="Code"> :computer: </a> </td>
     <td align="center"><a href="https://github.com/anmol-19"><kbd><img src="https://avatars3.githubusercontent.com/anmol-19?size=400" width="100px;" alt=""/></kbd><br /><sub><b>Anmol Jain</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=anmol-19" title="Code"> :computer: </a> </td>
 
+    td align="center"><a href="https://github.com/sandhukaran28"><kbd><img src="https://avatars3.githubusercontent.com/sandhukaran28?size=400" width="100px;" alt=""/></kbd><br /><sub><b>Karan Sandhu</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=sandhukaran28" title="Code"> :computer: </a> </td>
+
 </tr>
 </table>
 
