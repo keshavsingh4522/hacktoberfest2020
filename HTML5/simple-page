@@ -1,0 +1,33 @@
+<!--How to comment-->
+<!--Title: simple HTML page-->
+<!--Author: Nathália Couto-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href=""/>
+    <title>My page</title>
+
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <div class="head">
+        <h1>Page name</h1>
+        <p>Hi! This is a simple page example for you that are learning HTML now! You can work on it, add images, a nav bar, css/js. Good luck!</p>
+        <hr>
+    </div>
+    <div class="posts">
+        <h3>Title 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>Title 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <hr>
+    <div class="footer">
+        <p>Created by Nathália C.</p>
+    </div>
+
+</body>
+</html>
