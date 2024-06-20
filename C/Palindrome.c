@@ -26,3 +26,23 @@ int main()
     return 0;
 
 }
+
+
+//Second Method
+
+#include<stdio.h>
+int main(){
+int n,r,sum=0;
+printf("to check palindrome number , enter a number ");
+scanf("%d",&n);
+while(n>0){
+r=n%10;
+sum=sum*10+r; 
+n=n/10;
+}
+if(n==sum)
+printf("it's palindrome number ",sum);
+else
+printf("it is not a palindrome number ");
+
+return 0;
