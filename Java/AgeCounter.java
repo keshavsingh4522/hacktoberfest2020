@@ -27,9 +27,7 @@ public class AgeCounter {
         
         int age = Period.between(bdate , pres).getYears();
         
-        System.out.println(pres);
-        System.out.println(bdate);
-        System.out.println(age);
+        System.out.println("Your current age is:"+age+"from your birth year"+bdate+"to present date"+pres);
     }
     
 }
