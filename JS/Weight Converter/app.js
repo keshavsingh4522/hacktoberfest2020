@@ -48,7 +48,7 @@ function myResult() {
     if (input.value === "") {
       inputsFunction();
     } else {
-      poundInput.textContent = `${input.value}kg is ${input.value * 2}pounds`;
+      poundInput.textContent = `${input.value}kg is ${input.value * 2.20462}pounds`;
       ounceInput.textContent = `${input.value}kg is ${
         input.value * 35.2739619
       } ounce`;
