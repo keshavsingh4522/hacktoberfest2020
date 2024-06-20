@@ -7,3 +7,6 @@ Please ensure your pull request adheres to the following guidelines:
 - Make sure your text editor is set to remove trailing whitespace.
 
 Thank you for your suggestions!
+
+Name : SAHIL PATIL
+GitHub : https://github.com/sahilpatil9763/
