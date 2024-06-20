@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+}
+
+.App {
+  background-color: #111;
+}
+
+.Loading-component {
+  /* The image used */
+  background-image: url(./Images/tenor.gif);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
