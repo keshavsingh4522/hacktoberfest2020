@@ -1,0 +1,109 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define PI 3.1415926535897932384626
+#define ll long long
+#define lli long long int
+#define fo(i,a,n) for(int i=a;i<n;i++)
+#define pr(i,arr) for(auto i:arr)
+
+typedef vector<int> vi;
+typedef vector<ll> vl;
+typedef map<ll,ll> ml;
+typedef map<int,int> mi;
+
+void file_i_p()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif
+}
+
+ll fact(ll n) {
+    ll res = 1;
+    for(ll i=2;i<=n;i++) {
+        res*=i;
+    }
+    return res;
+}
+
+ll _lcm(ll x,ll y) {
+    return x*y/__gcd(x,y);
+}
+
+ll _gcd(ll a,ll b) {
+    return a%b==0 ? b : _gcd(b,a%b);
+}
+
+void shortest(int n,vector<int> adj[],int src)
+{
+    vector<int> dis(n,INT_MAX);
+    dis[src] = 0;
+
+    queue<int> q;
+    q.push(src);
+
+    // for(int i=0;i<n;i++)
+    // {
+    //     cout<<dis[i]<<" ";
+    // }
+
+    while(!q.empty())
+    {
+        int node = q.front();
+        q.pop();
+
+        for(auto it: adj[node])
+        {
+            if(dis[node]+1<dis[it])
+            {
+                dis[it] = dis[node]+1;
+                q.push(it);
+            }
+        }
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        cout<<dis[i]<<" ";
+    }
+}
+
+void solve()
+{
+    int n,m;
+    cin>>n>>m;
+
+    vector<int> adj[n];
+
+    for(int i=0;i<m;i++)
+    {
+        int a,b;
+        cin>>a>>b;
+
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+
+    }
+
+    // cout<<n<<" "<<m<<endl;
+
+    int src;
+    cin>>src;
+
+    shortest(n,adj,src);
+
+}
+
+int main() {
+    
+    file_i_p();
+
+    solve();
+
+    return 0;
+}
