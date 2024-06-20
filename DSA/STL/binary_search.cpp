@@ -13,5 +13,13 @@ int main() {
     cout<<"present";
     else
     cout<<"absent";
+    
+     auto lb=lower_bound(arr,arr+n,key);
+   cout<<endl<<lb-arr;
+auto ub=upper_bound(arr,arr+n,key);
+   cout<<endl<<ub-arr;
+   
+   cout<<endl<<ub-lb;
+    return 0;
 }
 
