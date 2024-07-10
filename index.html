@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed&family=Roboto+Slab:wght@200&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&family=Lato:wght@300&family=Roboto+Condensed&family=Roboto+Slab:wght@200&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Know JS</title>
+  </head>
+  <body>
+    <header>
+      <h1>History of Javascript</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            JavaScript was created by Brendan Eich in 1995 during his time at
+            Netscape Communications. It was inspired by Java, Scheme, and Self.
+            The creators of JavaScript wanted to borrow concepts from other
+            programming languages, such as Java and C. Those of you with
+            backgrounds in other languages may see things that look very
+            familiar, mainly the use of classes and Object-Oriented Programming
+            (OOP) architecture. Keep in mind that JavaScript is not a true OOP
+            language and many things you may be familiar with from another
+            language won’t work with JavaScript
+          </p>
+          <img
+            class="image-lorem"
+            src="https://assets.digitalocean.com/articles/alligator/js/v8-engine/javascript_journey.png"
+            alt="JS-Evolution"
+          />
+        </div>
+        <div class="col-md-6">
+          <div>
+            <p>
+              JavaScript is considered a ‘loosely’ typed language, in which
+              types do exist, but they are not enforced. You do not have to
+              declare a type when creating a variable or an array, for instance.
+            </p>
+          </div>
+          <div>
+            <h4>Why Put the Java in JavaScript?</h4>
+            <p>
+              When Eich created JavaScript in 1995, he created it for Netscape
+              Navigator and it quickly became known as LiveScript. In another
+              quirk of JavaScript history, the team changed the name to
+              JavaScript to reflect Netscape's support of Java within its
+              browser. While this definitely sounds confusing (and yes, it
+              confuses people to this day), at the time people said it was a
+              “marketing tactic” to connect a brand new language (JavaScript) to
+              a popular language at the time (Java), even though JavaScript and
+              Java have almost nothing to do with each other. The way Eich saw
+              it, higher-end programmers used Java and it might be considered a
+              “component language.” Eich created JavaScript to fill the need for
+              a “glue language” used by informal programmers and designers. This
+              allowed programmers to use JavaScript to put together components
+              and automate interactions. There were two dominating web browsers
+              at this point in our JavaScript history: Netscape Navigator (with
+              JavaScript) and Internet Explorer (with Jscript). And by the time
+              the browser world shifted and Internet Explorer became the
+              dominant browser, JavaScript evolved into the endorsed standard
+              for writing interactive processing run in a web browser.
+            </p>
+          </div>
+          <div>
+            <h4>JavaScript Today</h4>
+            <p>
+              Today, JavaScript is still everywhere — it’s the most commonly
+              used client-side scripting language. JavaScript is written into
+              HTML documents and enables interactions with web pages in many
+              unique ways. For example, thanks to JavaScript we can
+              automatically schedule appointments and play online games.
+              Furthermore, new developments, such as Node.js, allow JavaScript
+              on the server-side while APIs, such as HTML5, allow user media
+              control and other device features.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <form action="#">
+        <div class="user-form">
+          <div>
+            <label>Title</label>
+            <input type="radio" id="html" name="fav_language" value="Mr" />
+            <label for="Mr">Mr</label>
+            <input type="radio" id="css" name="fav_language" value="Mrs" />
+            <label for="Mrs">Mrs</label>
+            <input
+              type="radio"
+              id="javascript"
+              name="fav_language"
+              value="Miss"
+            />
+            <label for="Miss">Miss</label>
+            <div>
+              <label>
+                First Name <input type="text" minlength="1" required />
+              </label>
+              <label>
+                Last Name <input type="text" minlength="1" required />
+              </label>
+            </div>
+            <div></div>
+            <label> Email <input type="email" required /> </label>
+          </div>
+          <div>
+            <label> Phone Number <input type="tel" required /> </label>
+          </div>
+          <div>
+            <label>
+              Password <input type="password" minlength="8" required />
+            </label>
+          </div>
+
+          <div>
+            <label>
+              Confirm your password <input type="text" minlength="8" required />
+            </label>
+          </div>
+
+          <div>
+            <label for="Country">Country</label>
+            <select name="country" id="countries">
+              <option value="India">India</option>
+              <option value="Poland">Poland</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Bhutan">Bhutan</option>
+            </select>
+          </div>
+          <div>
+            <input type="checkbox" />
+            <label>I agree to <a href="#"> terms and condition</a></label>
+          </div>
+          <div>
+            <button type="submit">Sign up</button>
+          </div>
+        </div>
+      </form>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
