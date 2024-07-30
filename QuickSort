@@ -1,35 +1,33 @@
-class Solution
-{
-    //Function to sort an array using quick sort algorithm.
-    static void quickSort( int arr[],int l, int h)
+class Solution {
+public:
+    
+    int Partition(vector<int>& nums, int start, int last)
     {
-        // code here
-          if(l<h) {
-            int pivot = partition(arr,l,h);
-            quickSort(arr,l,pivot-1);
-            quickSort(arr,pivot +1 , h);
-    }
-    }
-    static int partition(int arr[], int l, int h)
-    {
-        // your code here
-        int pivot = arr[l];
-        int i = l;
-        int j = h;
-        while(i<j) {
-            while(arr[i]<=pivot && i<j) i++;
-            while(arr[j]>pivot) j--;
-            if(i<j) {
-                swap(arr,i,j);
+        int pivot=nums[last];
+        int partitionIndex=start;
+        
+        for(int i=start; i<last; i++)
+        {
+            if(nums[i] <= pivot)
+            {
+                swap(nums[i], nums[partitionIndex]);
+                partitionIndex++;
             }
         }
-                swap(arr,j,l);
-                return j;
-        }
+        swap(nums[partitionIndex], nums[last]);
         
-      static void swap(int arr[], int i, int j){
-          int temp = arr[i];
-          arr[i] = arr[j];
-          arr[j] = temp;
-     }
-}
+     return partitionIndex;
+    }
+    
+    //Quick Sort 
+    void QuickSort(vector<int>& nums, int start, int last) 
+    {
+       if(start>=last)return;
+       int partition=Partition(nums, start, last);
+       QuickSort(nums, start, partition-1);
+       QuickSort(nums, partition+1, last);
+    }
+    void sortColors(vector<int>& nums) {
+         QuickSort(nums, 0, nums.size()-1);
+    }
+};
