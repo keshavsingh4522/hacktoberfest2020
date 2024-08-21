@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
+
+class Home extends StatefulWidget with NavigationStates {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _page =0;
+  final _pageoption=[
+    //FTile(),
+ //   DTile(),
+  //  STile()
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white.withAlpha(50),
+        title: Text('Maduranga',
+          style: TextStyle(
+              letterSpacing: 8.0,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              fontFamily: 'DancingScript',
+              fontSize: 30.0),),
+        centerTitle: true,
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        color:Colors.white.withAlpha(180),
+        backgroundColor: Colors.deepOrange,
+        buttonBackgroundColor: Colors.white.withAlpha(180),
+        height: 50,
+        items: <Widget>[
+          Icon(Icons.spa,size: 20,color: Colors.black),
+          Icon(Icons.local_shipping,size: 20,color: Colors.black),
+          Icon(Icons.store,size: 20,color: Colors.black),
+
+        ],
+        animationDuration: Duration(
+          milliseconds: 200
+        ),
+        index: 0,
+        animationCurve: Curves.bounceInOut,
+        onTap: (index){
+          debugPrint("Current Index is$index");
+              setState(() {
+                _page=index;
+              });
+        },
+      ),
+  //    body: _pageoption[_page],
+
+    );
+  }
+}
