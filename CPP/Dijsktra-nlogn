@@ -1,0 +1,69 @@
+#include<bits/stdc++.h>
+using namespace std;
+# define INF 1e9+7
+class Graph
+{
+	int V;
+	list< pair<int, int> > *adj;
+public:
+	Graph(int V);
+	void addEdge(int u, int v, int w);
+	void shortestPath(int s);
+};
+Graph::Graph(int V)
+{
+	this->V = V;
+	adj = new list<pair<int, int>> [V];
+}
+void Graph::addEdge(int u, int v, int w)
+{
+	adj[u].push_back(make_pair(v, w));
+	adj[v].push_back(make_pair(u, w));
+}
+void Graph::shortestPath(int src)
+{
+	priority_queue< pair<int, int>, vector <pair<int, int>> , greater<pair<int, int>> > pq;
+	vector<int> dist(V, INF);
+	pq.push(make_pair(0, src));
+	dist[src] = 0;
+	while (!pq.empty())
+	{
+		int u = pq.top().second;
+		pq.pop();
+		list< pair<int, int> >::iterator i;
+		for (i = adj[u].begin(); i != adj[u].end(); ++i)
+		{
+			int v = (*i).first;
+			int weight = (*i).second;
+			if (dist[v] > dist[u] + weight)
+			{
+				dist[v] = dist[u] + weight;
+				pq.push(make_pair(dist[v], v));
+			}
+		}
+	}
+	printf("Distance from Source\n");
+	for (int i = 0; i < V; ++i)
+		cout<<i<<" "<<dist[i]<<endl;
+}
+int main()
+{
+  int V;
+  cout<<"Enter the number of Vertices in the Graph"<<endl;
+  cin>>V;
+  Graph g(V);
+  int m;
+  cout<<"Enter the number of edges"<<endl;
+  cin>>m;
+  while(m--)
+  {
+    int src,dest,weight;
+    cin>>src>>dest>>weight;
+    g.addEdge(src,dest,weight);
+  }
+  cout<<"Enter the source vertex"<<endl;
+  int src;
+  cin>>src;
+  g.shortestPath(src);
+	return 0;
+}
