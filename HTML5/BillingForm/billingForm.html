@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <title>BillingForm</title>
+
+    <style type="text/css">
+      h1 {
+        text-decoration: underline;
+        text-align: center;
+      }
+
+      .up{
+          text-align: center;
+      }
+
+      .tp{
+          font-weight: 700;
+      }
+
+      th{
+          text-align: left;
+      }
+
+      table{
+          border-spacing: 1cm;
+      }
+
+      p{
+          text-align: center;
+      }
+
+      .clr{
+        color: rgb(6, 85, 6);
+      }
+
+      
+
+    </style>
+  </head>
+
+  <body>
+    <h1>The Chocolate House</h1>
+
+    <form name = "bill">
+    <table border="0" align="center"  >
+      <thead>
+        <tr align="center">
+          <th>Chocolate Type</th>
+
+          <th>Unit Price</th>
+
+          <th>Quantity</th>
+
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td class="tp">Type 1: Dark Chocolate</td>
+        <td class="up">575.00</td>
+        <td><input type="text" id="qt1" class="clr" name="qt1" onblur="checkReg(document.bill.qt1.value)"/></td>
+        <td id="p1" class="clr"></td>
+      </tr>
+
+      <tr>
+        <td class="tp">Type 2: White Chocolate</td>
+        <td class="up">760.00</td>
+        <td><input type="text" id="qt2" class="clr" name="qt2" onchange="checkReg(document.bill.qt2.value)"/></td>
+        <td id="p2" class="clr"></td>
+      </tr>
+
+      <tr>
+        <td class="tp">Type 3: Milk Chocolate</td>
+        <td class="up">380.00</td>
+        <td><input type="text" id="qt3" class="clr" name="qt3" onchange="checkReg(document.bill.qt3.value)"/></td>
+        <td id="p3" class="clr"></td>
+      </tr>
+
+      <tr>
+        <td class="tp">Type 4: Bittersweet Chocolate</td>
+        <td class="up">700.00</td>
+        <td><input type="text" id="qt4" class="clr" name="qt4" onchange="checkReg(document.bill.qt4.value)"/></td>
+        <td id="p4" class="clr"></td>
+      </tr>
+
+      <tr>
+          <td colspan="4" align="right">
+            Sub Total : <span id="total" class="clr"></span>
+          </td>
+      </tr>
+    </table>
+  </form>
+
+    <center>
+    <button id="submit" onclick="calculateTotal()">Submit Details</button>
+
+    <button id="Clear" onclick="clearAll()">Clear Form</button>
+    </center>
+
+    <script type="text/javascript">
+
+    var qt1 , qt2 , qt3 , qt4;
+
+    var p1,p2,p3,p4 ;
+    
+
+    var total;
+
+    function checkReg(val){
+      var num = /\d/; 
+      if(!val.match(num)){
+        alert("Please enter only number to the quantity");
+        val = "";
+
+      }
+    }
+
+    function calculateTotal(){
+        qt1 = parseInt(document.getElementById("qt1").value);
+        qt2 = parseInt(document.getElementById("qt2").value);
+        qt3 = parseInt(document.getElementById("qt3").value);
+        qt4 = parseInt(document.getElementById("qt4").value);
+        qt1 > 0 ? p1 = qt1*575.0 : p1=0 ; 
+        qt2 > 0 ? p2 = qt2*760.0 : p2=0 ; 
+        qt3 > 0 ? p3 = qt3*380.0 : p3=0 ; 
+        qt4 > 0 ? p4 = qt4*700.0 : p4=0 ; 
+        
+        total = p1+p2+p3+p4;
+        document.getElementById("p1").innerHTML=p1;
+        document.getElementById("p2").innerHTML=p2;
+        document.getElementById("p3").innerHTML=p3;
+        document.getElementById("p4").innerHTML=p4;
+
+        document.getElementById("total").innerHTML=total;
+
+    }
+
+    function clearAll(){
+        document.getElementById("qt1").value="";
+        document.getElementById("qt2").value="";
+        document.getElementById("qt3").value="";
+        document.getElementById("qt4").value="";
+
+        document.getElementById("p1").innerHTML="";
+        document.getElementById("p2").innerHTML="";
+        document.getElementById("p3").innerHTML="";
+        document.getElementById("p4").innerHTML="";
+
+        document.getElementById("total").innerHTML="";
+    }
+    </script>
+  </body>
+</html>
