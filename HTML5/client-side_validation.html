@@ -1,0 +1,39 @@
+<html>
+<body>
+<h2>Sign up Form</h2>
+
+<form>
+<label for="name" value="name">Name:</label>
+  <input type="text" id="name" name="name" placeholder="No blank" required><br>
+  <label for="email">email:</label>
+  <input type="email" id="email" name="email" placeholder="example@xmail.com" required><br>
+  <label for="pass1">Password:</label>
+  <input type="password" id="pass1" name="pass1"required> <br>
+  <label for="pass2">Confirm Password:</label>
+  <input type="password" id="pass2" name="pass2" required><br>
+  <button onclick="return validate()">Submit</button>
+  <button onclick="return reset()">Reset</button>
+</form>
+<script type="text/javascript">
+	function validate()
+	{
+	 var  a,b;
+	 a = document.getElementById("pass1").value;
+	 b = document.getElementById("pass2").value;
+     if(a==""|| a!=b )
+     { 
+        alert("password cannot be empty or it didn't matched");
+
+     }
+     else
+     {
+     alert("password matched");
+     }
+	}
+  function reset();
+  {
+
+  }
+</script>
+</body>
+</html>
