@@ -54,23 +54,12 @@ node* recReverse(node *head){
 }
 
 void reverse(node *&head){
-	node* prev = NULL;
-	node* current = head;
-	node * temp;
-
-	while(current!=NULL){
-		//store next
-		temp = current->next;
-		//update the current
-		current->next = prev;
-
-		//prev and current
-		prev = current;
-		current = temp;
-	}
-
-	head = prev;
-	return;
+	if(head==NULL||head->next==NULL)return head;
+	Node *rest_head=recRevL(head->next);
+	Node *rest_tail=head->next;
+	rest_tail->next=head;
+	head->next=NULL;
+	return rest_head;
 }
 
 
