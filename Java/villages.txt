@@ -1,0 +1,83 @@
+1.	Gaborone 	South-East District 	Gaborone	231,592	91,823	94,184
+2.	Francistown  	North-East District 	Francistown	98,961	40,134	42,889
+3.	Molepolole 	Kweneng District 	Kweneng East	73,103	28,617	34,122
+4.	Serowe Central 	Dis-trict  Central 	Serowe/Palapye	57,588	25,400	27,431
+5.	Selibe Phikwe 	Central Dis-trict 	Selibe Phikwe	49,411	24,334	25,515
+6.	Maun  		North-West District 	Ngamiland East	65,693	23,714	26,108
+7.	Kanye 		Southern District 	Ngwaketse	52,214	22,451	25,692
+8.	Mahalapye 	Central Dis-trict 	Central Ma-halapye	43,538	21,120	22,418
+9.	Mogoditshane 	Kweneng District 	Kweneng East	58,632	20,972	19,781
+10.	Mochudi 	Kgatleng District 	Kgatleng	39,349	18,490	20,859
+11.	Lobatse 	South-East District 	Lobatse	29,689	14,202	15,487
+12.	Palapye 	Central Dis-trict 	Central Ser-owe/Palapye	29,565	13,995	15,570
+13.	Ramotswa 	South-East District 	South East	25,738	12,027	13,711
+14.	Moshupa 	Southern District 	Ngwaketse	22,811	10,677	12,134
+15.	Tlokweng 	South-East District 	South East	22,038	10,568	11,470
+16.	Bobonong 	Central Dis-trict 	Central Bobo-nong	21,020	9,877	11,143
+17.	Thamaga 	Kweneng District	Kweneng East	20,527	9,332	11,195
+18.	Letlhakane	Central Dis-trict 	Central Boteti	19,539	9,848	9,691
+19.	TonotaCentral 	District		Central Tutume	18,816	8,745	10,071
+20.	Mmadinare	Central Dis-trict 	Central Bobo-nong	15,712	7,600	8,112
+21.	Jwaneng		Southern District	Jwaneng	15,179	7,613	7,566
+22.	Tutume		Central Dis-trict	Central Tutume	14,707	6,555	8,152
+23.	Gabane		Kweneng District	Kweneng East	12,530	5,882	6,648
+24.	Shoshong	Central Dis-trict	Central Ma-halapye	11,176	5,521	5,655
+25.	Ghanzi		Ghanzi Dis-trict	Ghanzi	10,795	5,375	5,420
+26.	Letlhakeng	Kweneng District	Kweneng West	9,676	4,685	4,991
+27.	Orapa		Central District	Orapa	9,151	4,837	4,314
+28.	Kopong		Kweneng District	Kweneng East	8,992	4,416	4,576
+29.	Mmopane		Kweneng District	Kweneng East	8,554	4,181	4,373
+30.	Kasane		North-West District	Ngamiland West	7,933	3,968	3,965
+31.	Shakawe		North-West District	Ngamiland East	7,874	3,632	4,242
+32.	Lentsweletau	Kweneng District	Kweneng East	7,609	3,815	3,794
+33.	Molapowabojang	Southern District	Ngawaketse	7,499	3,533	3,966
+34.	Gumare		North-West District	Ngamiland West	7,478	3,482	3,996
+35.	Tshabong	Kgalagadi District	Kgalagadi South	7,228	3,671	3,557
+36.	Lerala		Central District	Central Ser-owe/Palapye	6,740	3,107	3,633
+37.	Mmathethe	Southern District	Borolong	6,692	3,351	3,341
+38.	Gweta		Central Dis-trict	Central Tutume	6,653	3,244	3,409
+39.	Mathangwane	Central Dis-trict	Central Tutume	6,468	3,011	3,457
+40.	Mmankgodi	Kweneng District	Kweneng East	6,277	2,868	3,409
+41.	Maitengwe	Central Dis-trict	Central Tutume	6,141	2,728	3,413
+42.	Rakop		Central Dis-trict	Central Boteti	6,124	2,814	3,310
+43.	Dukwi		Central Dis-trict	Central Tutume	5,877	3,220	2,657
+44.	Mopipi		Central Dis-trict	Central Boteti	5,625	2,725	2,900
+45.	Etsha		North-West District	Ngamiland West	5,613	2,466	3,147
+46.	Otse		South-East District	South East	5,599	2,838	2,761
+47.	Sefophe		Central Dis-trict	Central Bobo-nong	5,470	2,662	2,808
+48.	Sehithwa	North-West District	Ngamiland East	5,290	2,744	2,546
+49.	Nata		Central Dis-trict	Central Tutume	5,170	2,381	2,789
+50.	Tumasera/Seleka	Central District	Central Ma-halapye	5,131	2,401	2,730
+51.	Moiyabana	Central Dis-trict	Central Ser-owe/Palapye	4,947	2,258	2,689
+52.	Lotlhakane	Southern District	Ngwaketse	4,741	2,371	2,370
+53.	Metsimotlhaba	Kweneng District	Kweneng East	4,692	2,162	2,530
+54.	Bokaa		Kgatleng District	Kgatleng	4,545	2,185	2,360
+55.	Tati Siding	North-East District	North East	4,456	2,242	2,214
+56.	Tsetsebjwe	Central Dis-trict	Central Bobo-nong	4,396	2,031	2,365
+57.	Hukuntsi	Kgalagadi District	Kgalagadi North	4,131	2,052	2,079
+58.	Kang		Kgalagadi District	Kgalagadi North	4,124	2,133	1,991
+59.	Maunatlala	Central Dis-trict	Central Ser-owe/Palapye	3,876	1,806	2,070
+60.	Tobane		Central Dis-trict	Central Bobo-nong	3,718	1,909	1,809
+61.	Nkange		Central Dis-trict	Central Tutume	3,707	1,587	2,120
+62.	Ramokgonami	Central Dis-trict	Central Ma-halapye	3,654	1,717	1,937
+63.	Sebina		Central Dis-trict	Central Tutume	3,566	1,607	1,959
+64.	Oodi		Kgatleng District	Kgatleng	3,550	1,691	1,859
+65.	Kumakwane	Kweneng District	Kweneng East	3,544	1,668	1,876
+66.	Manyana		Southern District	Ngwaketse	3,488	1,645	1,843
+67.	Toteng		North-West District	Ngamiland East	3,391	1,826	1,565
+68.	Shorobe		North-West District	Ngamiland East	3,333	1,628	1,705
+69.	Mandunyane	Central Dis-trict	Central Tutume	3,265	1,550	1,715
+70.	Thabala		Central Dis-trict	Central Ser-owe/Palapye	3,255	1,624	1,631
+71.	Lecheng		Central Dis-trict	Central Ser-owe/Palapye	3,251	1,536	1,715
+72.	Shashe-Mooke	Central Dis-trict	Central Tutume	3,249	1,548	1,701
+73.	Khudumelapye	Kweneng District	Kweneng West	3,248	1,645	1,603
+74.	Ranaka		Southern District	Ngwaketse	3,124	1,546	1,578
+75.	Marobela	Central Dis-trict	Central Tutume	3,114	1,441	1,673
+76.	Masunga		North-East District	North East	3,110	1,394	1,716
+77.	Malolwane	Kgatleng District	Kgatleng	3,084	1,559	1,525
+78.	Borolong	Central Dis-trict	Central Tutume	3,081	1,423	1,658
+79.	Nokaneng	North-West District	Ngamiland West	3,075	1,564	1,511
+80.	Chadibe		Central Dis-trict	Central Ma-halapye	3,060	1,439	1,621
+81.	Seronga		North-West District	Ngamiland West	3,043	1,307	1,736
+82.	Mookane		Central Dis-trict	Central Ma-halapye	3,042	1,500	1,542
+
