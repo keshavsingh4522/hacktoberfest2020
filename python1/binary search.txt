@@ -1,0 +1,18 @@
+def bin_search(a,low,high,search):
+    mid=(low+high)//2
+    if(a[mid]==search):
+        return search
+    elif(a[mid]>search):
+        return bin_search(a,low,mid-1,search)
+    elif(a[mid]<search):
+        return bin_search(a,mid+1,high,search)
+    else:
+        return 0
+n=int(input("Enter lenght of array"))
+mylist =[]
+for i in range(n):
+    ele=int(input())
+    mylist.append(ele)
+print(mylist)
+key=int(input('enter key'))
+print("Element is present :",bin_search(mylist,0,len(mylist)-1,key))
