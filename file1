@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+       int size, array[50], i , j, temp , smel , check, index;
+       cout<<"Ënter the size of the array: ";
+       cin>>size;
+       cout<<"Ënter "<<size<<"Array Elements: ";
+       for(i=0; i<size; i++)
+            cin>>array[i];
+       for(i=0; i<(size-1); i++)
+       {
+            check=0;
+            smel=array[i];
+            for(j=(i+1); j<size; j++)
+            {
+               if(smel>array[j])
+               {
+                 smel=array[j];
+                 check++;
+                 index=j;
+               }
+            }
+            if(check!=0)
+            {
+                 temp=array[i];
+                 array[i]=smel;
+                 array[index]=temp;
+            }
+      }
+      cout<<"\nSorted Array is : \n";
+      for(i=0; i<size; i++)
+            cout<<array[i]<<" ";
+      cout<<endl;
+      return 0;
+}
+
+      
+                 
+                 
+       
+       
+      
