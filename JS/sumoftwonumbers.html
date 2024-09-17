@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>SUM OF THE TWO NUMBERS</title>
+<script type="text/javascript">
+function add()
+{
+var a=document.getElementById("n1").value;
+var b=document.getElementById("n2").value;
+var c=parseInt(a)+parseInt(b);
+document.write("<h1>"+"THE SUM IS="+c+"</h1>");
+}
+</script>
+<body>
+<form name="T" method="post" action="">
+ENTER NUMBER1:<input type="text" id="n1" size="20"/><br>
+ENTER NUMBER2:<input type="text" id="n2" size="20"/><br>
+Submit:<input type="Submit" value="Submit" onclick="add()"/>
+Reset:<input type="Reset" value="Reset"/>
+</form>
+</body>
+</html>
