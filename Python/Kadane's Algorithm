@@ -1,0 +1,22 @@
+# Kadane's Algorithm
+# In this algorithm, we have to find the subarray with the largest sum
+# O(N)
+
+
+array = [2, -3, 5, -1, 8, -5, -3, 10, 0]
+
+def max_Sum(array,size):
+    
+    max_now = array[0]
+    max_end = 0
+    
+    for i in range(0, size):
+        max_end = max_end + array[i]
+        if max_end < 0:
+            max_end = 0
+        elif (max_now < max_end):
+            max_now = max_end
+            
+    return max_now
+
+print("Maximum Sum possible for a subarray is:- " , max_Sum( array , len(array)) )
