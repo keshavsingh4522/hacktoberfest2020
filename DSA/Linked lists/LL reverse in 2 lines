@@ -1,0 +1,12 @@
+void printReverse(Node *head)
+{
+    //Write your code here
+      if (head == NULL)  
+    return;  
+  
+    // print the list after head node  
+    printReverse(head->next);  
+  
+    // After everything else is printed, print head  
+    cout << head->data << " ";  
+}
