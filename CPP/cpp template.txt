@@ -1,0 +1,245 @@
+Template
+                        //--------------------------//
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include <bits/stdc++.h>  
+#include <complex>
+#include <queue>
+#include <set>
+#include <unordered_set>
+#include <list>
+#include <chrono>
+#include <random>
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <stack>
+#include <iomanip>
+#include <fstream>
+ 
+using namespace std;
+ 
+typedef long long ll;
+typedef long double ld;
+typedef pair<int,int> p32;
+typedef pair<ll,ll> p64;
+typedef pair<double,double> pdd;
+typedef vector<ll> v64;
+typedef vector<int> v32;
+typedef vector<vector<int> > vv32;
+typedef vector<vector<ll> > vv64;
+typedef vector<vector<p64> > vvp64;
+typedef vector<p64> vp64;
+typedef vector<p32> vp32;
+double eps = 1e-12;
+ll MOD = 998244353;
+ll mod = 1000000007;
+#define forn(i,e) for(ll i = 0; i < e; i++)
+#define forsn(i,s,e) for(ll i = s; i < e; i++)
+#define rforn(i,s) for(ll i = s; i >= 0; i--)
+#define rforsn(i,s,e) for(ll i = s; i >= e; i--)
+#define nl "\n"
+#define dbg(x) cout<<#x<<" = "<<x<<ln
+#define mp make_pair
+#define pb push_back
+#define fi first
+#define se second
+#define INF 2e18
+#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+#define all(x) (x).begin(), (x).end()
+#define sz(x) ((ll)(x).size())
+#define MAXN 1e5 + 5
+#define int long long
+
+// -------------------Modular Operations------------------- //
+
+int add(int x, int y)
+{
+    int res = x + y;
+    return(res >= mod ? res - mod : res);
+}
+
+int multiply(int x, int y)
+{
+    int res = x * y;
+    return(res >= mod ? res % mod : res);
+}
+
+int subtract(int x, int y)
+{
+    int res = x - y;
+    return(res < 0 ? res + mod : res);
+}
+
+int power(long long x, unsigned int y, int p)
+{
+    int res = 1;
+
+    x = x % p;
+
+    if (x == 0) return 0;
+
+    while (y > 0)
+    {
+        if (y & 1)
+            res = (res*x) % p;
+
+       y = y>>1; // y = y/2
+        x = (x*x) % p;
+    }
+    return res;
+}
+
+// -------------------Sieve of Erastothenes------------------- //
+
+bool sieve_of_eratosthenes(int n)
+{
+    vector<bool> is_prime(n+1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i <= n; i++) {
+        if (is_prime[i] && (long long)i * i <= n) {
+            for (int j = i * i; j <= n; j += i)
+                is_prime[j] = false;
+        }
+    }
+    return is_prime[n];
+}
+
+// -------------------Number of Divisors------------------- //
+
+int NODiv(int n)
+{
+    int cnt = 0;
+    for(int i = 1;i * i <= n;i++)
+    {
+        if(i * i == n)
+        {
+            cnt++;
+            continue;
+        }
+        cnt += 2;
+    }
+    return cnt;
+}
+
+// -------------------nCr(Binomial)------------------- //
+
+int nCr(int n, int k) 
+{
+    if(n < k)
+    {
+        return 0;
+    }
+    if(k == 0)
+    {
+        return 1;
+    }
+    int res = 1;
+    for (int i = n - k + 1; i <= n; ++i)
+        res *= i;
+    for (int i = 2; i <= k; ++i)
+        res /= i;
+    return res;
+}
+
+// -------------------Checking Prime (O(root(n))------------------- //
+
+bool isPrime(int x) {
+  for (int d = 2; d * d <= x; d++) {
+      if (x % d == 0)
+          return false;
+  }
+  return true;
+}
+// -------------------Adding Egdes to the Graph------------------- //
+
+vector<vector<int>>adj;
+void addEdge(int x, int y)
+{
+    adj[x].push_back(y);
+    adj[y].push_back(x);
+}
+
+// -------------------DFS------------------- //
+
+// vector<bool>visited;     // resize in the solve() with n + 1
+// void dfs(int v)
+// {
+//     visited[v] = true;
+//     for(auto i:adj[v])
+//     {
+//         if(!visited[i])
+//         {
+//             dfs(i);
+//         }
+//     }
+// }
+
+// -------------------DIJKSTRA------------------- //
+
+// vector<int>d;
+// vector<int>p;
+
+// void dijkstra(int s)
+// {
+//     int n = adj.size();
+//     d.assign(n, INF);
+//     p.assign(n, -1);
+//     d[s] = 0;
+//     using pii =  pair<int, int>;
+//     priority_queue<pii, vector<pii>, greater<pii>>q;
+//     q.push({0, s});
+//     while(!q.empty())
+//     {
+//         int v = q.top().second;
+//         int d_v = q.top().first;
+//         q.pop();
+//         if(d_v != d[v])
+//         {
+//             continue;
+//         }
+//         for (auto edge : adj[v])
+//         {
+//             int to = edge.first;
+//             int len = edge.second;
+//             if (d[v] + len < d[to])
+//             {
+//                 d[to] = d[v] + len;
+//                 p[to] = v;
+//                 q.push({d[to], to});
+//             }
+//         }
+//     }
+// }
+
+// -------------------RESTORING SHORTEST PATH------------------- //
+
+// vector<int>path;
+
+// void restore_path(int s, int t)
+// {
+//     for(int v = t;v != s;v = p[v])
+//     {
+//         path.push_back(v);
+//     }
+//     path.push_back(s);
+//     reverse(path.begin(), path.end());
+// }
+
+// -------------------Important Notes------------------- //
+
+// For Interactive Problems remember to remove multi test cases condition //
+
+// (int)log2(x) + 1  -> to calculate number of bits of a number
+// s.erase(0, min(s.find_first_not_of('0'), s.size()-1));   //for removing leading zero's
+// (int index = str.find(substr, pos)) != string::npos    // for checking substring 'substr' in string 'str'
+
+// -----------------------Solve------------------------ //
+int main()
+{
+return 0;
