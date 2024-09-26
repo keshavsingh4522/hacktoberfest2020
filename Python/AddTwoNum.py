@@ -1,7 +1,7 @@
 # just change Add to sum two numbers wether in float or int
 num1 = 15.0
 num2 = 12.0
-
+# num1 and num2 are the two numbers
 # change Add to sum 
 sum = num1 + num2 
 
