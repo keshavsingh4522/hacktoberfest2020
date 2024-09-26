@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+ll int n,k;
+ll int logs[200000];
+
+bool check(double x){
+    int cuts=0;
+    for(int i=0;i<n;i++){
+        if(logs[i]>x){
+            cuts+=ceil(logs[i]/x)-1;
+        }
+    }
+    return cuts<=k;
+}
+
+int main()
+{
+    double ep=1e-6;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    cin>>n>>k;
+    ll int max=0;
+    for(ll int i=0;i<n;i++){
+        cin>>logs[i];
+        if(logs[i]>max) max=logs[i];
+    }
+    double lo=0;
+    double hi=max;
+    double mid;
+    while(hi-lo>ep){
+        mid=lo+(hi-lo)/2;
+        if(check(mid)){
+            hi=mid;
+        }
+        else{
+            lo=mid;
+        }
+    } 
+    ll int ans=ceil(lo);
+    cout<<ans;
+    return 0;
+}
