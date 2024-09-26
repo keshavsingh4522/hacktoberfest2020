@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!-- Design by foolishdeveloper.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Responsive Image Gallery</title>
+  <style media="screen">
+ 
+
+#gallery{
+  column-count:4;
+  column-gap:20px;
+}
+    
+#gallery img {
+  width:100%;
+  height:auto;
+  margin: 4% auto;
+  box-shadow:-3px 5px 15px #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+    
+@media (max-width:1200px){
+  #gallery{
+
+  column-count:3;
+
+  column-gap:20px;
+}
+}
+@media (max-width:800px){
+  #gallery{
+
+  column-count:2;
+
+  column-gap:20px;
+}
+}
+@media (max-width:600px){
+  #gallery{
+
+  column-count:1;
+}
+}
+
+
+
+
+  </style>
+</head>
+<body>
+ 
+<div id="gallery" class="container-fluid">
+  <img src="https://source.unsplash.com/1600x1200?female,portrait" class="img-responsive">
+  <img src="https://source.unsplash.com/1024x768?female,portrait" class="img-responsive">
+   <img src="https://source.unsplash.com/1366x768?female,portrait" class="img-responsive">
+
+  <img src="https://source.unsplash.com/1920x1080?female,portrait" class="img-responsive">
+  <img src="https://source.unsplash.com/640x360?female,portrait" class="img-responsive">
+<img src="https://source.unsplash.com/320x640?female,portrait" class="img-responsive">
+  <img src="https://source.unsplash.com/1200x1600?female,portrait" class="card img-responsive">
+  <img src="https://source.unsplash.com/800x600?female,portrait" class="img-responsive">
+  <img src="https://source.unsplash.com/600x800?female,portrait" class="img-responsive">
+  <img src="https://source.unsplash.com/400x600?female,portrait" class="img-responsive">
+  <img src="https://source.unsplash.com/600x400?female,portrait" class="img-responsive">
+<img src="https://source.unsplash.com/1100x1600?female,portrait" class="img-responsive">
+<img src="https://source.unsplash.com/1600x1100?female,portrait" class="img-responsive">
+<img src="https://source.unsplash.com/992x768?female,portrait" class="img-responsive">
+<img src="https://source.unsplash.com/768x992?female,portrait" class="img-responsive">
+
+</div>
+
+
+</body>
+</html>
