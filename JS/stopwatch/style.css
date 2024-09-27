@@ -1,0 +1,47 @@
+body {
+    background-color: #fff;
+}
+h1 {
+    font-size: 150px;
+    font-weight: 200%;
+    font-family: sans-serif;
+}
+h2 {
+    text-align: center;
+}
+#start {
+    background-color: #35c7bd;
+}
+#pause {
+    background-color: #9A3334;
+    color: #fff;
+}
+#reset {
+    background-color: #e9788c;
+}
+#save {
+    color: #4387d0;
+}
+#start:focus, #pause:focus, #reset:focus {
+    background-color: #000;
+    color: fff;
+}
+#save:focus {
+    color: black;
+}
+i {
+    font-size: 150px;
+}
+#record {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 2%;
+}
+table {
+    margin: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#sec, #msec {
+    margin-left: 5%;
+}
