@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click the coloured square</title>
+    <style>
+        .grid{    
+    width: 312px;
+    height: 312px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.square{
+    height: 100px;
+    width: 100px;
+    border:solid rgb(44, 170, 243) 2px;
+}
+
+.mole{
+    background: tomato;
+}
+    </style>
+  
+</head>
+<body>
+    
+    <h2>Your Score- </h2>
+    <h2 id="score">0</h2>
+    <h2>Time Left:</h2>
+    <h2 id="time-left">60</h2>
+
+      <div class="grid">
+      <div class="square" id="1"></div>
+      <div class="square" id="2"></div>
+      <div class="square" id="3"></div>
+      <div class="square" id="4"></div>
+      <div class="square" id="5"></div>
+      <div class="square" id="6"></div>
+      <div class="square" id="7"></div>
+      <div class="square" id="8"></div>
+      <div class="square" id="9"></div>
+  </div>
+    
+
+
+  <script>
+      const squares = document.querySelectorAll('.square')
+const mole = document.querySelector('.mole')
+const timeLeft=document.querySelector('#time-left')
+const score = document.querySelector('#score')
+let hitPosition
+let currentTime = 10
+let timerId= null;
+let result =0;
+
+function randomSquare(){
+    squares.forEach(square => {
+        square.classList.remove('mole');
+
+    })
+
+    let randomSquare = squares[Math.floor(Math.random()*9)]
+    randomSquare.classList.add('mole')
+
+    hitPosition = randomSquare.id
+}
+
+squares.forEach(square => {
+    square.addEventListener('mousedown',() => {
+        if(square.id == hitPosition){
+            result++
+            score.textContent = result
+            hitPosition = null
+        }
+    })
+})
+
+function moveMOle(){    
+    timerId = setInterval(randomSquare,1000)
+
+}
+
+moveMOle()
+
+function countDown(){
+    currentTime--
+    timeLeft.textContent = currentTime
+
+    if(currentTime == 0){
+      clearInterval(countDownTimerId)
+      clearInterval(timerId)
+      alert('GAME OVER YOUR SCORE IS '+result)
+    }
+   
+}
+
+let countDownTimerId = setInterval(countDown,1000)
+  </script>
+</body>
+
+</html>
