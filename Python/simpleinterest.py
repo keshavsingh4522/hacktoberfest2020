@@ -15,3 +15,10 @@ def simple_interest(p,t,r):
 	
 # Driver code 
 simple_interest(8, 6, 8) 
+
+#accepting user values for p,t,r
+p=double(input())
+t=double(input())
+r=double(input())
+
+simple_interest(p,t,r)

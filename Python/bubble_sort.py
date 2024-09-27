@@ -13,6 +13,21 @@ def bubble_sort(input_list):
 #Test simple
 example_list = [71, 77, 9, 11, 88]
 
+list1=[]
+
+#take user input for list elements
+
+#number of elements in list
+num_of_elements = int(input())
+
+for i in range(num_of_elements):
+  list1.append(int(input())
+               
+
+
 #call function
 bubble_sort(example_list)
 print(example_list)
+               
+#calling function
+bubble_sort(list1)
