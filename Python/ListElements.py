@@ -6,6 +6,13 @@ Bonus: Can you do this in one pass?"""
 
 
 
+def ifk(list1, k):
+    for i in range(0, len(list1)):
+        for j in range(0, len(list1)):
+            if k == list1[i] + list1[j]:
+                return True    
+    return False 
+    
 x=int(input('Enter the list size:'))
 l1=[]
 i=0
@@ -15,17 +22,5 @@ for i in range(x):
     l1.append(int(input()))
        
 k=int(input('Enter the no:'))
-
-y='False'
-
-start=l1[0]
-
-j=1
-
-for j in range(x):
-    if((start+l1[j])==k):
-        y='True'
-    j+=1
-    
-print(y)
+print(ifk(l1, k)
     
