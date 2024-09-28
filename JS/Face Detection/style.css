@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 20px 0;
+}
+.logo{
+    width: 250px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+
+}
+.hero h1{
+    font-size: 75px;
+    color: azure;
+    margin-top: 5px;
+    padding-left: 20px;
+}
