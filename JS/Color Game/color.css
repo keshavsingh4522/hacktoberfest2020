@@ -1,0 +1,103 @@
+body{
+	background-color: rgb(30, 30, 30);
+}
+body{
+	margin: 0px;
+	font-family: Courier New;
+	font-size: 20px;
+}
+#heading{
+	width: 100%;
+	height: 30px;
+	font-size: 25px;
+	text-align: center;
+	font-weight: bolder;
+	background-color:lightgray;
+	border-bottom: 1px solid black;
+}
+#to_guess{
+	width: 100%;
+	height: 100px;
+	padding-top: 30px;
+
+	text-align: center;
+	background-color:rgb(130, 120, 180);
+	font-size: 50px;
+}
+/*#info{
+	width: 100%;
+	height: 30px;
+	margin: 0px;
+	margin-bottom: 10px;
+	border-top: 1px solid black;
+
+	font-size: 23px;
+	background-color: lightgray;
+	text-align: center;
+	font-weight:bold;
+}*/
+
+/**/
+
+#info_bar{
+	width: 100%;
+	height: 30px;
+	margin: 0px;
+	margin-bottom: 10px;
+	border-top: 1px solid black;
+	
+	background-color: lightgray;
+	font-size: 23px;
+	font-weight:bold;
+}
+#info{
+	margin-left: 43%;
+	text-align: centre;
+}
+
+.line{
+	width: 30%;
+	float: left;
+}
+#score{
+	width: 5%;
+	float: right;
+}
+/**/
+
+
+#pallet{
+	height:400px;
+	text-align: center;
+}
+.btns{
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	position: relative;
+	border: 0px;
+	border-radius: 10px;
+}
+.btns:hover{
+	transform: scale(1.05);
+}
+.btns:active{
+	transform: scale(0.98);
+	/*background-color: rgb(30, 30, 30);*/
+}
+#retry{
+	width: 50px;
+	height: 50px;
+	margin: 0px auto 0px;
+}
+#btn_retry{
+	width: 50px;
+	height: 50px;
+}
+#btn_retry:hover{
+	transform: scale(1.05);
+}
+#btn_retry:active{
+	transform: scale(0.95);
+	transform: rotate(-90deg);
+}

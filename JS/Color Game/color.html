@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Color Game</title>
+
+	<link rel="stylesheet" type="text/css" href="color.css">
+	<script  src="color.js"></script>
+</head>
+<body>
+<div id="heading">
+	The Color Game
+</div>
+<div id="to_guess">
+	RGB(0,0,0)
+</div>
+<!-- <div id="info">
+	Press Retry Button
+</div> -->
+
+<!--  -->
+<div id="info_bar">
+	<div id="info" class="line">
+		Press Retry Button
+	</div>
+	<div id="score" class="line">
+		0.0
+	</div>
+</div>
+<!--  -->
+<div id="pallet">
+	<button id="col1" class="btns" onclick="pick(this.id)"></button>
+	<button id="col2" class="btns" onclick="pick(this.id)"></button>
+	<button id="col3" class="btns" onclick="pick(this.id)"></button>
+	<br>
+	<button id="col4" class="btns" onclick="pick(this.id)"></button>
+	<button id="col5" class="btns" onclick="pick(this.id)"></button>
+	<button id="col6" class="btns" onclick="pick(this.id)"></button>
+</div>
+<div id="retry" onclick="restart()">
+	<img src="retry.png" id="btn_retry" >
+</div>
+</body>
+</html>
