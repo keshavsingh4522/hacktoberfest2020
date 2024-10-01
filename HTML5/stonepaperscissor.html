@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>flames</title>
+</head>
+
+<body>
+    <button  id="stone" class="btn btn-primary" onclick="stone()">STONE</button>
+    <button  id="paper" class="btn btn-primary" onclick="paper()">PAPER</button>
+    <button  id="scissors" class="btn btn-primary" onclick="scissor()">SCISSORS</button>
+<script>
+function stone(){
+    let a=getRandomArbitrary(0,3);
+    console.log(a);
+    if(a==0){
+        alert("It's a stone,draw!!!");
+    }
+    if(a==1){
+        alert("It's paper,you lose!!!");
+    }
+    if(a==2){
+        alert("It's a scissor,you win!!!");
+    }
+}
+function paper(){
+    let a=getRandomArbitrary(0,3);
+    if(a==0){
+        alert("It's a stone,you win!!!");
+    }
+    if(a==1){
+        alert("It's paper,you draw!!");
+    }
+    if(a==2){
+        alert("It's a scissor,you lose!!!");
+    }
+}
+function scissor(){
+    let a=getRandomArbitrary(0,3);
+    if(a==0){
+        alert("It's a stone,you lose!!!");
+    }
+    if(a==1){
+        alert("It's paper,you win!!!");
+    }
+    if(a==2){
+        alert("It's a scissor,draw!!!");
+    }
+}
+
+function getRandomArbitrary(min, max) {
+  return Math.floor((Math.random() * (max - min) + min));
+}
+</script>
+
+
+</body></html>
