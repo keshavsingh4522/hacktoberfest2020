@@ -1,0 +1,3 @@
+tkinter
+PIL 
+pyttsx3
