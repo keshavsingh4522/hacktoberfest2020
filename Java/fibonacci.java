@@ -7,12 +7,14 @@ public class Main {
         System.out.println("Enter the number : ");
         Scanner scan = new Scanner(System.in);
         int limit = scan.nextInt();
-        int first_num = 0;
-        int second_num = 1;
+        System.out.println("Enter the first number : ");
+        int first_num = scan.nextInt();
+        System.out.println("Enter the second number : ");
+        int second_num = scan.nextInt();
         int next_num = 0;
-        int i = 0;
-        for (i=1;i<=limit;i++){
-            System.out.println(first_num+", ");
+        //int i = 0;
+        for (int i=1;i<=limit;i++){
+            System.out.print(first_num+", ");
             next_num = first_num + second_num;
             first_num = second_num;
             second_num = next_num;
