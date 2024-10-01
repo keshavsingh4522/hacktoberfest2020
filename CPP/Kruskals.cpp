@@ -1,64 +1,166 @@
-class Graph: 
-  
-    def __init__(self,vertices): 
-        self.V= vertices 
-        self.graph = []
-    def addEdge(self,u,v,w): 
-        self.graph.append([u,v,w])  
-    def find(self, parent, i): 
-        if parent[i] == i: 
-            return i 
-        return self.find(parent, parent[i]) 
-    def union(self, parent, rank, x, y): 
-        xroot = self.find(parent, x) 
-        yroot = self.find(parent, y) 
-        if rank[xroot] < rank[yroot]: 
-            parent[xroot] = yroot 
-        elif rank[xroot] > rank[yroot]: 
-            parent[yroot] = xroot 
-        else : 
-            parent[yroot] = xroot 
-            rank[xroot] += 1
-    def KruskalMST(self): 
-  
-        result =[] 
-  
-        i = 0 
-        e = 0 
-        self.graph =  sorted(self.graph,key=lambda item: item[2]) 
-  
-        parent = [] ; rank = [] 
-        for node in range(self.V): 
-            parent.append(node) 
-            rank.append(0) 
 
-        while e < self.V -1 : 
-            u,v,w =  self.graph[i] 
-            i = i + 1
-            x = self.find(parent, u) 
-            y = self.find(parent ,v) 
-            if x != y: 
-                e = e + 1     
-                result.append([u,v,w]) 
-                self.union(parent, rank, x, y)             
-        print("Following are the edges in the constructed MST")
-        for u,v,weight  in result: 
-            print("%d -- %d == %d" % (u,v,weight))
-g = Graph(9)
-g.addEdge(0, 1, 4)
-g.addEdge(0, 7, 8)
-g.addEdge(1, 2, 8)
-g.addEdge(1, 7, 11)
-g.addEdge(2, 8, 2)
-g.addEdge(2, 3, 7)
-g.addEdge(2, 5, 4)
-g.addEdge(3, 4, 9)
-g.addEdge(3, 5, 14)
-g.addEdge(4, 5, 10)
-g.addEdge(5,6,2)
-g.addEdge(6,7,1)
-g.addEdge(6,8,6)
-g.addEdge(7,8,7)
+#include <bits/stdc++.h>
+using namespace std;
 
-g.KruskalMST()            
+class Edge {
+public:
+	int src, dest, weight;
+};
+
+
+class Graph {
+public:
+	
+	int V, E;
+  
+	Edge* edge;
+};
+
+
+Graph* createGraph(int V, int E)
+{
+	Graph* graph = new Graph;
+	graph->V = V;
+	graph->E = E;
+
+	graph->edge = new Edge[E];
+
+	return graph;
+}
+
+
+class subset {
+public:
+	int parent;
+	int rank;
+};
+
+
+int find(subset subsets[], int i)
+{
+
+	if (subsets[i].parent != i)
+		subsets[i].parent
+			= find(subsets, subsets[i].parent);
+
+	return subsets[i].parent;
+}
+
+
+void Union(subset subsets[], int x, int y)
+{
+	int xroot = find(subsets, x);
+	int yroot = find(subsets, y);
+
+
+	if (subsets[xroot].rank < subsets[yroot].rank)
+		subsets[xroot].parent = yroot;
+	else if (subsets[xroot].rank > subsets[yroot].rank)
+		subsets[yroot].parent = xroot;
+
+
+	else {
+		subsets[yroot].parent = xroot;
+		subsets[xroot].rank++;
+	}
+}
+
+
+int myComp(const void* a, const void* b)
+{
+	Edge* a1 = (Edge*)a;
+	Edge* b1 = (Edge*)b;
+	return a1->weight > b1->weight;
+}
+
+
+void KruskalMST(Graph* graph)
+{
+	int V = graph->V;
+	Edge result[V]; 
+	int e = 0; 
+	int i = 0; 
+
+
+	qsort(graph->edge, graph->E, sizeof(graph->edge[0]),
+		myComp);
+
+
+	subset* subsets = new subset[(V * sizeof(subset))];
+
+	for (int v = 0; v < V; ++v)
+	{
+		subsets[v].parent = v;
+		subsets[v].rank = 0;
+	}
+
+
+	while (e < V - 1 && i < graph->E)
+	{
+
+		Edge next_edge = graph->edge[i++];
+
+		int x = find(subsets, next_edge.src);
+		int y = find(subsets, next_edge.dest);
+
+		if (x != y) {
+			result[e++] = next_edge;
+			Union(subsets, x, y);
+		}
+	}
+
+
+	cout << "Following are the edges in the constructed "
+			"MST\n";
+	int minimumCost = 0;
+	for (i = 0; i < e; ++i)
+	{
+		cout << result[i].src << " -- " << result[i].dest
+			<< " == " << result[i].weight << endl;
+		minimumCost = minimumCost + result[i].weight;
+	}
+
+	cout << "Minimum Cost Spanning Tree: " << minimumCost
+		<< endl;
+}
+
+
+int main()
+{
+
+	int V = 4; 
+	int E = 5; 
+	Graph* graph = createGraph(V, E);
+
+
+	graph->edge[0].src = 0;
+	graph->edge[0].dest = 1;
+	graph->edge[0].weight = 10;
+
+
+	graph->edge[1].src = 0;
+	graph->edge[1].dest = 2;
+	graph->edge[1].weight = 6;
+
+
+	graph->edge[2].src = 0;
+	graph->edge[2].dest = 3;
+	graph->edge[2].weight = 5;
+
+
+	graph->edge[3].src = 1;
+	graph->edge[3].dest = 3;
+	graph->edge[3].weight = 15;
+
+
+	graph->edge[4].src = 2;
+	graph->edge[4].dest = 3;
+	graph->edge[4].weight = 4;
+
+
+	KruskalMST(graph);
+
+	return 0;
+}
+
 
