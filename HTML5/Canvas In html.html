@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>first canvas</title>
+        <style>
+            *{
+    padding:0;
+    margin:0;
+    overflow:hidden ;
+    box-sizing:border-box ;
+}
+canvas{
+    background:black;
+}
+
+        </style>
+    </head>
+    <body>
+        <canvas id="cnv"></canvas>
+    </body>
+    <script>
+        var canvas = document.getElementById("cnv");
+        var ctx = canvas.getContext("2d");
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        
+        let x = canvas.width/2
+        let y = canvas.height/2
+        let vx = 3
+        let vy = 3
+        let radius = 15
+        let clrs = 60
+    
+        function animate(){
+            ctx.beginPath()
+            ctx.arc(x,y,radius,0,2*Math.PI);
+            ctx.fillStyle="hsl("+clrs+",100%,50%)"
+            ctx.fill();
+            ctx.closePath()
+            if(x+radius>innerWidth || x-radius<0){
+                vx=-vx
+                clrs+=50
+            }
+            if(y+radius>innerHeight || y-radius<0){
+                vy=-vy
+                clrs+=50
+            }
+          x+=vx
+          y+=vy
+        }
+        function draw(){
+           ctx.globalAlpha = 0.18
+           ctx.fillStyle = "black";             
+           ctx.fillRect(0, 0, canvas.width, canvas.height)
+           ctx.globalAlpha = 1
+           animate()
+           
+        }
+        
+        setInterval(draw,15)
+        
+    </script>
+</html>
