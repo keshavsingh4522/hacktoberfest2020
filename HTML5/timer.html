@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>CLOCK</title>
+    </head>
+    <body>
+            
+        <div>Seconds: <span id="time">0</span></div>
+        <input type="button" id="startTimer" value="Start Timer" onclick="start();"><br/>
+        <input type="button" id="stopTimer" value="Stop Timer"  onclick="stop();"><br/>
+       
+        <script>
+            var timeElapsed = 0;
+            var timerID = -1;
+            function tick() {
+                timeElapsed++
+                document.getElementById("time").innerHTML = timeElapsed;
+            }
+
+            function start() {
+                if(timerID == -1){
+                    timerID = setInterval(tick, 1000);
+                }
+            }
+
+            function stop() {
+                if(timerID != -1){
+                    clearInterval(timerID)
+                    timerID = -1
+                }
+            }
+
+        </script>
+    </body>
+</html>
