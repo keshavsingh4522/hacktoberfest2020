@@ -1,18 +1,15 @@
-#defined function
-def bubble_sort(input_list):
-  #get list length
-  count = len(input_list)
+def bubbleSort(arr):
+	n = len(arr)
+	for i in range(n):
+		for j in range(0, n-i-1):
+			if arr[j] > arr[j+1]:
+				arr[j], arr[j+1] = arr[j+1], arr[j]
 
-  #Loop through an array
-  for i in range(count):
-    for j in range(0, count - i - 1):
-      #Switch if greater value is found
-      if input_list[j] > input_list[j + 1]:
-        input_list[j], input_list[j + 1] = input_list[j + 1], input_list[j]
+if __name__ == "__main__":
+arr = [64, 34, 25, 12, 22, 11, 90]
 
-#Test simple
-example_list = [71, 77, 9, 11, 88]
+bubbleSort(arr)
 
-#call function
-bubble_sort(example_list)
-print(example_list)
+print("Sorted array is:")
+for i in range(len(arr)):
+	print("%d" % arr[i], end=" ")
