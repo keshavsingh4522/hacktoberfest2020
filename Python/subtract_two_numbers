@@ -1,0 +1,4 @@
+number1 = 12
+number2 = 10
+number = number1 - number2
+print(number)
