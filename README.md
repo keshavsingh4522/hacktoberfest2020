@@ -2,7 +2,7 @@
     <b>dont contribute in this repo, contribute only in below mentioned repo</b>
 </div>
 
-# Special Note For Everyone
+# SPECIAL NOTE FOR EVERYONE
 ```py
 '''
 always make more then 4 pull request
