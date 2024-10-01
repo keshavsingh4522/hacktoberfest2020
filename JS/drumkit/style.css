@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: url("nature-gec19d118c_1920.jpg") bottom center;
+  background-size: cover;
+}
+.key {
+  color: rgb(247, 141, 141);
+}
+.keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: 100vh;
+}
+.key {
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.07s ease;
+  width: 10rem;
+  border: 0.5rem solid black;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  text-align: center;
+}
+kbd {
+  display: block;
+  font-size: larger;
+  color: white;
+}
+.sound {
+  text-transform: uppercase;
+}
