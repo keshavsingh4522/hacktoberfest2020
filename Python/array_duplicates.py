@@ -13,4 +13,3 @@ def findDup(liArr):
 print("enter array elements: ")
 sample = list(map(int, input().split()))
 print(findDup(sample))
-#print(findDup([2, 3, 1, 0, 2, 5,3]))
