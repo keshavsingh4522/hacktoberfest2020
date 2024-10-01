@@ -4,4 +4,8 @@
 num = float(input('Enter a number:'))
 
 num_sqrt = num ** 0.5
-print('The square root of %0.3f is %0.3f'%(num ,num_sqrt))
+num_sqrt = f"{num_sqrt:g}" #Throw out trailing zeros and extra decimals
+
+num = f"{num:g}" #Throw out trailing zeros and extra decimals
+
+print('The square root of ', num, ' is ', num_sqrt)
