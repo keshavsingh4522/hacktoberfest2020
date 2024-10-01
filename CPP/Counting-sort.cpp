@@ -1,38 +1,57 @@
+//Initial Template for C++
+
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define RANGE 255
 
-//only for numbers in the range -1e3 to 1e3 : 
-void counting_sort(vector<ll> &v){
-    vector<ll> hash(int(1e6), 0) ;
-    for(auto x : v){
-        hash[int(1e3) + x]++;
+
+ // } Driver Code Ends
+//User function Template for C++
+
+class Solution{
+    public:
+    //Function to arrange all letters of a string in lexicographical 
+    //order using Counting Sort.
+    string countSort(string arr){
+      int count[26]={0};
+      for(int i=0;i<arr.length();i++){
+         count[int(arr[i])-97]++;
+      }
+      for(int i=1;i<26;i++){
+        
+         count[i]=count[i-1]+count[i];
+         
+      } 
+     
+      char output[arr.length()];
+      for(int i=arr.length()-1;i>=0;i--){
+          output[count[(int(arr[i])-97)]-1]=arr[i];
+          count[int(arr[i])-97]--;
+      }
+   
+      for(int i=0;i<arr.length();i++){
+          arr[i]=output[i];
+      }
+      
+       return arr;
     }
-    v.clear();
-    for(int j = 0 ; j < hash.size() ; j++){
-        if(hash[j] > 0){
-            for(int i = 0 ; i < hash[j] ; i++){
-                v.push_back(j-int(1e3));
-            }
-        }
-    }
-}
-void solve(){
-    ll n ; cin >> n ;
-    vector<ll> v(n);
-    for(auto &x : v){
-        cin >> x;
-    }
-    counting_sort(v);
-    for(auto x : v){
-        cout << x << " ";
-    }
-}
+};
+
+
+// { Driver Code Starts.
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    solve();
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        string arr;
+        cin>>arr;
+        Solution obj;
+        cout<<obj.countSort(arr)<<endl;
+    }
+    return 0;
 }
