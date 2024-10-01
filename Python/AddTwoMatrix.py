@@ -1,22 +1,28 @@
-# Program to add two matrices using nested loop
-#first matrice
-X = [[12,7,3],
-    [4 ,5,6],
-    [7 ,8,9]]
-#second matrice
-Y = [[5,8,1],
-    [6,7,3],
-    [4,5,9]]
-
-result = [[0,0,0],
-         [0,0,0],
-         [0,0,0]]
-
-# iterate through rows
-for i in range(len(X)):
-   # iterate through columns
-   for j in range(len(X[0])):
-       result[i][j] = X[i][j] + Y[i][j]
-print("Result is")
-for r in result:
-   print(r)
+r1=int(input("Enter the Row size for Matrix A: "))
+c1=int(input("Enter the Column size for Matrix A: "))
+r2=int(input("Enter the Row size for Matrix B: "))
+c2=int(input("Enter the Column size for Matrix B: "))
+A=[]
+B=[]
+R=[]
+t=0
+print("Enter elemnts for Matrix A")
+for i in range(r1):
+    l=[]
+    for j in range(c1):
+        t=int(input("Enter Element: "))
+        l.append(t)
+    A.append(l)
+print("Enter elemnts for Matrix B")        
+for i in range(r2):
+    sl=[]
+    l=[]
+    for j in range(c2):
+        t=int(input("Enter Element: "))
+        sl.append(t+A[i][j])
+        l.append(t)
+    B.append(l)
+    R.append(sl)
+        
+print("Result is\n")
+print(R)
