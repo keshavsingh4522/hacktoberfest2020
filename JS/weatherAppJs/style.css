@@ -1,0 +1,144 @@
+/* #### Universal Selector ####### */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body */
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, rgb(140, 219, 255), rgb(234, 223, 255));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1;
+}
+
+#wrapper {
+  max-width: 400px;
+  width: 100%;
+  /* background-color: #cf455c; */
+  background: #56ccf2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2f80ed, #56ccf2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2f80ed, #56ccf2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #ffffff;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0.7rem auto;
+}
+
+#wrapper form {
+  margin-bottom: 1rem;
+  margin-left: 10px;
+  padding: 15px;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border-radius: 10px;
+  border: 0;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+input[type="text"]:focus,
+#btn:focus {
+  outline: none;
+}
+
+form #btn {
+  padding: 10px;
+  border: 0;
+  width: 20%;
+  background-color: #fff7ad;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 550;
+  color: #696969;
+}
+
+#message {
+  text-align: center;
+  font-size: 1.3rem;
+  padding-bottom: 10px;
+}
+
+#weather-info h1 {
+  font-size: 4.5rem;
+  padding-top: 10px;
+  padding-left: 30px;
+  color: #ffdd67;
+}
+
+#weather-info h2 {
+  font-size: 1.7rem;
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+
+.w-info {
+  display: flex;
+  align-items: center;
+}
+
+#weather-info h3 {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  color: #fff;
+  margin-left: -25px;
+  margin-top: 13px;
+}
+
+#other-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+  padding-bottom: 5px;
+}
+
+#other-info div {
+  flex: 1 1;
+  background-color: #fff;
+  color: #444444;
+  margin: 0 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#other-info p {
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
+
+#other-info h2 {
+  font-size: 1rem;
+  padding: 10px 0;
+  font-weight: 400;
+}
+
+div.icon {
+  margin-top: 10px;
+  font-size: 3em;
+}
+
+.info-card {
+  padding: 20px;
+}
