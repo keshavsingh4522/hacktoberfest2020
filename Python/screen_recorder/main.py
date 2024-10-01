@@ -8,8 +8,8 @@ import numpy as np
 import pyautogui
 
 SCREEN_SIZE = (1920, 1080)
-fourcc = cv2.VideoWriter_fourcc(*"XVID")
-out = cv2.VideoWriter("Output.avi", fourcc, 20.0,(SCREEN_SIZE))
+fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+out = cv2.VideoWriter("output.mp4", fourcc, 20.0,(SCREEN_SIZE))
 
 while True:
     img = pyautogui.screenshot()
