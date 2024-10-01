@@ -1,0 +1,23 @@
+int lpss(char *strin)
+{
+    int n=strlen(strin);
+    int i,j,d;
+    int l[n][n];
+    for(i=0;i<n;i++) 
+    l[i][i]=1;                              //here i made a lpss function to solve the problem
+
+    for(d=2;d<=n;d++)
+    {
+        for(i=0;i<n-d+1;i++)
+        {
+            j=i+d-1;
+            if(strin[i]==strin[j]&&d==2)
+            l[i][j]=2;
+            else if (strin[i]==strin[j])
+            l[i][j]=l[i+1][j-1]+2;
+            else
+            l[i][j]=max(l[i][j-1],l[i+1][j]);
+        }
+    }
+    return l[0][n-1];
+}
