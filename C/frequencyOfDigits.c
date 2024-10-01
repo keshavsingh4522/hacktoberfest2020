@@ -10,18 +10,17 @@ int main()
         scanf("%d", &a[i]);
     for (int j = 0; j < n; j++)
     {
-        c=0;
+        c = 0;
         for (i = 0; i < n; i++)
         {
-            
+
             if (a[j] == a[i])
             {
                 c++;
             }
         }
-        
+
         printf("Frequency of %d : %d\n", a[j], c);
-        
     }
     return 0;
 }

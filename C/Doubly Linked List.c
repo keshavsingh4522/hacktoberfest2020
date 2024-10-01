@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
- 
+
 struct node
 {
     struct node *prev;
     int n;
     struct node *next;
-}*h,*tmp,*tmp1,*tmp2,*tmp4;
+} * h, *tmp, *tmp1, *tmp2, *tmp4;
 
-int count=0;
+int count = 0;
 
 void second(void)
 {
@@ -24,7 +24,7 @@ void second(void)
 void create()
 {
     int data;
-    tmp =(struct node *)malloc(1*sizeof(struct node));
+    tmp = (struct node *)malloc(1 * sizeof(struct node));
     tmp->prev = NULL;
     tmp->next = NULL;
     printf("\n\t\t\t\tEnter value to node : ");
@@ -32,7 +32,7 @@ void create()
     tmp->n = data;
     count++;
 }
- 
+
 void insbeg()
 {
     if (h == NULL)
@@ -70,11 +70,11 @@ void insend()
 void inspos()
 {
     int pos, i = 2;
- 
+
     printf("\n\t\t\t\tSpecify position to be inserted : ");
     scanf("%d", &pos);
     tmp2 = h;
- 
+
     if ((pos < 1) || (pos >= count + 1))
     {
         printf("\n\t\t\t\tSpecified Position out of range!!");
@@ -109,10 +109,10 @@ void inspos()
 
 void del()
 {
-    int i=1, pos;
+    int i = 1, pos;
     printf("\n\t\t\t\tSpecify position to be deleted : ");
     scanf("%d", &pos);
-    tmp2=h;
+    tmp2 = h;
     if ((pos < 1) || (pos >= count + 1))
     {
         printf("\n\t\t\t\tSpecified Position out of range!!");
@@ -130,7 +130,7 @@ void del()
             tmp2 = tmp2->next;
             i++;
         }
-        if (i==1)
+        if (i == 1)
         {
             if (tmp2->next == NULL)
             {
@@ -148,10 +148,10 @@ void del()
             return;
         }
         tmp2->next->prev = tmp2->prev;
-        if (i!=1)
+        if (i != 1)
             tmp2->prev->next = tmp2->next;
-        if (i==1)
-            h=tmp2->next;
+        if (i == 1)
+            h = tmp2->next;
         printf("\n\t\t\t\tDeleted!!");
         free(tmp2);
     }
@@ -160,37 +160,37 @@ void del()
 
 void tbeg()
 {
-    tmp2=h;
-    if (tmp2==NULL)
+    tmp2 = h;
+    if (tmp2 == NULL)
     {
         printf("\n\t\t\t\tList is empty!!\n");
         return;
     }
     printf("\n\t\t\t\tLinked list: ");
-    while (tmp2->next!=NULL)
+    while (tmp2->next != NULL)
     {
-        printf(" %d ",tmp2->n);
+        printf(" %d ", tmp2->n);
         tmp2 = tmp2->next;
     }
-    printf(" %d ",tmp2->n);
+    printf(" %d ", tmp2->n);
 }
 
 void tend(int i)
 {
-    if (tmp2!=NULL)
+    if (tmp2 != NULL)
     {
-        i=tmp2->n;
-        tmp2=tmp2->next;
+        i = tmp2->n;
+        tmp2 = tmp2->next;
         tend(i);
-        printf(" %d ",i);
+        printf(" %d ", i);
     }
 }
-  
+
 void main()
 {
     int ch;
-    h=NULL;
-    tmp=tmp1=NULL;
+    h = NULL;
+    tmp = tmp1 = NULL;
     second();
     printf("\n\t\t\t\t\t=============================================");
     printf("\n\t\t\t\t\t||           DOUBLY LINKED LIST            ||");
@@ -225,8 +225,8 @@ void main()
             tbeg();
             break;
         case 6:
-            tmp2=h;
-            if (tmp2==NULL)
+            tmp2 = h;
+            if (tmp2 == NULL)
                 printf("\n\t\t\t\tList is empty!!");
             else
             {

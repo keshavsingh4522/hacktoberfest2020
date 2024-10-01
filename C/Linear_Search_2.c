@@ -14,7 +14,7 @@ int search(int arr[], int n, int x)
 
 int main(void)
 {
-	int arr[] = { 2, 36, 4, 15, 40 };
+	int arr[] = {2, 36, 4, 15, 40};
 	int x = 4;
 	int n = sizeof(arr) / sizeof(arr[0]);
 

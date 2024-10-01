@@ -1,23 +1,23 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 int change(int n);
 int main()
 {
 	int n;
 	printf("Enter a number in decimal : ");
-	scanf("%d",&n);
+	scanf("%d", &n);
 	int m = change(n);
-	printf ("The number %d in binary is %d",n,m);
+	printf("The number %d in binary is %d", n, m);
 }
 int change(int n)
 {
-	int dec=0,i=1,rem;
-	while(n!=0)
+	int dec = 0, i = 1, rem;
+	while (n != 0)
 	{
 		rem = n % 2;
-        n /= 2;
-        dec += rem * i;
-        i *= 10;
+		n /= 2;
+		dec += rem * i;
+		i *= 10;
 	}
 	return dec;
 }

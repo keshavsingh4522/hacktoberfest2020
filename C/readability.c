@@ -1,11 +1,10 @@
 // predicts grade-level of a text
 // based on Coleman-Liau index
 
-
-#include<cs50.h>
-#include<math.h>
-#include<string.h>
-#include<stdio.h>
+#include <cs50.h>
+#include <math.h>
+#include <string.h>
+#include <stdio.h>
 
 int main(void)
 
@@ -14,7 +13,7 @@ int main(void)
     int letters = 0;
     int words = 1;
     int sentences = 0;
-    
+
     //promot user for text
     string s = get_string("Text:\n");
 
@@ -34,11 +33,11 @@ int main(void)
         if ((s[i] == '.' || s[i] == '?') || s[i] == '!')
         {
             sentences++;
-        }    
+        }
     }
-    
-    // calculate "value" of index 
-    float value = ((0.0588 * 100 * ((float) letters / (float) words)) - (0.296 * 100 * ((float) sentences / (float) words)) - 15.8);
+
+    // calculate "value" of index
+    float value = ((0.0588 * 100 * ((float)letters / (float)words)) - (0.296 * 100 * ((float)sentences / (float)words)) - 15.8);
 
     // round-off index value to nearest integer
     int index = round(value);

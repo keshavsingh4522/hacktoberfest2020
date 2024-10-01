@@ -15,7 +15,7 @@ void bucketSort(int array[], int size)
     // we cannot assign declare it as int bucket(max+1) in C as
     // it does not support dynamic memory allocation.
     // So, its size is provided statically.
-    
+
     int bucket[10];
     const int max = getMax(array, size);
     for (int i = 0; i <= max; i++)
