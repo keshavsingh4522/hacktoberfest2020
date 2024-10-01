@@ -139,21 +139,23 @@ public class singlylinklist {
             System.out.println("Not Found");
         }
     }
-
-    public Node Reverse(Node head) {
-        Node current = head;
-        Node prev = null;
-        Node nxt = null;
-
-        while (current != null) {
-            nxt = current.next;
-            current.next = prev;
-            prev = current;
-            current = nxt;
+        public static singlylinklist reverse(singlylinklist head) {
+        singlylinklist next = null;
+        singlylinklist current = head;
+        singlylinklist previous = null;
+        while(current!=null)
+        {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
         }
-        return prev;
+        singlylinklist singlyLinkedList = previous;
+        return singlyLinkedList;
 
-    }
+}
+
+
 
     public int FindNthNode(int n) {
         Node current = head;
@@ -262,7 +264,7 @@ public class singlylinklist {
                     break;
 
                 case 11:
-                    cr.display(cr.Reverse(cr.head));
+                    cr.display(cr.singlylinklist Reverse(cr.head));
 
                     break;
 
