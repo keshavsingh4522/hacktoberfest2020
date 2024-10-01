@@ -18,7 +18,7 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.retrofittut", appContext.packageName)
+        val app = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.retrofittut", app.packageName)
     }
 }
