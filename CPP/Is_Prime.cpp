@@ -1,26 +1,36 @@
-#include <assert.h>
+#include <iostream>
+using namespace std;
 
-constexpr bool isPrimeRecursive(const unsigned int number, const unsigned int ref)
-{
-    return (ref * ref > number) ? true : (number % ref == 0) ? false : isPrimeRecursive(number, ref + 1);
+bool is_prime(int n) {
+    // Assumes that n is a positive natural number
+    // We know 1 is not a prime number
+    if (n == 1) {
+        return false;
+    }
+
+    int i = 2;
+    // This will loop from 2 to int(sqrt(x))
+    while (i*i <= n) {
+        // Check if i divides x without leaving a remainder
+        if (n % i == 0) {
+            // This means that n has a factor in between 2 and sqrt(n)
+            // So it is not a prime number
+            return false;
+        }
+        i += 1;
+    }
+    // If we did not find any factor in the above loop,
+    // then n is a prime number
+    return true;
 }
 
-constexpr bool isPrime(const unsigned int number)
-{
-    return (number < 2) ? false : isPrimeRecursive(number, 2);
-}
-
-int main()
-{
-    assert(!isPrime(0));
-    assert(!isPrime(1));
-    assert(isPrime(2));
-    assert(isPrime(3));
-    assert(!isPrime(4));
-    assert(isPrime(5));
-    assert(!isPrime(6));
-    assert(isPrime(7));
-    assert(!isPrime(8));
-    assert(!isPrime(9));
-    assert(!isPrime(10));
+int main() {
+    for(int x=1; x<11; x++) {
+        cout << x << ": " << (is_prime(x) ? "true" : "false") << endl;
+    }
+    cout << 1000000000 << ": " <<  (is_prime(1000000000) ? "true" : "false") << endl;
+    // Output: 1000000000: false
+    cout << 1000000007 << ": " <<  (is_prime(1000000007) ? "true" : "false") << endl;
+    // Output: 1000000007: true
+    return 0;
 }
