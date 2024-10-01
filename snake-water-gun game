@@ -1,0 +1,63 @@
+import random
+print('Want to play snake-water-gun')
+ 
+ 
+n = int(input('Enter number of rounds: '))
+ 
+ 
+options = ['s', 'w', 'g']
+ 
+rounds = 1
+ 
+c = 0
+ 
+u = 0
+ 
+ 
+while rounds <= n:
+ 
+    print(f"Round :{rounds}\nSnake - 's'\nWater - 'w'\nGun - 'g'")
+ 
+    try:
+        player = input("Chose your option: ")
+    except EOFError as e:
+        print(e)
+ 
+    if player != 's' and player != 'w' and player != 'g':
+        print("Invalid input, try again\n")
+        continue
+ 
+    computer = random.choice(options)
+    if computer == 's':
+        if player == 'w':
+            c += 1
+        elif player == 'g':
+            u += 1
+ 
+    elif computer == 'w':
+        if player == 'g':
+            c += 1
+        elif player == 's':
+            u += 1
+ 
+    elif computer == 'g':
+        if player == 's':
+            c += 1
+        elif player == 'w':
+            u += 1
+ 
+    if u > c:
+        print(f"You Won round {rounds}\n")
+    elif c > u:
+        print(f"Computer Won round {rounds}\n")
+    else:
+        print("Draw!!\n")
+ 
+    rounds += 1
+ 
+if u > c:
+    print("Congratulations You Won")
+elif c > u:
+    print("You lose!!")
+else:
+    print("Match Draw!!")
