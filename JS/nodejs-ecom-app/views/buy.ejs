@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">AjaniStore</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+    </ul>
+    <div class="my-2 my-lg-0">
+      <a href="/users/logout" class="btn btn-success">Logout</a>
+      <a class="navbar-brand ml-2"><%= user.name %></a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div id="dynamic">
+    <div class="mt-4">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          value="<%= user.name %>"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          aria-describedby="emailHelp"
+          value="<%= user.email %>"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Delivery address</label>
+        <input
+          class="form-control"
+          id="address"
+          aria-describedby="emailHelp"
+          required
+        />
+        <div class="mb-3">
+          <label for="phoneno" class="form-label">Contact No.</label>
+          <input
+            class="form-control"
+            id="phoneno"
+            aria-describedby="emailHelp"
+            required
+          />
+        </div>
+        <button class="btn btn-primary" id="plorder">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const fourthparam = window.location.href.split("/")[4];
+    const api = "/api/buy/" + fourthparam;
+    const button = document.getElementById("plorder");
+    const dynamic = document.getElementById("dynamic");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const address = document.getElementById("address");
+    const phoneno = document.getElementById("phoneo");
+
+    function putData() {
+      const send = {
+        name: name.value,
+        email: email.value,
+      };
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(send),
+      };
+      fetch(api, options)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
+
+    button.addEventListener("click", () => {
+      putData();
+      dynamic.innerHTML = `
+      <h2 class="mt-4">
+        Order Placed. Be sure to track your order on our email, by just responding to the confirmation email as Hi.
+      </h1>
+    `;
+    });
+  </script>
+</div>

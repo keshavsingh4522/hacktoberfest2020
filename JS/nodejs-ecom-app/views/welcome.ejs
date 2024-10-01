@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">AjaniStore</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+    </ul>
+    <div class="my-2 my-lg-0">
+      <a href="/users/login" class="btn btn-success">Login</a>
+      <a class="navbar-brand ml-2">Guest User</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div id="buyercards" class="row mt-4">
+
+  </div>
+</div>
+
+<script>
+  const api = '/api/items';
+  const buyercards = document.getElementById('buyercards');
+
+  async function returnData() {
+    const info = await fetch(api)
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
+    return info;
+  }
+
+  async function fill() {
+    const infoarray = await returnData();
+    console.log(await returnData());
+    for (let i = 0; i < infoarray.length; i++) {
+      buyercards.innerHTML += `
+      <div class="col-sm-4">
+          <div class="card mt-4">
+            <img src="${'/static/' + infoarray[i].imgName}" class="card-img-top" alt="${infoarray[i].imgName}">
+            <div class="card-body">
+              <h5 class="card-title">${infoarray[i].name}</h5>
+              <p class="card-text">${infoarray[i].description}</p>
+              <h1>₹${infoarray[i].pricing}</h1>
+              <a href="/users/login" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+      </div>
+      `;
+    }
+  }
+
+  fill();
+</script>
