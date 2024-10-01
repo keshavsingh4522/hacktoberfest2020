@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    
+    .container {
+        background-color: rgba(34, 228, 199, 0.689);
+        display: flex;
+        margin: auto;
+        width: 50%;
+        height: 200px;    
+        border: 3px rgb(205, 84, 47) solid;
+        border-radius: 8px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #time {
+        font-size: 46px;
+    
+    }
+
+    #time_title {
+        color:darkmagenta;
+        font-size: 32px;
+        display: flex;
+        position: relative;
+        margin: 12px 0px;
+    }
+
+    .btn_container {
+        margin-top: auto;
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+
+    button {
+        background-color:brown;
+        color: white;
+        padding: 8px 16px;
+        border: 3px yellowgreen solid;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 8px;
+    }
+
+    button:hover {
+        background-color:crimson;
+    }
+
+    
+
+</style>
+<body>
+    <div class="container">
+        <div id="time_title">Time</div>
+        <span id="time">0:0:0:0</span>
+        <div class="btn_container">
+            <button id="start" onclick="onStart()">Start</button>
+            <button id="pause" onclick="onPause()">Pause</button>
+            <button id="reset" onclick="onReset()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+
+        var mil_sec = 0;
+        var intervalId;
+
+        function onStart() {
+            intervalId = setInterval(() => {
+                let hour = Math.floor(mil_sec/36000);
+                let min = Math.floor(mil_sec/600)%60;
+                let sec = Math.floor(mil_sec/10)%60;
+                console.log(`${hour}:${min}:${sec}`);
+                document.getElementById("time").innerHTML = `${hour}:${min}:${sec}:${mil_sec%10}`;
+                mil_sec += 1;
+            }, 100
+            );
+        }
+        function onPause() {
+            clearInterval(intervalId);
+        }
+        function onReset() {
+            clearInterval(intervalId);
+            mil_sec = 0;
+            document.getElementById("time").innerHTML = `0:0:0:0`;
+        }
+
+    </script>
+</body>
+</html>  
