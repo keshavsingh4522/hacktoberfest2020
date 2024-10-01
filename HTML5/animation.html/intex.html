@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="header">
+                <h2>Create an Account</h2>
+            </div>
+            <form class="form" id="form">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your Username">
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your Email">
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your Password">
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+
+                <div class="form-control">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" placeholder="Confirm your Password">
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+
+                <button>Submit</button>
+            </form>
+
+            <div class="complete-modal">
+                <h2>Successful!</h2>
+            </div>
+
+        </div>
+    </main>
+    <div class="animate-circles">
+        <div class="red circle"></div>
+        <div class="blue circle"></div>
+        <div class="red circle"></div>
+        <div class="circle"></div>
+        <div class="orange circle"></div>
+        <div class="red circle"></div>
+        <div class="circle"></div>
+        <div class="red circle"></div>
+        <div class="blue circle"></div>
+        <div class="orange circle"></div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
+
