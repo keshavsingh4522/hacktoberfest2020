@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        overflow: hidden;
+        background-color: rgb(202, 218, 255);
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+      }
+      .quote {
+        padding: 0 3rem;
+      }
+    </style>
+    <title>Quote</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="quote"></h1>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        // Quote API
+        fetch("https://api.quotable.io/random?maxLength=215")
+          .then((response) => response.json())
+          .then((data) => {
+            document.querySelector(".quote").innerHTML = `"${data.content}"`;
+            localStorage.setItem("quote", `${data.content}`);
+          })
+          .catch(() => {
+            document.querySelector(".quote").innerHTML =
+              localStorage.getItem("quote");
+          });
+      });
+    </script>
+  </body>
+</html>
