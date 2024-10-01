@@ -1,0 +1,13 @@
+/*C# program to input and print an integer number*/
+using System;
+class ReadIntExample {
+    static void Main() {
+        //declare an integer variable
+        int num = 0;
+        //prompt message to take input
+        Console.Write("Input an integer value: ");
+        num = Convert.ToInt32(Console.ReadLine());
+        //print the value
+        Console.WriteLine("num = " + num);
+    }
+}
