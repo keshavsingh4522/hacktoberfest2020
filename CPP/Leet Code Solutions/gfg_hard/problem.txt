@@ -1,0 +1,35 @@
+Given two arrays arr[] and powr[] of size N and an integer K. Every element arr[i] has its respective power powr[i]. The task is to maximize the value of the given function by choosing at most K elements from the array. The function is defined as :
+
+f(N) = (arr[i1] + arr[i2] + arr[i3]+…..arr[in]) * min(powr[i1], powr[i2], powr[i3], …..powr[in]) where, arr[i1], arr[i2], arr[i3], …..arr[in] are the chosen elements.
+
+Attention reader! Don’t stop learning now. Get hold of all the important mathematical concepts for competitive programming with the Essential Maths for CP Course at a student-friendly price. To complete your preparation from learning a language to DS Algo and many more,  please refer Complete Interview Preparation Course.
+
+Examples:
+
+Input: arr[] = {11, 10, 7, 6, 9}, powr[] = {3, 2, 4, 1, 1}, K = 2, N = 5 
+Output: 54
+Explanation: Choose elements at indices {0, 2} so, f(N) = (11 + 7) * min(3, 4) = 18 * 3 = 54, which is the maximum possible value that can be achieved by choosing at most 2 elements.
+
+
+
+Input: arr[] = {5, 12, 11, 9}, powr[] = {2, 1, 10, 1}, K = 3, N = 4 
+Output: 110
+
+ 
+Approach: The idea is to consider every ith element as the minimum power, for this, sort the elements in descending order of power, so the first element will be considered to have the highest power. All times try to maintain a list of elements of size at most K. This list will contain at most K elements with the largest one, not including the current ith element. If already have a list of size K, then remove the element with the smallest length so, size becomes K – 1, then include the current element into the list, size becomes K, and update res with maximum one. In the end, return res which is the answer.
+
+Initialize a vector of pairs v[] of size N to store elements along with their power.
+Iterate over the range [0, N) using the variable i and perform the following tasks:
+Assign the values power[i] and arr[i] as the first and second values of the array v[].
+Sort the array v[] in ascending order.
+Initialize the variables res and sum as 0 to store the result and the sum.
+Initialize a set of pairs s[].
+Iterate over the range [N-1, 0] using the variable i and perform the following tasks:
+Insert the pair {v[i].second, i} into the set s[].
+Add the value of v[i].second to the variable sum.
+If s.size() is greater than K then perform the following tasks:
+Initialize the variable it as the first element of the set s[].
+Reduce the value it.first from the variable sum.
+Remove the variable it from the set s[].
+Set the value of res as the maximum of res or sum*v[i].first.
+After performing the above steps, print the value of res as the answer.
