@@ -1,17 +1,16 @@
 //Insertion sort
 
 #include<bits/stdc++.h>
-using namespace std;
 
 int main()
 {
     int s,i,j,current;
-    cout<<"enter size of array :";
-    cin>>s;
+    std::cout<<"enter size of array :";
+    std::cin>>s;
     int arr[s];
     for(i=0;i<s;i++)
     {
-        cin>>arr[i];
+        std::cin>>arr[i];
     }
     
     for(i=1;i<s;i++)
@@ -29,7 +28,7 @@ int main()
     }
     for(i=0;i<s;i++)
     {
-        cout<<arr[i]<<" ";
+        std::cout<<arr[i]<<" ";
     }
     return 0;
 }
