@@ -1,0 +1,96 @@
+# include<bits/stdc++.h>
+using namespace std;
+
+int medianfor5(int arr[],int start,int end){
+int n=end-start+1;
+
+int crr[n];
+int j=1;
+for(int i=start;i<=n;i++){
+ 
+crr[j]=arr[i];
+j++;
+}
+sort(crr,crr+end);
+return crr[n/2];
+
+
+}
+int partition (int arr[],int start,int end){
+int x= arr[end];
+int i=start;
+for (int j=start;j<end;j++){
+    if(arr[j]<=x){
+        swap(arr[i],arr[j]);
+        i++;
+    }
+}
+swap(arr[i],arr[end]);
+return i;
+}
+int  quickselect(int arr[],int start,int end,int k){
+    if(k<1 ){
+      
+        return 0;
+    }
+    if(k>end-start+1){
+      
+        return 0;
+    }
+   
+        int n=end-start+1;
+       int w=n/5;
+      int y =ceil(w);
+       int median[y];
+       int j=start;
+       
+       for(int i=0;i<y;i++){
+median[i]=medianfor5(arr,j,j+4);
+j=j+5; 
+
+    }
+ 
+       int largestgroupsize=n-5*floor(n/5);
+    
+       median[y]=medianfor5(arr,j,end);
+
+        int pos;
+int medianofmedians=quickselect(median,1,ceil(n/5),n/10);
+
+
+
+for(int i=start;i<=end;i++){
+    if(arr[i]==medianofmedians){
+        pos=i;
+       
+        break;
+    }
+    
+}
+    swap(arr[pos],arr[end]);
+    int pivot=partition(arr,start,end);
+    int r=pivot-start+1;
+    if(k==r){
+        return arr[pos];
+    }
+    if(k<r){
+        return quickselect(arr,start,pivot-1,k);
+    }
+    else{
+        return quickselect(arr,pivot+1,end,k-r);
+    }
+}
+int main(){
+int n;
+cin>>n;
+cout<<"for the array element"<<endl;
+int arr[n];
+for(int i=1;i<=n;i++){
+    cin>>arr[i];
+}
+int k;
+cout<<"for the kth element"<<endl;
+cin>>k;
+cout <<"cout"<<" "<<quickselect(arr,0,n,k)<<endl;
+return 0;
+}
