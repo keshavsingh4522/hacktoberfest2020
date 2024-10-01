@@ -1,3 +1,5 @@
+//programme for a stopwatch hours:mins:seconds
+
 #include <stdio.h>
 #include <time.h> //for sleep() function
 #include <unistd.h>
