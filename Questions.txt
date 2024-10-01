@@ -1,0 +1,11 @@
+Q1 WAP to reverse a stack using
+recursion
+
+Q2 WAP to implement two stacks
+in a single array
+
+Q3 WAP to check if an expression
+is balanced or not
+
+Q4 WAP to evaluate postfix
+expression
