@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Dictionary
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Customer customer1 = new Customer()
+            {
+                ID = 101,
+                Name = "Safal",
+                Salary = 5000
+            };
+
+            Customer customer2 = new Customer()
+            {
+                ID = 102,
+                Name = "Naruto",
+                Salary = 6000
+            };
+
+            Customer customer3 = new Customer()
+            {
+                ID = 103,
+                Name = "Luffy",
+                Salary = 7000
+            };
+
+            //Created a Dictionary and added  Customer object to a dictionary
+            Dictionary<int, Customer> dictionaryCustomers = new Dictionary<int, Customer>(); 
+            dictionaryCustomers.Add(customer1.ID, customer1);
+            dictionaryCustomers.Add(customer2.ID, customer2);
+            dictionaryCustomers.Add(customer3.ID, customer3);
+
+            //For Remove
+            //dictionaryCustomers.Remove(102);
+
+            //Remove all items in the dictionary
+            //dictionaryCustomers.Clear();
+
+
+            Console.WriteLine("Count is {0}",dictionaryCustomers.Count()); //LINQ extension method on a dictionary
+            Console.WriteLine("Count is {0}", dictionaryCustomers.Count(kvp => kvp.Value.Salary > 5000));
+           
+            //Object Reference Variable of type Customer
+            Customer cust = new Customer();
+            Console.WriteLine("Enter a key.\n");
+            int k = Convert.ToInt32(Console.ReadLine());
+            if(dictionaryCustomers.TryGetValue(k, out cust))
+            {
+                Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", cust.ID, cust.Name, cust.Salary);
+            }
+            else
+            {
+                Console.WriteLine("The key is not found.");
+            }
+
+            if (!dictionaryCustomers.ContainsKey(customer1.ID))
+            {
+                dictionaryCustomers.Add(customer1.ID, customer3);
+            }
+
+            Customer customer101 = dictionaryCustomers[101];
+
+            //Console.WriteLine("ID = {0}, Name = {1}, Salary = {2}", customer101.ID, customer101.Name, customer101.Salary);
+            foreach(KeyValuePair<int, Customer> customerKeyValuePair in dictionaryCustomers) //can use var instead of KeyValuePair<int, Customer>
+            {
+                Console.WriteLine("Key is {0}", customerKeyValuePair.Key);
+                Customer cv = customerKeyValuePair.Value;
+                Console.WriteLine("ID = {0}, Name= {1}, Salary = {2}", cv.ID, cv.Name, cv.Salary);
+                Console.WriteLine("--------------------------------------------------------");
+            }
+
+
+
+            //Array to Dictionary
+
+            Customer[] customers = new Customer[3];
+            customers[0] = customer1;
+            customers[1] = customer2;
+            customers[2] = customer3;
+
+            Dictionary<int, Customer> dict = customers.ToDictionary(cu => cu.ID, cu => cu);
+
+            //List to Dictionary
+            List<Customer> cl = new List<Customer>();
+            cl.Add(customer1);
+            cl.Add(customer2);
+            cl.Add(customer3);
+
+
+        }
+
+        public class Customer
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public int Salary { get; set; }
+        }
+    }
+}
