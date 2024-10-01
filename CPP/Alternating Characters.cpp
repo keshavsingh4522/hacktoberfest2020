@@ -1,37 +1,37 @@
+// C++ implementation of the approach
 #include <bits/stdc++.h>
-
 using namespace std;
 
-// Complete the alternatingCharacters function below.
-int alternatingCharacters(string s) {
-    int c = 0;
-    int n = s.size();
-    for(int i =0; i<n-1; i++)
-    {
-        if(s[i] == s[i+1])
-            c++;
-    }
-    return c;
+// Function that returns true if the string
+// is made up of two alternating characters
+bool isTwoAlter(string s)
+{
+
+	// Check if ith character matches
+	// with the character at index (i + 2)
+	for (int i = 0; i < s.length() - 2; i++) {
+		if (s[i] != s[i + 2]) {
+			return false;
+		}
+	}
+
+	// If string consists of a single
+	// character repeating itself
+	if (s[0] == s[1])
+		return false;
+
+	return true;
 }
 
+// Driver code
 int main()
 {
-    ofstream fout(getenv("OUTPUT_PATH"));
+	string str = "ABAB";
 
-    int q;
-    cin >> q;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	if (isTwoAlter(str))
+		cout << "Yes";
+	else
+		cout << "No";
 
-    for (int q_itr = 0; q_itr < q; q_itr++) {
-        string s;
-        getline(cin, s);
-
-        int result = alternatingCharacters(s);
-
-        fout << result << "\n";
-    }
-
-    fout.close();
-
-    return 0;
+	return 0;
 }
