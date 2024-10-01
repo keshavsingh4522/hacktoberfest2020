@@ -190,6 +190,7 @@ Steps for adding your name below
 <tr><td align="center"><a href="https://github.com/shoom1337"><kbd><img src="https://avatars3.githubusercontent.com/shoom1337?size=400" width="100px;" alt=""/></kbd><br /><sub><b>Ivan Shoom</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=shoom1337" title="Code"> :computer: </a> </td>
 <td align="center"><a href="https://github.com/agrajagrawal"><kbd><img src="https://avatars3.githubusercontent.com/agrajagrawal?size=400" width="100px;" alt=""/></kbd><br /><sub><b>Agraj Agrawal</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=agrajagrawal" title="Code"> :computer: </a> </td>
     <td align="center"><a href="https://github.com/anmol-19"><kbd><img src="https://avatars3.githubusercontent.com/anmol-19?size=400" width="100px;" alt=""/></kbd><br /><sub><b>Anmol Jain</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=anmol-19" title="Code"> :computer: </a> </td>
+    <td align="center"><a href="https://github.com/PawaniImalsha"><kbd><img src="https://avatars.githubusercontent.com/u/43125255?s=400&u=bccd0ff7d0dc11892a3ea898a7eb7268b99f45e0&v=4" width="100px;" alt=""/></kbd><br /><sub><b>Pawani Imalsha</b></sub></a><br /><a href="https://github.com/keshavsingh4522/hacktoberfest2020/commits?author=anmol-19" title="Code"> :computer: </a> </td>
 
 </tr>
 </table>
