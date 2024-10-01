@@ -1,48 +1,71 @@
-#include<bits/stdc++.h> 
-#include<ext/pb_ds/assoc_container.hpp>
-#include<ext/pb_ds/tree_policy.hpp>
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
-const unsigned int M = 1000000007;
+#include <bits/stdc++.h>
 using namespace std;
-// Check
-using namespace __gnu_pbds;
-typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> T_set; // PBDS_set
-typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_node_update> T_multiset; // PBDS_multiset
 
-void solve()
-{
-    int n ,m,u,v;
-    cin>>n>>m;
-    vector<list<int>> adj(n+1);
-    vector<bool> vis(n+1,false);
-    for(int i = 0; i < n ; i++ ){
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-    queue<int> temp;
-    temp.push(1);
-    vis[1] = true;
-    while(!temp.empty()){
-        int curr = temp.front();
-        cout<<curr<<" ";
-        temp.pop();
-        for(int elem : adj[curr]){
-            if(!vis[elem]){
-                temp.push(elem);
-                vis[elem] = true;
-             }
+void printBFS(int** arr,int n,int sv,bool* visited){
+  if(n==0){
+      return;
+  }
+    queue<int> q;
+    q.push(sv);
+    visited[sv] = true;
+while(!q.empty()){
+    int s = q.front();
+    q.pop();
+    cout<<s<<" ";
+    for(int i=0;i<n;i++){
+        if(i == s){
+            continue;
+        }
+        if(arr[s][i] == 1){
+            if(visited[i]){
+                continue;
+            }
+            q.push(i);
+            visited[i] = true;
         }
     }
-
 }
-int main()
-{
-ios_base::sync_with_stdio(false);
-cout.tie(NULL);
-cin.tie(NULL);
-solve();
-return 0;
+    
+    
+}
+
+void BFS(int** edges,int n){
+
+
+bool* visited = new bool[n];
+for(int i=0;i<n;i++){
+    visited[i] = false;
+}
+  for(int i=0;i<n;i++){
+      if(!visited[i]){
+          printBFS(edges,n,i,visited);
+      }
+  }
+
+delete [] visited;
+}
+
+int main(){
+int n,e;
+cin>>n>>e;
+int** edges = new int*[n];
+for(int i=0;i<n;i++){
+    edges[i] = new int[n];
+    for(int j=0;j<n;j++){
+        edges[i][j] = 0;
+    }
+}
+for(int i=0;i<e;i++){
+    int f,s;
+    cin>>f>>s;
+    edges[f][s] = 1;
+    edges[s][f] = 1;
+}
+
+
+BFS(edges,n);
+    for(int i=0;i<n;i++){
+        delete [] edges[i];
+    }
+    delete[] edges;
 }
