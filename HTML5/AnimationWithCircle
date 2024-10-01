@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  body{
+  background:black;
+}
+
+.main{
+  width:330px;
+  height:330px;
+  border:1px solid #CCC;
+  position:absolute;
+  top:0; bottom:0; left:0;right:0;
+  margin:auto;
+  border-radius:50%; 
+}
+
+.circle{
+  width:30px;
+  height:30px;
+  background:cyan;
+  border-radius:50%;
+  position:absolute;
+  top:0; bottom:0; left:0;right:0;
+  overflow:hidden;
+  margin:auto;
+  animation: circle 6s linear infinite;
+}
+
+@keyframes circle{
+  0%{
+    transform:rotate(0deg)
+              translate(-165px)
+              rotate(0deg);
+  
+  }
+  100%{
+    transform:rotate(360deg)
+              translate(-165px)
+              rotate(-360deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="main">
+  <div class="circle"></div>
+</div>
+
+</body>
+</html>
