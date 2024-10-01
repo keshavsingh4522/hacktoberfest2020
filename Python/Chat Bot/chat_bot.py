@@ -1,5 +1,6 @@
 import aiml
-import os
+import os 
+import requests
 
 
 def chat():
@@ -18,12 +19,11 @@ def chat():
     while True:
         excitation = input('')
         response = kernel.respond(excitation)
-        if excitation == 'EXIT' or excitation == 'exit' or excitation == 'Exit':
-            break
+        if excitation == 'EXIT' or excitation == 'exit' or excitation == 'Exit' or excitation == 'EXit' or excitation =='EXIt'
         else:
             print('>>> '+response)
             kernel.saveBrain("bot_brain.brn")
-    print("Session Ended")
+    print("Session Ended Successfully!")
 
 
 if __name__ == '__main__':
