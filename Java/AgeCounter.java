@@ -11,13 +11,13 @@ public class AgeCounter {
         Scanner bday=new Scanner(System.in);
         
         //Get Inputs
-        System.out.println("Enter Your Birth Year");
+        System.out.println("Enter your Birth Year");
         int year=bday.nextInt();
       
-        System.out.println("Enter Your Birth Month");
+        System.out.println("Enter your Birth Month");
         int month=bday.nextInt();
         
-        System.out.println("Enter Your Birth Date");
+        System.out.println("Enter your Birth Date");
         int day=bday.nextInt();
         
         

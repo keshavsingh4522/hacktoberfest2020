@@ -38,7 +38,7 @@ def IsWinner(b,l):
 def playerMove():
     run = True
     while run:
-        move = input("please select a position to enter the X between 1 to 9: ")
+        move = input("Please select a position to enter the X between 1 to 9: ")
         try:
             move = int(move)
             if move > 0 and move < 10:
@@ -48,7 +48,7 @@ def playerMove():
                 else:
                     print('Sorry, this space is occupied')
             else:
-                print('please type a number between 1 and 9: ')
+                print('Please type a number between 1 and 9: ')
 
         except:
             print('Please type a number')
@@ -111,14 +111,14 @@ def main():
                 print(" ")
             else:
                 insertLetter('O' , move)
-                print('computer placed an o on position' , move , ':')
+                print('Computer placed an o on position' , move , ':')
                 printBoard(board)
         else:
-            print("you win!")
+            print("You win!")
             break
 
     if isBoardFull(board):
-        print("Tie game")
+        print("Draw")
 
 while True:
     x = input("Do you want to play? (y/n): ")
