@@ -15,5 +15,5 @@ int main()
     int x;
     cout<<"enter the number";
     cin>>x;
-    cout<<factorial(x);
+    cout<<factorial( x);
 }
