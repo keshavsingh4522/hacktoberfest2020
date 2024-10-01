@@ -6,8 +6,8 @@ public class Add_Group {
     public static void main(String [] args){
         add();
     }
-    
-         public static void add(){
+
+    public static void add() {
         System.out.println("How may numbers would you like to add?");
         
         //  The number variable takes an input of type int from the user        
@@ -23,7 +23,7 @@ public class Add_Group {
         //  For each iteration of the loop:
         //  1: a number is taken from the user and stored in the array
         //  2: the number is added to sum
-        for(int i = 0; i < number; i++){
+        for(int i = 0; i < number; i++) {
             System.out.println("Enter number " + (i + 1));
             numArray[i] = input.nextInt();
             sum = sum + numArray[i];
