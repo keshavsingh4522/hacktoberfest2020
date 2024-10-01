@@ -1,0 +1,256 @@
+body, ul, li, h1, h2, a{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    
+}
+header{
+    background-color:#F63232;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+header h1{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 8px solid rgb(0, 0, 0);
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 35px;
+    
+}
+
+.banner img{
+    max-width: 100%;
+}
+
+/*.banner .Welcome{
+    background-color: rgb(255, 251, 2);
+    color: rgb(3, 3, 3);
+    border: 8px solid rgb(54, 230, 54);
+    padding: 30px;
+    position: absolute;
+    left: 5;
+    top: 30%;
+}
+
+.banner h2{
+    font-size: 50px;
+}
+
+.banner h2 span{
+    font-size: 1.3em;
+}*/
+
+nav{
+    background-color: #f4f4f4;
+    padding: 2px;
+    position: sticky;
+    top: 108px;
+}
+
+nav ul{
+    white-space: nowrap;
+    
+}
+
+nav li{
+    text-align: center;
+    width: 33%;
+    display: inline-block;
+    font-size: 24px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: #4b4b4b
+}
+
+nav li a .join1 {
+    color: #F63232;
+}
+
+main{
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+article h1{
+    color: #F63232;
+    font-size: 48px;
+}
+
+article p, ul{
+    line-height: 2em;
+}
+
+.Interstellar h3{
+    background-color: black;
+    color: white;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.Interstellar h4{
+    text-align: center;
+}
+
+.elenco{
+    text-align: center;
+    margin: 10px 10px;
+    white-space: nowrap;
+}
+
+.elenco .image{
+    white-space: nowrap;
+    display: inline-block;
+}
+.elenco img{
+    height: 200px;
+    width: auto;
+    margin: 10px 10px;
+}
+
+div .desc{
+    text-align: center;
+}
+
+
+/* Slideshow container */
+.gallery-container {
+    text-align: center;
+    position: relative;
+    background: #333;
+    margin: 50px 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev {
+      left: 0;
+      border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  
+  .imgslide {
+    height: 500px;
+    width: auto;
+  }
+  
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  nav li a:hover{
+      text-decoration: underline;
+  }
+
+  .Interstellar h3:hover{
+      color: black;
+      background-color: #f4f4f4;
+      border: 1px solid black;
+  }
+
+  .elenco .image:hover{
+      position: relative;
+      top: -4px;
+  }
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #F63232;
+    color: aliceblue;
+    text-align: center;
+    font-size: 30;
+}
+
+.join{
+    background-color:  #f4f4f4;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: #4b4b4b;
+}
+
+.join h3{
+    font-size: 36px;
+}
+
+.join p{
+    font-size: 20px;
+}
+
+form input{
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 28px;
+    border: 4px solid white;
+    text-align: center;
+}
+
+form input:focus{
+    border: 4px dashed #4b4b4b;
+    outline: none;
+}
+
+form input:valid{
+    border: 4px solid greenyellow;
+}
+
+
