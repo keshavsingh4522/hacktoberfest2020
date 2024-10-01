@@ -1,31 +1,22 @@
-// C program to implement iterative Binary Search 
+// C program to implement Recursive Binary Search 
 #include <stdio.h> 
   
-// A iterative binary search function. It returns 
+// A  recursive binary search function. It returns 
 // location of x in given array arr[l..r] if present, 
 // otherwise -1 
 int binarySearch(int arr[], int l, int r, int x) 
 { 
-    while (l <= r) { 
-        int m = l + (r - l) / 2; 
-  
-        // Check if x is present at mid 
-        if (arr[m] == x) 
-            return m; 
-  
-        // If x greater, ignore left half 
-        if (arr[m] < x) 
-            l = m + 1; 
-  
-        // If x is smaller, ignore right half 
-        else
-            r = m - 1; 
-    } 
-  
-    // if we reach here, then element was 
-    // not present 
-    return -1; 
-} 
+  // base case
+  if(l>h)return -1;
+  //updating mid value each time with respect to l and r
+  int mid=l+(r-l)/2;
+  if(arr[mid]==x) //checking whether the mid value is the given x or not
+    return mid;
+  else if(arr[mid]<x)  // checking whether the selected mid value is less than the given x or not
+    return binarySearch(a,mid+1,r,x);
+  else
+    return binarySearch(a,l,mid-1,x); 
+ } 
   
 int main(void) 
 { 
