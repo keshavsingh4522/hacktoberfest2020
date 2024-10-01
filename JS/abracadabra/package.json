@@ -1,0 +1,15 @@
+{
+  "name": "abracadabra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "abracadabra.js",
+  "scripts": {
+    "start": "node abracadabra.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
