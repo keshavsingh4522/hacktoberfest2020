@@ -1,59 +1,80 @@
-<html>
-    <title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload a image</title>
 
-    </title>
-    <head>
-        <title>Upload a Image</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
+       <!-- Popper JS -->
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script-->
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        
-    </head>
+</head>
 <body>
-    
-    <div class="card" style="width: 40%; margin-top: 5%; margin-left: 30%; padding: 2%;  opacity:0.85;">
+    <style>
+        .cardDiv{
+            width: 40%;
+            margin-top: 5%;
+            margin-left: 30%;
+            padding: 2%;
+            opacity: 0.85;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+
+        }
+
+        .submitBtn{
+            margin: 3%;
+
+        }
+    </style>
+    <div class="card cardDiv">
+        <h1 class="text-center text-info">Upload Image</h1>
+      
         <div class="card-body">
             <form method="POST" action="">
                 <div class="form-group mx-sm-3 mb-2">
-                  <label for="exampleFormControlInput1">E-mail</label>
+                  <label for="exampleFormControlInput1">Enter E-mail Address</label>
                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="exampleFormControlInput1">Image Title</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Give a name of your image">
+                  </div>
           
                 <div class="form-group mx-sm-3 mb-2">
                   <label for="exampleFormControlSelect1">Type</label>
                   <select class="form-control form-control-sm" id="exampleFormControlSelect2">
-                      <option selected="">Select Type</option>
-                      <option>Type A</option>
-                    <option>Type B</option>
-                    <option>Type C</option>
-                    <option>Type D</option>
-                    <option>Type E</option>
+                        <option selected="">Select Type</option>
+                        <option>Type A</option>
+                        <option>Type B</option>
+                        <option>Type C</option>
+                        <option>Type D</option>
+                        <option>Type E</option>
                   </select>
                 </div>
                 
                 <div class="form-group mx-sm-3 mb-2">
-                    <label for="exampleFormControlFile1">Image</label>
+                    <label for="exampleFormControlFile1">Select Image</label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
                 
                 <div class="form-group mx-sm-3 mb-2">
                   <label for="exampleFormControlTextarea1">Description</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" placeholder='Description about the image' rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-success" style="margin: 3%;">Submit</button>
+                <button type="submit" class="btn btn-success submitBtn">Submit</button>
               </form>
         </div>
     </div>
-
+    
 </body>
 </html>
