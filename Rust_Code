@@ -1,0 +1,5 @@
+//Hello World
+fn main() {
+    println!("Hello World!");
+}
+//Rust is a low-level programming language but it emphasizes performance, type safety, and concurrency.
