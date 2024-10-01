@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+   //initialize a variable 
    int a, b, c, i, n;
 
    n = 4;
@@ -19,3 +20,4 @@ int main() {
    
    return 0;
 }
+//Code is Created by Ujwal Gulhane 
