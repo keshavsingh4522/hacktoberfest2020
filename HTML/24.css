@@ -1,0 +1,29 @@
+/*  TRBL: TOP RIGHT BOTTOM LEFT */
+
+div{
+   /* width: 200px;
+    height: 200px;
+    background-color: silver;
+    /*margin-top: 100px;
+    padding-top: 100px;
+    margin-left: 100px;
+    padding-top: 100px;
+    padding-left: 150px;
+    padding-right: 70px;
+    padding: 10px; /*10px from all side
+    padding: 20px 30px; /*20px from top bottom and 20px from LR
+    padding: 10PX 20PX 30PX; /*10px TOP 20px LR 30px Bottom
+    padding: 10px 30px 40px 20px; /*TRBL*/
+
+}
+h2{
+   color: rgb(255, 0, 0);
+   text-align: center;
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: silver;
+    display: none;
+    visibility: hidden;
+}

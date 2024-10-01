@@ -1,0 +1,50 @@
+h3{
+    animation-name: examnotice;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; /*for countiune animation*/
+}
+@keyframes examnotice{
+    0%{
+        color: red;
+    }
+    25%{
+       color: blue;
+       font-size: 20px;
+    }
+    50%{
+       color: chartreuse;
+       font-size: 30px;
+       text-decoration: underline;
+    }
+    75%{
+       color: darkgreen;
+       font-size: 20px;
+    }
+    100%{
+         color: darkslateblue;
+         font-size: 30px;
+         text-decoration: underline;
+    } 
+}
+
+/*
+
+h3{
+    animation-name:examnotice;
+    animation-duration:1s;
+    animation-iteravction-count:infite
+}
+0%{
+    color:red;
+}
+50%{
+    color:white;
+}
+75%{
+    color:red;
+}
+100%{
+    color:white;
+}
+
+*/

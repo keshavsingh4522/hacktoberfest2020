@@ -1,0 +1,20 @@
+@media screen and (max-width: 1000px) {
+    body{
+        background: red;
+    }
+}
+@media screen and (max-width:800px) {
+    body{
+        background-color: silver;
+    }
+    h1{
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+@media screen and (max-width:400px) {
+    
+}
+h1{
+    color: blue;
+    font-size: 50px;
+}

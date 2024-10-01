@@ -1,0 +1,9 @@
+div{
+    width: 500px;
+    height: 200px;
+    border: 2px solid red;
+    padding: 20px ;
+    left: calc(50% - 250px);
+    top: calc(50% - 250px);
+    position:absolute;
+}

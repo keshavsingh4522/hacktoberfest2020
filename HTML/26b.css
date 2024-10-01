@@ -1,0 +1,14 @@
+*{
+    width: 100px;
+}
+#first{
+    transform: translateY(100px);
+    left: 200px;
+    position: relative;
+    z-index: 2;
+}
+#second{
+   z-index: 1;
+   position: relative;
+   opacity: 0.2;
+}

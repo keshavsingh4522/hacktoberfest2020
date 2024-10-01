@@ -1,0 +1,95 @@
+<!--
+!. <input>
+2. <textarea>
+3.  attributr -
+             text
+             number
+             email
+             password
+             file
+             submit
+             reset
+             radio
+             maxlength
+             value - predfined text
+             disabale
+             readonly
+-->
+
+<html>
+    <head>
+        <title>Form Section</title>
+        <body>
+           <form>
+               <table cellspacing="10">
+                <tr>
+               <td>Full Name:</td>
+               <td><input type="text" maxlength="10" value="enter your name"></td>
+               </tr>
+
+                <tr>
+               <td>Date of birth:</td>
+               <td><input type="date"></td>
+               </tr>
+
+               <tr>
+                   <td>Email ID:</td>
+                   <td><input type="email"></td>
+               </tr>
+
+               <tr>
+                   <td>Mobile No:</td> 
+                   <td><input type=""></td>
+               </tr>
+
+               <tr>
+                   <td>Age:</td>
+                   <td><input type="number"></td>
+               </tr>
+
+               <tr>
+                   <td>Password*:</td>
+                   <td><input type="password" placeholder="Min 6 char & max 14 char" required></td>
+               </tr>
+
+               <tr>
+                   <td>Uplod Photo*:</td>
+                   <td><input type="file"></td>
+               </tr>
+
+              <tr>
+                  <td>Gender:</td>
+                  <td><input type="radio" name="demo" checked>Male<input type="radio" name="demo" required>Female</td>
+              </tr>
+
+              <tr>
+                  <td>Languages Known:</td>
+                  <td><input type="checkbox">English <input type="checkbox">marthi</td>
+              </tr>
+
+              <tr>
+                  <td>Address:</td>
+                  <td><textarea cols="50" rows="5"></textarea></td>
+              </tr>
+
+              <tr>
+                  <td>Select City:</td>
+                  <td>
+                      <select>
+                          <option>Amravati</option>
+                          <option>Nagpur</option>
+                          <option selected>Bhandara</option>
+                          <option>Akola</option>
+                      </select>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td><input type="Submit" value="Save"> </td>
+                  <td><input type="Reset" value="Clear all"> </td>
+              </tr>
+               </table>
+           </form>
+        </body>
+    </head>
+</html>

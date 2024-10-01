@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: inline;
+    border: 1px solid red;
+    
+
+    /* display: inline-block;
+    width: 100px;
+    
+    *******they are use combine*******/
+}
+a{
+    display: block;
+    padding-top: 10px;
+    border: 1px solid blue;
+    width: 120px;
+    background-color: black;
+    text-decoration: none;
+    text-align: center;
+    color: silver;
+}
+a:hover{
+       background-color: silver;
+       width: 150px;
+       color: blue;
+}

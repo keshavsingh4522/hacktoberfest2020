@@ -1,0 +1,99 @@
+<!--
+  <*> Cascading Style Sheet (CSS)
+  1.Introduction
+
+  2.Type of Stylesheet
+      -< internal stylesheet
+         - When we write css code inside same html file
+        <head>
+             <style>
+                 // CSS CODE
+             </style>
+        </head>
+  
+      -< SYNTAX CSS CODE
+        
+          selector{
+              property-name: value;
+              property-name: value;
+              property-name: value;
+              property-name: value;
+          }
+
+      < external stylesheet 
+      < inline stylesheet
+
+  3.selector
+      < tag selector , element selector 
+         - when you dircet
+      < id selector = prefix as #
+      < class selector = prefix as .
+      < grouping selector = seperated by ,
+      < universal selector = * means every thing, select evry tag
+      < attribute selector =
+
+  4.Layout
+  5.Unit
+  6.Background
+  7.Font
+  8.Text
+  9.Image
+  10.Link
+  11.Border
+  12.
+-->
+
+<html>
+    <head>
+    <style>
+       /* h1{
+            color: blue;
+        } 
+        h2{
+            color: rgb(212, 63, 17);
+        }
+         p{
+            color: crimson;
+        }*/
+
+       /* #demo{
+            color: rgb(53, 235, 29);
+        }
+        .yes{
+            color: rgb(19, 22, 226);
+        } */
+
+       /* h1, h2{
+            color: yellowgreen;
+        } */
+        
+       /*  *{
+            color: rgb(218, 189, 30);
+            font-family: Arial, Helvetica, sans-serif;
+        } */
+
+        h3[align="center"]{
+            color: rgb(197, 20, 20);
+        }
+        
+
+    </style>
+        <title>CSS SECTION</title>
+    </head>
+    <body>
+         <h1>HEADING 1</h1>
+         <P>HEADING 1</P>
+         <P class="yes">HEADING 2</P>
+         <h3 align="center">HEADING 3</h3>
+         <h1 id="demo">HEADING 1</h1>
+         <h2 class="yes">HEADING 2</h2>
+         <h1>HEADING 1</h1>
+         <h4 id="demo">HEADING 4</h4>
+         <h2 align="right">HEADING 2</h2>
+         <h3>HEADING 3</h3>
+         
+
+         Full Name: <input type="text"><br><br>
+         Email : <input type="text">
+    </body>
+</html>

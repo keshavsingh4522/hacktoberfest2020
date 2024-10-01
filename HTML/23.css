@@ -1,0 +1,19 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(5, 5, 5);
+    border-left: 5px solid red;
+    border-right: 5px solid rgb(7, 236, 225);
+    border-bottom:5px solid chartreuse;
+    border-top:5px solid rgb(207, 17, 224);
+
+    border-radius: 10px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+div:hover{
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: silver;
+    width: 300px;
+}

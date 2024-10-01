@@ -1,0 +1,15 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: silver;
+    text-align: center;
+    transition-property: all;
+    transition-duration: 5s;
+    transition-timing-function: linear;
+    /* transition: width 2s , heifht 3s,; */
+}
+div:hover{
+    background-color: red;
+    width: 300px;
+    height: 300px;
+}
