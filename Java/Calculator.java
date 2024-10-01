@@ -80,6 +80,9 @@ public class Calculator extends JFrame implements ActionListener {
         bd.addActionListener(this);
         bd.setLocation(211, 204);
         bd.setSize(57, 48);
+        bdel.addActionListener(this);
+        bdel.setLocation(10, 322);
+        bdel.setSize(258, 48);
         getContentPane().add(bd);
         bmu.addActionListener(this);
         bmu.setLocation(211, 263);
