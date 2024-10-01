@@ -1,48 +1,95 @@
-#include<bits/stdc++.h> 
-#include<ext/pb_ds/assoc_container.hpp>
-#include<ext/pb_ds/tree_policy.hpp>
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
-const unsigned int M = 1000000007;
-using namespace std;
-// Check
-using namespace __gnu_pbds;
-typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> T_set; // PBDS_set
-typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_node_update> T_multiset; // PBDS_multiset
-
-void solve()
-{
-    int n ,m,u,v;
-    cin>>n>>m;
-    vector<list<int>> adj(n+1);
-    vector<bool> vis(n+1,false);
-    for(int i = 0; i < n ; i++ ){
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-    queue<int> temp;
-    temp.push(1);
-    vis[1] = true;
-    while(!temp.empty()){
-        int curr = temp.front();
-        cout<<curr<<" ";
-        temp.pop();
-        for(int elem : adj[curr]){
-            if(!vis[elem]){
-                temp.push(elem);
-                vis[elem] = true;
-             }
-        }
-    }
-
-}
-int main()
-{
-ios_base::sync_with_stdio(false);
-cout.tie(NULL);
-cin.tie(NULL);
-solve();
-return 0;
-}
+// Program to print BFS traversal from a given 
+// source vertex. BFS(int s) traverses vertices  
+// reachable from s. 
+#include<iostream> 
+#include <list> 
+  
+using namespace std; 
+  
+// This class represents a directed graph using 
+// adjacency list representation 
+class Graph 
+{ 
+    int V;    // No. of vertices 
+  
+    // Pointer to an array containing adjacency 
+    // lists 
+    list<int> *adj;    
+public: 
+    Graph(int V);  // Constructor 
+  
+    // function to add an edge to graph 
+    void addEdge(int v, int w);  
+  
+    // prints BFS traversal from a given source s 
+    void BFS(int s);   
+}; 
+  
+Graph::Graph(int V) 
+{ 
+    this->V = V; 
+    adj = new list<int>[V]; 
+} 
+  
+void Graph::addEdge(int v, int w) 
+{ 
+    adj[v].push_back(w); // Add w to v’s list. 
+} 
+  
+void Graph::BFS(int s) 
+{ 
+    // Mark all the vertices as not visited 
+    bool *visited = new bool[V]; 
+    for(int i = 0; i < V; i++) 
+        visited[i] = false; 
+  
+    // Create a queue for BFS 
+    list<int> queue; 
+  
+    // Mark the current node as visited and enqueue it 
+    visited[s] = true; 
+    queue.push_back(s); 
+  
+    // 'i' will be used to get all adjacent 
+    // vertices of a vertex 
+    list<int>::iterator i; 
+  
+    while(!queue.empty()) 
+    { 
+        // Dequeue a vertex from queue and print it 
+        s = queue.front(); 
+        cout << s << " "; 
+        queue.pop_front(); 
+  
+        // Get all adjacent vertices of the dequeued 
+        // vertex s. If a adjacent has not been visited,  
+        // then mark it visited and enqueue it 
+        for (i = adj[s].begin(); i != adj[s].end(); ++i) 
+        { 
+            if (!visited[*i]) 
+            { 
+                visited[*i] = true; 
+                queue.push_back(*i); 
+            } 
+        } 
+    } 
+} 
+  
+// Driver program to test methods of graph class 
+int main() 
+{ 
+    // Create a graph given in the above diagram 
+    Graph g(4); 
+    g.addEdge(0, 1); 
+    g.addEdge(0, 2); 
+    g.addEdge(1, 2); 
+    g.addEdge(2, 0); 
+    g.addEdge(2, 3); 
+    g.addEdge(3, 3); 
+  
+    cout << "Following is Breadth First Traversal "
+         << "(starting from vertex 2) \n"; 
+    g.BFS(2); 
+  
+    return 0; 
+} 
