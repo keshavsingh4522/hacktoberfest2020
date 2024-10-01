@@ -1,0 +1,41 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main() {
+    srand(time(NULL));
+    unsigned int x, y;
+    
+    /*This is a guessing game
+    The user inputs a number, as to define the range he wants to play within
+    For example, if user inputs 9, he has to guess the number between 0 - 9(both inclusive) */
+    
+    cout << "You have to enter a positive integer to play this game! As simple as that!\n";
+    
+    cout << "For Example, you put x as the input, so the range in which you will be guessing is [0 - x](both inclusive)\n\n";
+    
+    cout << "You have to guess the number between 0 to x(both inclusive).\nRemember, the higher you put your number, lower is the probability of your winning!";
+    
+    cout << "\n\nPlease enter any random positive integer without decimals: ";
+    
+    cin >> x;
+    
+    int a = (rand() % (x+1));
+    
+    cout << "\nOkay, so let's play the game now!\n";
+    
+    cout << "Guess the number between 0 to " << x << "(both inclusive): ";
+    
+    cin >> y;
+    
+    if (a == y) {
+        cout << "\nCongratulations! You guessed it right!\n";
+    }
+    else {
+        cout << "\nSee, it's total gambling! Hard luck!\nBetter luck next time!";
+    }
+    
+    cout << "\n\nThe number was " << a << ".";
+    
+    return 0;
+}
