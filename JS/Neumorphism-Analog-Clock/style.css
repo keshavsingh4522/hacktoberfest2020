@@ -1,0 +1,328 @@
+body{
+  background-color: #008eff;
+}
+h1{
+  text-align: center;
+  color: white;
+}
+
+/* General containers */
+.container {
+    width: 100%;
+    display: flex;
+    min-width: 200px;
+    min-height: 200px;
+    justify-content: center;
+  }
+  .clock-container {
+    height: 100px;
+    width: 90%;
+  }
+  
+  .button-container {
+    height: 100px;
+    width: 10%;
+    min-width: 20px;
+    min-height: 20px;
+  }
+  
+      .clock-box {
+    height: 100px;
+    width: 100%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 200px;
+  }
+  
+  
+  .container-clock {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 350px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Reloj */
+  .clock {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/clock.png");
+    background-color: #091921;
+    background-size: cover;
+    border: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+      inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
+      inset 0 -15px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .light .clock {
+    background: url("../img/clock.png");
+    background-color: #d1dae3;
+    background-size: cover;
+    border: 4px solid #cad3dc;
+    box-shadow: -8px -8px 15px rgba(167, 100, 100, 0.5),
+      inset 10px 10px 10px rgba(255, 255, 255, 0.05), -8 -8 -8 rgba(0, 0, 0, 0.5),
+      inset 10 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .clock:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+  }
+  
+  .light .clock:before {
+    background: #008eff;
+  }
+  
+  .clock .hour,
+  .clock .min,
+  .clock .sec {
+    position: absolute;
+  }
+  
+  .clock .hour,
+  .hr {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .clock .min,
+  .mn {
+    width: 190px;
+    height: 190px;
+  }
+  
+  .clock .sec,
+  .sc {
+    width: 230px;
+    height: 230px;
+  }
+  
+  .hr,
+  .mn,
+  .sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .hr::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #ff1744;
+    border-radius: 6px 6px 0 0;
+    z-index: 10;
+  }
+  
+  .mn::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    z-index: 11;
+  }
+  
+  .light .mn::before {
+    background: #091921;
+  }
+  
+  .sc::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: #2979ff;
+    border-radius: 6px 6px 0 0;
+    z-index: 12;
+  }
+  
+  /* Boton */
+  .toggle-btn {
+    position: absolute;
+    float: right;
+    display: flex;
+  
+    width: 90px;
+    height: 40px;
+    border-radius: 40px;
+  }
+  
+  input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  /* First toggle btn */
+  
+  #toggle-btn span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: #fff;
+    box-shadow: 0px 2px 25px #d9d9d9;
+    border-radius: 40px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+  }
+  
+  #toggle-btn span:before,
+  #toggle-btn span:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+  }
+  
+  #toggle-btn span:before {
+    background-color: #fff;
+    transform: translate(-35px, 0px);
+    z-index: 1;
+  }
+  
+  #toggle-btn span:after {
+    background-color: #000;
+    transform: translate(2px, 0px);
+    z-index: 0;
+  }
+  
+  #toggle-btn input[type="checkbox"]:checked + span {
+    background-color: #000;
+  }
+  
+  #toggle-btn input[type="checkbox"]:active + span {
+    opacity: 0.5;
+  }
+  
+  /*Desplazamiento*/
+  #toggle-btn input[type="checkbox"]:checked + span:before {
+    background-color: #000;
+    transform: translate(38px, -9px);
+  }
+  
+  #toggle-btn input[type="checkbox"]:checked + span:after {
+    background-color: #fff;
+    transform: translate(49px, 0px);
+  }
+  
+  
+  @media (min-device-width: 50px) and (max-device-width: 480px)  {
+    .clock-box {
+      height: 75px;
+      width: 25%;
+      margin-left: 0;
+    }
+    .clock {
+      width: 200px;
+      height: 200px;
+    }
+  
+      .clock .hour,
+    .hr {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .clock .min,
+    .mn {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .clock .sec,
+    .sc {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .hr::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 45px;
+      background: #ff1744;
+      border-radius: 6px 6px 0 0;
+      z-index: 10;
+    }
+    
+    .mn::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 70px;
+      background: #fff;
+      border-radius: 6px 6px 0 0;
+      z-index: 11;
+    }
+    
+    .sc::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 90px;
+      background: #2979ff;
+      border-radius: 6px 6px 0 0;
+      z-index: 12;
+    }
+    .container-clock {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 350px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      flex-wrap: wrap;
+      flex-flow: row wrap-reverse
+    }
+    .button-container {
+      width: 100%;
+      display: flex;
+      align-items: center
+    }
+    .toggle-btn {
+      position: relative;
+      width: 90px;
+      height: 40px;
+      border-radius: 40px;
+      margin: 0 auto;
+    }
+  }
+  
