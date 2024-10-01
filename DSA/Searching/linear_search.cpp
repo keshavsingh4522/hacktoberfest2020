@@ -16,5 +16,8 @@ int main() {
     int n=sizeof(arr);
     int key=3;
 
-    cout<<search(n,arr,key);
+    int res = search(n,arr,key);
+    if(res==-1)cout<<"NOT FOUND";
+    else cout<<"Found at index"<<res;
+    return 0;
 }
