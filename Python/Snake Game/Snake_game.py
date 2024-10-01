@@ -9,8 +9,8 @@ red = (255, 0, 0)
 black = (0, 0, 0)
 
 # Creating window
-screen_width = 900
-screen_height = 600
+screen_width = 1920
+screen_height = 1080
 gameWindow = pygame.display.set_mode((screen_width, screen_height))
 
 # Game Title
