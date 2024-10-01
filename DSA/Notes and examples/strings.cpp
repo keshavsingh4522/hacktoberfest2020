@@ -6,7 +6,7 @@ int main()
 	string s1="hello";
 	string s2="world";
 //	getline(cin,s);
-	cout<<"string is:"<<s1.length();
+	cout<<"length of the string is: "<<s1.length();
 	
 	//iterating over characters
 	for(int i=0;i<s1.length();i++)
