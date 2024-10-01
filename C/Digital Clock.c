@@ -1,3 +1,5 @@
+/*C program to design a digital clock.*/
+ 
 #include <stdio.h>
 #include <time.h> //for sleep() function
 #include <unistd.h>
@@ -43,3 +45,4 @@ int main()
  
     return 0;
 }
+
