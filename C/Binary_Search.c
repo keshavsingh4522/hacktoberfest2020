@@ -24,12 +24,12 @@ int binarySearch(int arr[], int l, int r, int x)
   
     // if we reach here, then element was 
     // not present 
-    return -1; 
+    return -1; // -1 will be return to the calling function if element is not there.
 } 
   
 int main(void) 
 { 
-    int arr[] = { 2, 3, 4, 10, 40 }; 
+    int arr[] = { 2, 3, 4, 10, 40 }; // Array of five element 
     int n = sizeof(arr) / sizeof(arr[0]); 
     int x = 10; 
   //Calling the binarySearch function
