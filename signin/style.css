@@ -1,0 +1,28 @@
+.btn
+{
+    background: none;
+    background-color: yellowgreen;
+    cursor: pointer;
+    outline: none;
+    width: 25%;
+    margin: 12px 0px;
+    padding: 10px;
+    border-radius: 6px;
+    opacity: 0.5;
+    font-size: 45px;
+    color:white;
+}
+.btn:hover
+{
+    background: white;
+    cursor: pointer;
+    outline: none;
+    width: 25%;
+    margin: 12px 0px;
+    padding: 10px;
+    border-radius: 6px;
+  
+    font-size: 45px;
+    color:deepskyblue;
+    
+}
