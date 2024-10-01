@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Fitness</title>
+    
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Baloo Bhai 2', cursive;
+            background:url('img/fitness3.jpg');
+            color: white;
+            
+        }
+        .left{
+            
+            display: inline-block;
+            position: absolute;
+            left: 10px;
+            
+        }
+        .left img{
+            width: 70px;
+        }
+        .left div{
+            text-align: center;
+        }
+        .mid{
+            
+            display: inline-block;
+            position: absolute;
+            right: 500px;
+        }
+        .right{
+            
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+        }
+        .navbar li{
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+            font-size: large;
+        }
+        .navbar li a{
+            color: white;
+            text-decoration: none;
+        }
+        .navbar li a:hover{
+            color: chartreuse;
+        }
+        .btn{
+            font-family: 'Baloo Bhai 2', cursive;
+            color: rgb(10, 247, 22);
+            background-color: black;
+            padding: 3px 10px;
+            border:2px solid blueviolet;
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+        .btn:hover{
+            color: red;
+            background-color:honeydew;
+        }
+        .cointainer{
+            
+            width: 35%;
+            margin: 10px 5px;
+            padding: 15px 60px;
+            border-radius: 50px;
+        }
+        .formgroup input{
+            font-family: 'Baloo Bhai 2', cursive;
+            text-align: center;
+            display: block;
+            width: 260px;
+            margin: 10px;
+        }
+        .formgroup button{
+            margin: 0px 10px;
+            padding: 0px 10px;
+            position: relative;
+            left: 48px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <img src="img/gym logo.png" alt="">
+            <div>PIYUSH FITNESS CENTRE</div>
+
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FitnessCalculator</a></li>
+            </ul>
+
+        </div>
+        <div class="right">
+            <button class="btn">Daily Nutrition Chart</button>
+            <br>
+            <button class="btn">contact us</button>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    <div class="cointainer">
+        <h2>Join the best gym of the country now and get flat 10% discount</h2>
+        <form action="nobackend.php">
+            <div class="formgroup">
+                <input type="text" name="" placeholder="enter your name">
+            </div>
+            <div class="formgroup">
+                <input type="text" name="" placeholder="enter your age">
+            </div>
+            <div class="formgroup">
+                <input type="text" name="" placeholder="enter your gender">
+            </div>
+            <div class="formgroup">
+                <input type="text" name="" placeholder="enter your adress">
+            </div>
+            <div class="formgroup">
+            <button class="btn">submit</button>
+            <button class="btn">reset</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
