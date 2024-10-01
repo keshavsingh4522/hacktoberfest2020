@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+	Video audioTracks Property in HTML
+	</title>
+	<style>
+		h1 {
+			color: green;
+		}
+		
+		h2 {
+			font-family: Impact;
+		}
+		
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>
+	GeeksforGeeks
+	</h1>
+	<h2>
+	Video audioTracks Property
+	</h2>
+	<br>
+
+	<video id="Test_Video"
+		width="360"
+		height="240"
+		controls>
+		
+		<source src="samplevideo.mp4"
+				type="video/mp4">
+		
+		<source src="movie.ogg"
+				type="video/ogg">
+	</video>
+
+	<p>
+	To get the number of available audio tracks,
+	double click the "Return Count" button.
+	</p>
+
+	<button ondblclick="My_Video()">
+	Return Count
+	</button>
+
+	<p id="test"></p>
+
+	<script>
+		function My_Video() {
+			var v =
+				document.getElementById(
+				"Test_Video").audioTracks.length;
+			
+			document.getElementById(
+			"test").innerHTML = v;
+		}
+	</script>
+
+</body>
+
+</html>
