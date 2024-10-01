@@ -3,21 +3,17 @@
 </div>
 
 # Special Note For Everyone
+
 ```py
 '''
-always make more then 4 pull request
-lets you have made only 4 pull request to different projects
-but one project is excluded from hackoctoberfest event then your pull request will not be count and 
-then you have remains 3 valid pull request if these projects is not excluded.
-if you fail to make 4 pull request then you cant get swags or t-shirts.
-
+Always make more than 4 pull request. Why?
+If you make only 4 pull request and one of them is excluded from hackoctoberfest event then your pull request will not be counted
+and then you remain with only 3 pull request provided other projects is not excluded.
+If you fail to make 4 or more pull request then you cannot get swags or goodies.
 i will recommend you make pull request to your own repo which is very very saffest side for you..
 keep in mind that repo has hacktoberfest topic..
 '''
 ```
-
-
-
 
 <p align="center">
     <a href="https://hacktoberfest.digitalocean.com/">
@@ -43,20 +39,19 @@ keep in mind that repo has hacktoberfest topic..
 
 📢 **Register [here](https://hacktoberfest.digitalocean.com) for Hacktoberfest and make four pull requests (PRs) between October 1st-31st to grab free SWAGS 🔥.**
 
-
 > Upload your code in this repository to particular section if folder is not present then create folder.
 > some more repos for contribution
 
-| Repository                                                  | Issues                                                                                                                                                           | Pull Requests                                                                                                                                                     | Forks                                                                                                                                                             |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [new repo of hacktoberfest-2021](https://github.com/keshavsingh4522/HacktoberFest-2021)         | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/HacktoberFest-2021?color=pink&logo=github)](https://github.com/keshavsingh4522/HacktoberFest-2021/issues)         | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/HacktoberFest-2021?style=social&logo=github)](https://github.com/keshavsingh4522/HacktoberFest-2021/pulls)         | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/HacktoberFest-2021?logo=git)](https://github.com/keshavsingh4522/HacktoberFest-2021/network)                         |
-| [Python](https://github.com/keshavsingh4522/Python)         | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/Python?color=pink&logo=github)](https://github.com/keshavsingh4522/Python/issues)         | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/Python?style=social&logo=github)](https://github.com/keshavsingh4522/Python/pulls)         | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/Python?logo=git)](https://github.com/keshavsingh4522/Python/network)                         |
-| [C](https://github.com/keshavsingh4522/c/)                  | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/c?color=pink&logo=github)](https://github.com/keshavsingh4522/c/issues)                   | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/c?style=social&logo=github)](https://github.com/keshavsingh4522/c/pulls)                   | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/c?logo=git)](https://github.com/keshavsingh4522/c/network)                                   |
-| [Javascript](https://github.com/keshavsingh4522/javascript) | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/javascript?color=pink&logo=github)](https://github.com/keshavsingh4522/javascript/issues) | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/javascript?style=social&logo=github)](https://github.com/keshavsingh4522/javascript/pulls) | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/javascript?logo=git)](https://github.com/keshavsingh4522/javascript/network)                 |
-| [jQuery](https://github.com/keshavsingh4522/jquery)         | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/jquery?color=pink&logo=github)](https://github.com/keshavsingh4522/jquery/issues)         | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/jquery?style=social&logo=github)](https://github.com/keshavsingh4522/jquery/pulls)         | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/jquery?style=flat-square&logo=git)](https://github.com/keshavsingh4522/jquery/network)       |
-| [Bootstrap](https://github.com/keshavsingh4522/Bootstrap/)  | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/Bootstrap?color=pink&logo=github)](https://github.com/keshavsingh4522/Bootstrap/issues)   | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/Bootstrap?style=social&logo=github)](https://github.com/keshavsingh4522/Bootstrap/pulls)   | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/Bootstrap?style=flat-square&logo=git)](https://github.com/keshavsingh4522/Bootstrap/network) |
-| [HTML5](https://github.com/keshavsingh4522/HTML5/)          | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/HTML5?color=pink&logo=github)](https://github.com/keshavsingh4522/HTML5/issues)           | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/HTML5?style=social&logo=github)](https://github.com/keshavsingh4522/HTML5/pulls)           | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/HTML5?logo=git)](https://github.com/keshavsingh4522/HTML5/network)                           |
-| [PHP](https://github.com/keshavsingh4522/PHP/)              | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/PHP?color=pink&logo=github)](https://github.com/keshavsingh4522/PHP/issues)               | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/PHP?style=social&logo=github)](https://github.com/keshavsingh4522/PHP/pulls)               | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/PHP?logo=git)](https://github.com/keshavsingh4522/PHP/network)                           	 |
+| Repository                                                                              | Issues                                                                                                                                                                           | Pull Requests                                                                                                                                                                     | Forks                                                                                                                                                             |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [new repo of hacktoberfest-2021](https://github.com/keshavsingh4522/HacktoberFest-2021) | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/HacktoberFest-2021?color=pink&logo=github)](https://github.com/keshavsingh4522/HacktoberFest-2021/issues) | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/HacktoberFest-2021?style=social&logo=github)](https://github.com/keshavsingh4522/HacktoberFest-2021/pulls) | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/HacktoberFest-2021?logo=git)](https://github.com/keshavsingh4522/HacktoberFest-2021/network) |
+| [Python](https://github.com/keshavsingh4522/Python)                                     | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/Python?color=pink&logo=github)](https://github.com/keshavsingh4522/Python/issues)                         | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/Python?style=social&logo=github)](https://github.com/keshavsingh4522/Python/pulls)                         | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/Python?logo=git)](https://github.com/keshavsingh4522/Python/network)                         |
+| [C](https://github.com/keshavsingh4522/c/)                                              | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/c?color=pink&logo=github)](https://github.com/keshavsingh4522/c/issues)                                   | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/c?style=social&logo=github)](https://github.com/keshavsingh4522/c/pulls)                                   | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/c?logo=git)](https://github.com/keshavsingh4522/c/network)                                   |
+| [Javascript](https://github.com/keshavsingh4522/javascript)                             | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/javascript?color=pink&logo=github)](https://github.com/keshavsingh4522/javascript/issues)                 | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/javascript?style=social&logo=github)](https://github.com/keshavsingh4522/javascript/pulls)                 | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/javascript?logo=git)](https://github.com/keshavsingh4522/javascript/network)                 |
+| [jQuery](https://github.com/keshavsingh4522/jquery)                                     | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/jquery?color=pink&logo=github)](https://github.com/keshavsingh4522/jquery/issues)                         | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/jquery?style=social&logo=github)](https://github.com/keshavsingh4522/jquery/pulls)                         | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/jquery?style=flat-square&logo=git)](https://github.com/keshavsingh4522/jquery/network)       |
+| [Bootstrap](https://github.com/keshavsingh4522/Bootstrap/)                              | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/Bootstrap?color=pink&logo=github)](https://github.com/keshavsingh4522/Bootstrap/issues)                   | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/Bootstrap?style=social&logo=github)](https://github.com/keshavsingh4522/Bootstrap/pulls)                   | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/Bootstrap?style=flat-square&logo=git)](https://github.com/keshavsingh4522/Bootstrap/network) |
+| [HTML5](https://github.com/keshavsingh4522/HTML5/)                                      | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/HTML5?color=pink&logo=github)](https://github.com/keshavsingh4522/HTML5/issues)                           | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/HTML5?style=social&logo=github)](https://github.com/keshavsingh4522/HTML5/pulls)                           | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/HTML5?logo=git)](https://github.com/keshavsingh4522/HTML5/network)                           |
+| [PHP](https://github.com/keshavsingh4522/PHP/)                                          | [![GitHub issues](https://img.shields.io/github/issues/keshavsingh4522/PHP?color=pink&logo=github)](https://github.com/keshavsingh4522/PHP/issues)                               | [![GitHub PRs](https://img.shields.io/github/issues-pr/keshavsingh4522/PHP?style=social&logo=github)](https://github.com/keshavsingh4522/PHP/pulls)                               | [![GitHub forks](https://img.shields.io/github/forks/keshavsingh4522/PHP?logo=git)](https://github.com/keshavsingh4522/PHP/network)                               |
 
 ## Rules
 
@@ -65,12 +60,14 @@ keep in mind that repo has hacktoberfest topic..
 ---
 
 ## Github Contribution Rules
+
 - Pull requests can be submitted to any opted-in repository on GitHub or GitLab.
 - The pull request must contain commits you made yourself.
 - If a maintainer reports your pull request as spam, it will not be counted toward your participation in Hacktoberfest.
 - If a maintainer reports behavior that’s not in line with the project’s code of conduct, you will be ineligible to participate.
 - To get a shirt, you must make four approved pull requests (PRs) on opted-in projects between October 1-31 in any time zone.
 - This year, the first 50,000 participants can earn a T-shirt.
+
 ---
 
 Steps for adding your name below
@@ -79,8 +76,6 @@ Steps for adding your name below
     2. Edit `CONTRIBUTERS.md` file
     3. Add your Name also link your github profile
     4. Make pull request
-
-
 
 ## Contributors
 
@@ -196,11 +191,12 @@ Steps for adding your name below
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 Contributions of any kind welcome!
 
->    NOTE: if you should be on the list of contributors but we forgot you, don't be shy and let us know!
+> NOTE: if you should be on the list of contributors but we forgot you, don't be shy and let us know!
 
 ## License
 
