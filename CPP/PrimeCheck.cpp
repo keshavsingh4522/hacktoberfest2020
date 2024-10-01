@@ -22,7 +22,7 @@ bool isPrime(int n)
 int main()
 {
     //APPLICATION
-    bool result = isPrime(24498757);
+    bool result = isPrime(24498757); //calling function
     cout << result << endl;
     cout << (result ? "Prime" : "Not A Prime") << endl;
     return 0;
