@@ -1,76 +1,468 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <bits/stdc++.h>
+#include <conio.h>
+#include <iostream>
+#include <string.h>
+using namespace std;
 
-struct library
+class Library
 {
-    char bk_name[30];
-    char author[30];
-    int pages;
-    float price;
+public:
+    char c[20] = "aaaa";
+    char bookName[50], authorName[50], publication[50], bookId[50];
+    int price, quantity, B;
+    void start();
+    void student();
+    void Addbook();
+    void Librarian();
+    void newBook();
+    void pass();
+    void changePass();
+    void showBook(int);
+    void bookList(int);
+    void getBook(int);
+    int branch(int);
+    void issueBook();
+    void check(char[], int, int);
 };
-int main()
+void Library::pass()
 {
-    struct library l[100];
-    char ar_nm[30],bk_nm[30];
-    int i,j, keepcount;
-    i=j=keepcount = 0;
-    while(j!=6)
+    int i;
+    char ch[20];
+    cout << "\n\t\tEnter Password: ";
+    cin >> ch;
+    if (strcmp(ch, c) == 0)
     {
-        printf("\n\n1. Add book information\n2. Display book information\n");
-        printf("3. List all books of given author\n");
-        printf("4. List the title of specified book\n");
-        printf("5. List the count of books in the library\n");
-        printf("6. Exit");
-        printf ("\n\nEnter one of the above : ");
-        scanf("%d",&j);
-    switch (j)
+        Librarian();
+    }
+    else
     {
-        case 1:  
-            printf ("Enter book name = ");
-            scanf ("%s",l[i].bk_name);
-            printf ("Enter author name = ");
-            scanf ("%s",l[i].author);
-            printf ("Enter pages = ");
-            scanf ("%d",&l[i].pages);
-            printf ("Enter price = ");
-            scanf ("%f",&l[i].price);
-            keepcount++;
-        break;
-        case 2:
-            printf("you have entered the following information\n");
-            for(i=0; i<keepcount; i++)
-            {
-                printf ("book name = %s",l[i].bk_name);
-                printf ("\t author name = %s",l[i].author);
-                printf ("\t  pages = %d",l[i].pages);
-                printf ("\t  price = %f",l[i].price);
-            }
-        break;
-        case 3:
-            printf ("Enter author name : ");
-            scanf ("%s",ar_nm);
-            for (i=0; i<keepcount; i++)
-            {
-                if (strcmp(ar_nm, l[i].author) == 0)
-                printf ("%s %s %d %f",l[i].bk_name,l[i].author,l[i].pages,l[i].price);
-            }
-        break;
-        case 4:
-            printf ("Enter book name : ");
-            scanf ("%s",bk_nm);
-            for (i=0; i<keepcount; i++)
-            {
-                if (strcmp(bk_nm, l[i].bk_name) == 0)
-                printf ("%s \t %s \t %d \t %f",l[i].bk_name,l[i].author,l[i].pages,l[i].price);
-            }
-        break;
-        case 5:
-            printf("\n No of books in library : %d", keepcount);
-        break;
-        case 6:
-        exit (0); 
+        cout << "\n\n\t\tWRONG PASSWORD!!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        start();
     }
 }
-return 0;
+void Library::changePass()
+{
+    int i;
+    char cp[20], np[20];
+up:
+    cout << "\n\n\t\tEnter current password: ";
+    cin >> cp;
+    if (strcmp(cp, c) == 0)
+    {
+    pp:
+        cout << "\n\n\t\tEnter new password: ";
+        cin >> np;
+    }
+    else
+    {
+        cout << "\n\n\t\tWrong password entered";
+        goto up;
+    }
+    if (strcmp(np, c) == 0)
+    {
+        cout << "\n\n\t\tPassword same as old password!!!";
+        goto pp;
+    }
+    else
+    {
+        cout << "\n\n\t\tPassword changed successfully!!!!";
+        strcpy(c, np);
+        cout << "\n";
+        system("PAUSE");
+        system("cls");
+        Librarian();
+    }
+}
+void Library::start()
+{
+    int ch;
+    cout << "\t~~~~~~~~~~~~~~~~~~~~ LIBRARY MANAGEMENT SYSTEM ~~~~~~~~~~~~~~~~~~~~\n";
+    cout << "\n\t\t<<<< LOGIN MENU >>>>\n";
+    cout << "\n\t\t1. Librarian\n\t\t2. Student\n\t\t3. Exit\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> ch;
+    if (ch == 1)
+        pass();
+    else if (ch == 2)
+    {
+        system("cls");
+        student();
+    }
+    else if (ch == 3)
+        exit(0);
+    else
+    {
+        cout << "\n\t\tInvalid Choice!\n\t\t";
+        system("PAUSE");
+        start();
+    }
+}
+void Library::student()
+{
+    int ch;
+    cout << "\t~~~~~~~~~~~~~~~~~~~~ STUDENT SECTION ~~~~~~~~~~~~~~~~~~~~\n";
+    cout << "\n\t\t<<<< MENU >>>>\n";
+    cout << "\n\t\t1. View BookList\n\t\t2. Search a Book\n\t\t3. Go to Login Menu\n\t\t4. Exit\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> ch;
+    if (ch == 1)
+        bookList(1);
+    else if (ch == 2)
+        getBook(1);
+    else if (ch == 3)
+    {
+        system("cls");
+        start();
+    }
+    else if (ch == 4)
+        exit(0);
+    else
+    {
+        cout << "\n\t\tInvalid Choice!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        student();
+    }
+}
+void Library::Librarian()
+{
+    int ch;
+    cout << "\t~~~~~~~~~~~~~~~~~~~~ LIBRARIAN SECTION ~~~~~~~~~~~~~~~~~~~~\n";
+    cout << "\n\t\t<<<< MENU >>>>\n";
+    cout << "\n\t\t1. View BookList\n\t\t2. Search a Book\n\t\t3. Add Book\n\t\t4. Issue Book\n\t\t5. Go to Login Menu\n\t\t6. Change Password\n\t\t7. Exit\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> ch;
+    switch (ch)
+    {
+    case 1:
+        bookList(2);
+        break;
+    case 2:
+        getBook(2);
+        break;
+    case 3:
+        Addbook();
+        break;
+    case 4:
+        issueBook();
+        break;
+    case 5:
+        system("cls");
+        start();
+        break;
+    case 6:
+        changePass();
+        break;
+    case 7:
+        exit(0);
+    default:
+        cout << "\n\t\tInvalid Choice!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        Librarian();
+    }
+}
+void Library::newBook()
+{
+    fflush(stdin);
+    cout << "\n\n\tEnter Book Details:\n";
+    cout << "\n\n\tEnter Book's Name: ";
+    cin.getline(bookName, 50);
+    cout << "\tEnter Author Name: ";
+    cin.getline(authorName, 50);
+    cout << "\tEnter Publication: ";
+    cin.getline(publication, 50);
+    cout << "\tEnter Book's ID: ";
+    cin.getline(bookId, 50);
+    cout << "\tEnter Book's Price: ";
+    cin >> price;
+    cout << "\tEnter Book's Quantity: ";
+    cin >> quantity;
+}
+void Library::showBook(int i)
+{
+    cout << "\n\tBook Name: " << bookName << endl;
+    cout << "\tBook's Author: " << authorName << endl;
+    cout << "\tBook's ID: " << bookId << endl;
+    cout << "\tBook's Publication: " << publication << endl;
+    if (i == 2)
+    {
+        cout << "\tBook's Price: " << price << endl;
+        cout << "\tBook's Quantity: " << quantity << endl;
+    }
+}
+void Library::bookList(int i)
+{
+    int b, r = 0;
+    system("cls");
+    b = branch(i);
+    system("cls");
+    ifstream f1("Books.txt", ios::binary);
+    if (!f1)
+    {
+        cout << "\n\t\tFile not Found!\n\t\t";
+    }
+    else
+    {
+        cout << "~~~~~~~~~~~~~~~~~~~~ BOOK LIST ~~~~~~~~~~~~~~~~~~~~\n";
+        f1.read((char *)this, sizeof(*this));
+        while (!f1.eof())
+        {
+            if (b == B)
+            {
+                if (quantity == 0)
+                {
+                }
+                else
+                {
+                    r++;
+                    cout << "\n\t~~~~~~~~~~~~~~~~~~~~ " << r << " ~~~~~~~~~~~~~~~~~~~~\n";
+                    showBook(i);
+                }
+            }
+            f1.read((char *)this, sizeof(*this));
+        }
+    }
+    cout << "\n\t\t\t";
+    system("PAUSE");
+    system("cls");
+    if (i == 1)
+        student();
+    else
+        Librarian();
+}
+void Library::Addbook()
+{
+    char ch, str[100];
+    int i = 0, b, cnt = 0;
+    system("cls");
+    cout << "\t\tMENU\n";
+    cout << "\n\t\t1. Add new Book\n\t\t2. Go to Main Menu\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> i;
+    if (i == 1)
+    {
+        system("cls");
+        B = branch(2);
+        newBook();
+        ofstream f2;
+        f2.open("Books.txt", ios::app | ios::binary);
+        f2.write((char *)this, sizeof(*this));
+        f2.close();
+        cout << "\n\t\tBook added successfully!!!!\n";
+        Librarian();
+    }
+    else if (i == 2)
+    {
+        Librarian();
+    }
+}
+void Library::getBook(int x)
+{
+    int i, b, cnt = 0;
+    char ch[100];
+    system("cls");
+    b = branch(x);
+    ifstream f1("Books.txt", ios::binary);
+    if (!f1)
+    {
+        cout << "\n\t\tFile not Found!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        if (x == 1)
+            student();
+        else
+            Librarian();
+    }
+    system("cls");
+    cout << "\n\t\t\tMENU\n";
+    cout << "\n\t\t1. Search by Book's Name\n\t\t2. Search by Book's ID\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> i;
+    fflush(stdin);
+    f1.read((char *)this, sizeof(*this));
+    if (i == 1)
+    {
+        cout << "\n\t\tEnter Book's Name: ";
+        cin.getline(ch, 100);
+        system("cls");
+        while (!f1.eof())
+        {
+            for (i = 0; b == B && quantity != 0 && (ch[i] == bookName[i]); i++)
+            {
+                if (bookName[i] == '\0' && ch[i] == '\0')
+                {
+                    cout << "\n\t\tBook Found!\n";
+                    showBook(x);
+                    cnt++;
+                    break;
+                }
+            }
+            f1.read((char *)this, sizeof(*this));
+        }
+    }
+    else if (i == 2)
+    {
+        cout << "\n\t\tEnter Book's ID: ";
+        cin.getline(ch, 100);
+        system("cls");
+        while (!f1.eof())
+        {
+            for (i = 0; b == B && quantity != 0 && ch[i] == bookId[i]; i++)
+            {
+                if (bookId[i] == '\0' && ch[i] == '\0')
+                {
+                    cout << "\n\t\tBook Found!\n";
+                    showBook(x);
+                    cnt++;
+                    break;
+                }
+            }
+            f1.read((char *)this, sizeof(*this));
+        }
+    }
+    else
+    {
+        cnt++;
+        cout << "\n\t\tInvalid Choice!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        getBook(x);
+    }
+    f1.close();
+    if (cnt == 0)
+        cout << "\n\t\tBook not Available!\n";
+    cout << "\n\t\t";
+    system("PAUSE");
+    system("cls");
+    if (x == 1)
+        student();
+    else
+        Librarian();
+}
+int Library::branch(int x)
+{
+    int i;
+    cout << "\n\t\tMENU\n";
+    cout << "\n\t\t1. TOC\n\t\t2. OS\n\t\t3. Computer Network\n\t\t4. OOPs\n\t\t5. Discrete Mathematics\n\t\t6. Back to Main Menu\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> i;
+    if (i < 6 && i > 0)
+        return i;
+    else if (i == 6)
+    {
+        system("cls");
+        if (x == 1)
+            student();
+        else
+            Librarian();
+    }
+    else
+    {
+        cout << "\n\t\tInvalid Choice!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        branch(x);
+    }
+}
+void Library::issueBook()
+{
+    char s[50], str[20];
+    int b, i, j, cnt = 0;
+    system("cls");
+    cout << "\n\t\tMENU\n";
+    cout << "\n\t\t1. Issue Book\n\t\t2. View Issued Books\n\t\t3. Back to Main Menu\n";
+    cout << "\n\t\tEnter your choice: ";
+    cin >> i;
+    fflush(stdin);
+    if (i == 1)
+    {
+        system("cls");
+        b = branch(2);
+        system("cls");
+        fflush(stdin);
+        cout << "\n\t\tEnter Book's Name: ";
+        cin.getline(bookName, 100);
+        cout << "\n\t\tEnter Book's ID: ";
+        cin.getline(bookId, 20);
+        check(bookId, b, 1);
+        cout << "\n\t\tEnter Student's Name: ";
+        cin.getline(authorName, 100);
+        cout << "\n\t\tEnter Student's ID: ";
+        cin.getline(publication, 20);
+        cout << "\n\t\tEnter Date: ";
+        cin >> quantity >> B >> price;
+        ofstream f2("student.txt", ios::binary | ios::app);
+        f2.write((char *)this, sizeof(*this));
+        f2.close();
+        cout << "\n\t\tBook Issued!\n";
+    }
+    else if (i == 2)
+    {
+        ifstream f1("student.txt", ios::binary);
+        system("cls");
+        cout << "\n\t\tIssued Books:\n";
+        f1.read((char *)this, sizeof(*this));
+        i = 0;
+        while (!f1.eof())
+        {
+            i++;
+            cout << "\n\t~~~~~~~~~~~~~~~~~~~~ " << i << ". ~~~~~~~~~~~~~~~~~~~~\n";
+            cout << "\n\t\tStudent's Name: " << authorName << "\n\t\tStudent's ID: " << publication << "\n\t\tBook's Name: " << bookName << "\n\t\tBook's ID: " << bookId << "\n\t\tDate: " << quantity << "/" << B << "/" << price << endl;
+            f1.read((char *)this, sizeof(*this));
+        }
+        f1.close();
+    }
+    else if (i == 3)
+    {
+        system("cls");
+        Librarian();
+    }
+    else
+    {
+        cout << "\n\t\tInvalid Input!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        Librarian();
+    }
+}
+void Library::check(char s[], int b, int x)
+{
+    int i, cnt = 0;
+    fstream f1("Books.txt", ios::in | ios::out | ios::ate | ios::binary);
+    f1.seekg(0);
+    f1.read((char *)this, sizeof(*this));
+    while (!f1.eof())
+    {
+        for (i = 0; b == B && quantity != 0 && bookId[i] != '\0' && s[i] != '\0' && s[i] == bookId[i]; i++)
+            ;
+        if (bookId[i] == s[i])
+        {
+            cnt++;
+            if (x == 1)
+                quantity--;
+            else
+                quantity++;
+            f1.seekp(f1.tellp() - sizeof(*this));
+            f1.write((char *)this, sizeof(*this));
+            break;
+        }
+        f1.read((char *)this, sizeof(*this));
+    }
+    if (cnt == 0)
+    {
+        cout << "\n\t\tBook Not Found!\n\t\t";
+        system("PAUSE");
+        system("cls");
+        issueBook();
+    }
+    f1.close();
+}
+int main()
+{
+    Library ob;
+    ob.start();
+    return 0;
 }
