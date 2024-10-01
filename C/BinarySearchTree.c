@@ -3,6 +3,8 @@
 struct node
 {
     int data;
+    int data1;
+    int data2;
     struct node *left;
     struct node *right;
 };
