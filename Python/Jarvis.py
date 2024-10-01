@@ -14,6 +14,8 @@ from tkinter import filedialog
 import json
 from urllib.request import urlopen
 import time
+import google
+from translate import Translator
 
 
 engine = pyttsx3.init()
@@ -85,7 +87,14 @@ def cpu():
     speak(battery.percent)
     temp = psutil.sensors_temperatures()
     speak('current temperature is'+temp)
-
+def Translator_tran():
+    speak("to which language")
+    lang = Take_command()
+    translator= Translator(to_lang=lang)
+    speak("what to translate")
+    lan_g = Take_command()
+    translation = translator.translate(str(lan_g))
+    print (translation)
 
 def Take_command ():
     r=sr.Recognizer()
@@ -249,7 +258,8 @@ if __name__ == "__main__":
             answer = next(res.results).text
             print('the Answer is :'+answer)
             speak('the Answer is :'+answer)
-
+        elif "translate" in query:
+            Translator_tran()
         elif 'what is' in query or 'who is ':
             client = wolframalpha.Client(wolframalpha_app_id)
             res = client.query(query)
