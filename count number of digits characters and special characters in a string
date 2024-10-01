@@ -1,0 +1,28 @@
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+    string str;
+    int alpha=0,num=0,special=0;
+    cout<<"Enter string\n";
+    getline (cin, str);
+    for(int i=0; str[i] != '\0'; i++){
+    if((str[i]>='A' && str[i]<='Z') || (str[i]>='a' && str[i]<='z')) {  
+                alpha++;
+    }
+    else if(str[i]>='0' && str[i]<='9'){ 
+                num++;
+    }
+    else{
+        special++;
+    }
+    }
+    cout<<"Alphabet letters:"<<alpha;
+    cout<<"\nNumbers: "<<num;
+    cout<<"\nSpecial characters: "<<special;
+    
+    return 0;
+}
+
