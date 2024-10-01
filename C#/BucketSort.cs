@@ -8,20 +8,19 @@ namespace Sorting_Algorithms_In_C_Sharp
 {
     public static class BucketSort
     {
-        //Bucket sort breaks a list down into sub-lists, you can then use another algo to sort the sub-lists
-        //Bucketsort isn't a good choice if you don't know the range or distribution of the data
-        //Bucket Sort time complexity
-        //Average case: O(n+k) - k being the number of buckets that were created
-        //Worst case: O(N^2)
+       /*Bucket sort breaks a list down into sub-lists, you can then use another algo to sort the sub-lists
+        Bucket Sort time complexity
+        Average case: O(n+k) - k being the number of buckets that were created
+        Worst case: O(N^2)
  
-        //In this case, we will focus on building an algorithm that uses bucketsort to sort an array of integers between 1 and 99
-        //we will also assume that the integers in the passed array are evenly distributed
-        public static List<int> BucketSort1(params int[] x)
+        In this case, we will focus on building an algorithm that uses bucketsort to sort an array of integers between 1 and 99
+        we will also assume that the integers in the passed array are evenly distributed
+        public static List<int> BucketSort1(params int[] x)*/
         {
             List<int> result = new List<int>();
  
             //Determine how many buckets you want to create, in this case, the 10 buckets will each contain a range of 10
-            //1-10, 11-20, 21-30, etc. since the passed array is between 1 and 99
+           
             int numOfBuckets = 10;
  
             //Create buckets
@@ -47,17 +46,17 @@ namespace Sorting_Algorithms_In_C_Sharp
         }
  
         //Bubblesort w/ ListInput
-        public static int[] BubbleSortList(List<int> input)
+        public static int[] BubbleSortList(List<int> in)
         {
-            for (int i = 0; i < input.Count; i++)
+            for (int i = 0; i < in.Count; i++)
             {
-                for (int j = 0; j < input.Count; j++)
+                for (int j = 0; j < in.Count; j++)
                 {
-                    if (input[i] < input[j])
+                    if (in[i] < in[j])
                     {
-                        int temp = input[i];
-                        input[i] = input[j];
-                        input[j] = temp;
+                        int temp = in[i];
+                        in[i] = in[j];
+                        in[j] = temp;
                     }
                 }
             }
