@@ -7,12 +7,12 @@ const Bmicalc = () => {
   const [bmi, setBmi] = useState(0);
   const [status, setStatus] = useState();
 
-  const weightChangeHandler = (event) => {
-    setWeightInput(event.target.value);
+  const weightChangeHandler = (e) => {
+    setWeightInput(e.target.value);
   };
 
-  const heightChangeHandler = (event) => {
-    setHeightInput(event.target.value);
+  const heightChangeHandler = (e) => {
+    setHeightInput(e.target.value);
   };
 
   const calculate = (e) => {
@@ -69,8 +69,8 @@ const Bmicalc = () => {
         </button>
       </form>
       <div>
-        <p className=''>Your BMI is {bmi}</p>
-        <p className=''>This is considered {status}</p>
+        <p >Your BMI is {bmi}</p>
+        <p >This is considered {status}</p>
       </div>
     </>
   );
