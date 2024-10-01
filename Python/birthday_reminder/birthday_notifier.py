@@ -102,7 +102,7 @@ class birthdayLogger:
     def find(self, name):
         self.records = 0
         self.matches = 0
-        birthday = data['birthday']
+        birthday = self.data['birthday']
         for i in birthday:
             names = i['name']
             self.records += 1
@@ -114,7 +114,7 @@ class birthdayLogger:
 
     # returning all entries
     def allEntries(self):
-        birthday = data['birthday']
+        birthday = self.data['birthday']
         for i in birthday:
             name = i['name']
             dob = i['date_of_birth']
