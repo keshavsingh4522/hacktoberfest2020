@@ -1,0 +1,27 @@
+
+def shellsort(My_List): 
+ a = len(My_List)
+  gap = a // 2 
+  while gap > 0: 
+    for i in range(gap,a): 
+      temp = My_List[i] 
+      j = i 
+      while  j >= gap and My_List[j-gap] > temp: 
+        My_List[j] = My_List[j-gap] 
+        j = j - gap 
+      My_List[j] = temp 
+    gap = gap // 2
+
+def PrintList(My_List):
+  for i in My_List:
+    print(i, end=" ")
+  print("\n")
+  
+                
+My_List = [10, 1, 23, 50, 4, 9, -4]
+print("Original List")
+PrintList(My_List)
+
+shellsort(My_List)
+print("Sorted List")
+PrintList(My_List)
