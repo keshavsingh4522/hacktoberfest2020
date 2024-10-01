@@ -99,9 +99,14 @@ void RadixSort(int A[], int n)
 
 int main()
 {
-    int A[] = {237, 140, 259, 348, 152, 163, 1244, 48, 36, 62};
-    int n = sizeof(A)/sizeof(A[0]);
-
+    int n;
+    cin>>n;
+    int A[n];
+    for(int i=0;i<n;i++)
+        cin>>A[i];
+    //int A[] = {237, 140, 259, 348, 152, 163, 1244, 48, 36, 62};
+    //int n = sizeof(A)/sizeof(A[0]);
+    
     RadixSort(A, n);
     //Display
     cout << "Sorted List : ";
