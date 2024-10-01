@@ -5,14 +5,14 @@
 # Special Note For Everyone
 ```py
 '''
-always make more then 4 pull request
-lets you have made only 4 pull request to different projects
-but one project is excluded from hackoctoberfest event then your pull request will not be count and 
-then you have remains 3 valid pull request if these projects is not excluded.
-if you fail to make 4 pull request then you cant get swags or t-shirts.
+Always make more then 4 pull requests
+let us say you have made only 4 pull requests to different projects
+but one project is excluded from hackoctoberfest event then your pull request will not be counted and 
+then you have remaining 3 valid pull request, if these projects are not excluded.
+If you fail to make 4 pull requests then you can't get swags or t-shirts.
 
-i will recommend you make pull request to your own repo which is very very saffest side for you..
-keep in mind that repo has hacktoberfest topic..
+I will recommend you to make pull requests to your own repo to be on a safe side,
+keep in mind that repo should have hacktoberfest topic..
 '''
 ```
 
@@ -76,8 +76,8 @@ keep in mind that repo has hacktoberfest topic..
 Steps for adding your name below
 
     1. Fork this repo
-    2. Edit `CONTRIBUTERS.md` file
-    3. Add your Name also link your github profile
+    2. Edit `CONTRIBUTORS.md` file
+    3. Add your name and also link your github profile
     4. Make pull request
 
 
