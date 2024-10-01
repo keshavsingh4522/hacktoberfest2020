@@ -1,29 +1,29 @@
-/* 
-------------------------------------------------------------------------------------------------
-USERNAME: RASESH2005
-DESCRIPTION: THIS PROGRAM CHECKS IF A NUMBER IS PRIME OR NOT
-DATE: 1/10/2021
-------------------------------------------------------------------------------------------------
-*/
-#include <bits/stdc++.h>
-
+#include <iostream>
 using namespace std;
 
-//SNIPPET
-bool isPrime(int n)
-{
-    for (int i = 2; i <= int(sqrt(n) + 1); i++)
-    {
-        if (n % i == 0)
-            return false;
+int main() {
+    int i, n;
+    bool isPrime = true;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    // 0 and 1 are not prime numbers
+    if (n == 0 || n == 1) {
+        isPrime = false;
     }
-    return true;
-}
-int main()
-{
-    //APPLICATION
-    bool result = isPrime(24498757);
-    cout << result << endl;
-    cout << (result ? "Prime" : "Not A Prime") << endl;
+    else {
+        for (i = 2; i <= n / 2; ++i) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    if (isPrime)
+        cout << n << " is a prime number";
+    else
+        cout << n << " is not a prime number";
+
     return 0;
 }
