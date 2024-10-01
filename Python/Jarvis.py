@@ -265,6 +265,9 @@ if __name__ == "__main__":
             ans = int(Take_command())
             time.sleep(ans)
             print(ans)
+            
+        elif 'close' in query:
+            exit()
 # GIVING COMPUTERS CONTROLS
 
         elif 'log out' in query:
