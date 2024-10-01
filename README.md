@@ -1,5 +1,5 @@
 <div align="centre">
-    <b>dont contribute in this repo, contribute only in below mentioned repo</b>
+    <b>don't contribute in this repo, contribute only in below mentioned repo</b>
 </div>
 
 # Special Note For Everyone
