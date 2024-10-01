@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<malloc.h>
+int waterharvesting(int A[],int n)
+{
+  int B1[n],B2[n];
+  int i,maxl,maxr,sum=0;
+  maxl=A[0];
+  maxr=A[n-1];
+  for(i=0;i<n;i++)
+  {
+    B1[i]=maxl;
+    if(A[i]>maxl)
+      maxl=A[i];
+  }
+  for(i=n-1;i>=0;i--)
+  {
+    B2[i]=maxr;
+    if(A[i]>maxr)
+      maxr=A[i];
+  }
+  for(i=1;i<n-1;i++)
+  {
+    if(B1[i]<=B2[i] && B1[i]>A[i])
+      sum+=B1[i]-A[i];
+    else
+      if(B2[i]<=B1[i] && B2[i]>A[i])
+        sum+=B2[i]-A[i];
+  }
+  return sum;
+}
+int main()
+{
+  int n,s,i;
+  int *A;
+  printf("Enter the no of buildings: ");
+  scanf("%d",&n);
+  A=(int *)malloc(n*sizeof(int));
+  printf("Enter the heights of the buildings: ");
+  for(i=0;i<n;i++)
+    scanf("%d",A+i);
+  s=waterharvesting(A,n);
+  printf("Rainwater Harvested : %d",s);
+  return 0;
+}
