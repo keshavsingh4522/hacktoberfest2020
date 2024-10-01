@@ -247,10 +247,10 @@ void addBlog(){
                 printf("\t\t\t\t\t\t\033[0;35mADD TODAY's BLOG...\033[0m\n\n");
                 gets(e.note);
                 fwrite( &e,sizeof(e),1,fp); //WRITES DATA FROM ARRAY POINTER TO, BY POINTER TO THE GIVEN STREAM
-                printf("\n\n\t\t\t\t\033[0;32mYOUR BLOG IS ADDED...\033[0m\n");
+                printf("\n\n\t\t\t\t\033[0;32mYOUR BLOG IS ADDED.....\033[0m\n");
             }
 
-            printf ( "\n\t\t\t\t\033[0;35mADD ANOTHER BLOG...(Y/N) \033[0m" ) ;
+            printf ( "\n\t\t\t\t\033[0;35mADD ANOTHER BLOG.....(Y/N) \033[0m" ) ;
             fflush ( stdin ) ;
             another = getchar(); //TAKES ONLY ONE LETTER AS INPUT AND IGNORES REST
 
@@ -271,17 +271,17 @@ void deleteMeet(){
     while(another == 'Y')
     {
         printf("\n\n\t\t\t\t\033[0;35mHOW WOULD YOU LIKE TO DELETE");
-        printf("\n\n\t\t\t\t[1] DELETE WHOLE RECORD");
+        printf("\n\n\t\t\t\t[1] DELETE THE WHOLE RECORD");
         printf("\n\t\t\t\t[2] DELETE A PARTICULAR RECORD BY TIME");
 
         do
         {
-            printf("\n\t\t\t\tENTER YOU CHOICE: \033[0m");
+            printf("\n\t\t\t\tENTER YOU CHOICE : \033[0m");
             scanf("%d",&choice);
             switch(choice)
             {
             case 1:
-                printf("\n\t\t\t\t\033[0;35mENTER THE DATE OF RECORD TO BE DELETED:[yyyy-mm-dd]: \033[0m");
+                printf("\n\t\t\t\t\033[0;35mENTER THE DATE OF RECORD TO BE DELETED : [yyyy-mm-dd]: \033[0m");
                 fflush(stdin);
                 gets(filename);
                 fp = fopen (filename, "wb" ) ;
@@ -304,8 +304,8 @@ void deleteMeet(){
                 fp = fopen (filename, "rb" ) ;
                 if ( fp == NULL )
                 {
-                    printf("\n\t\t\t\t\033[0;31mTHE FILE DOES NOT EXISTS");
-                    printf("\n\n\t\t\t\tPRESS ANY KEY TO GO BACK.\033[0m");
+                    printf("\n\t\t\t\t\033[0;31mTHE FILE DOES NOT EXISTS!");
+                    printf("\n\n\t\t\t\tPRESS ANY KEY TO GO BACK.......\033[0m");
                     getch();
                     return ;
                 }
