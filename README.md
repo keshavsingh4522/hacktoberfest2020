@@ -5,7 +5,7 @@
 # Special Note For Everyone
 ```py
 '''
-always make more then 4 pull request
+always make more then 4 pull request , because of the following reason
 lets you have made only 4 pull request to different projects
 but one project is excluded from hackoctoberfest event then your pull request will not be count and 
 then you have remains 3 valid pull request if these projects is not excluded.
