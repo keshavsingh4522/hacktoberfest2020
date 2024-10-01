@@ -36,3 +36,10 @@ int main()
     
     solve();
 }
+// Time Complexity:
+// Worst case time-	O(n)
+// Best case time- 	O(n)
+// Average case time-	O(n)
+
+//Space complexity:
+// Space-	O(n)
