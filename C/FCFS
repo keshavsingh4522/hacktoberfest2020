@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main ()
+{
+    int n, BT[10], WT[10], TT[10];
+    float awt = 0, att = 0;
+
+    printf ("Enter number of processes: ");
+    scanf ("%d", &n);
+    printf("\n");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf ("Enter burst time of process %d :", i + 1);
+        scanf ("%d", &BT[i]);
+    }
+
+    WT[0] = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            WT[j] = BT[j - 1] + WT[j - 1];
+        }
+        awt = awt + WT[i];
+    }
+
+    awt = awt / n;
+    for (int j = 0; j < n; j++)
+    {
+        TT[j] = (BT[j] + WT[j]);
+        att = att + TT[j];
+        printf ("\n");
+        printf ("Waiting Time of process %d : %d \t", j + 1, WT[j]);
+        printf ("Turnaround Time of process %d : %d ", j + 1, TT[j]);
+    }
+
+    att = att/n;
+    printf ("\n");
+    printf ("\nAverage waiting time: %.3f ", awt);
+    printf ("\n");
+    printf ("Average turnaround time: %.3f \n", att);
+}
