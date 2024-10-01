@@ -2,7 +2,7 @@
 import random
 
 #creating a list of elements of game and define variable.
-elements = ["Stone","Scissor","Paper"]
+elements = ["Rock","Paper","Scissor"]
 global human #global for using the variabe in function
 global com 
 human = 0
@@ -10,11 +10,11 @@ com = 0
 
 #for displaying choices.
 def display_choices():
-    print("Now you're going to play Stone Paper Scissor game.")
+    print("Now you're going to play Rock Paper Scissors game.")
     print("You need 10 points to win the match.")
     print("Here are your Choices :- ")
-    print("Stone   : 1")
-    print("Scissor : 2")
+    print("Rock   : 1")
+    print("Scissors : 2")
     print("Paper   : 3")
     
 #main gameplay.     
