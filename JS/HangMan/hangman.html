@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./hangman.css">
+    <title>Hang-Man Game</title>
+</head>
+<body>
+    <h1>Hang-Man</h1>
+    <p>Find the hidden word -Enter a letter</p>
+    <div class="game-container">
+        <svg class="figure-container" height="250" width="200">
+            <!--  Stand for man hanging-->
+            <line x1="60" y1="20" x2="140" y2="20"></line>
+            <line x1="140" y1="20" x2="140" y2="50" />
+            <line x1="60" y1="20" x2="60" y2="230"></line>
+            <line x1="20" y1="230" x2="100" y2="230"></line>
+
+            <!-- Head-->
+            <circle cx="140" cy="70" r="20" class="figure-part"/>
+            <!--Body-->
+            <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
+            <!--Arms-->
+            <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
+            <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
+             <!--Legs-->
+             <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+             <line x1="140" y1="150" x2="160" y2="180"class="figure-part" />
+
+        </svg>
+
+        <div class="wromg-letters-container">
+            <div id="wrong-letters">
+                <!-- <p>Wrong</p>
+                <Span>e,r,t</Span> -->
+            </div>
+        </div>
+
+        <h2 class="hint" id="hint"></h2>
+
+        <div class="word" id="word">
+            <!-- <div class="letter">h</div>
+            <div class="letter">e</div>
+            <div class="letter">l</div>
+            <div class="letter">l</div>
+            <div class="letter">o</div> -->
+        </div>
+
+    </div>
+
+    <!--Conatiner for final maessages-->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+             <h2 id="final-message" >Hang man !!</h2>
+            <button id="play-again" class="play-again">Play </button>
+            <button class="quit"><a href="../index.html">Exit</a></button>
+        </div>
+
+
+    </div>
+    <!--Notification -->
+    <div class="notification-container " id="notification-container">
+        <p>You have already entered this letter</p>
+
+    </div>
+
+
+
+
+
+<script src="./hangman.js"></script>
+</body>
+</html>
