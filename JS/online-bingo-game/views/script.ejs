@@ -1,0 +1,578 @@
+<script>
+  const TYPE = "<%=type%>";
+  const CODE = "<%=code%>";
+  const PIN = "<%=secret%>";
+
+  let a1 = new Audio(); // Sketch Sound
+  let a2 = new Audio(); // Win Sound
+  let a3 = new Audio(); // Draw Sound
+  let a4 = new Audio(); // Loose Sound
+  a1.src = `${BASE_URL}/sounds/sketch.m4a`;
+  a2.src = `${BASE_URL}/sounds/win.mp3`;
+  a3.src = `${BASE_URL}/sounds/draw.mp3`;
+  a4.src = `${BASE_URL}/sounds/lose.mp3`;
+
+  let gObj;
+  let nums = [];
+  let cuts = [];
+  let socket;
+  let isClientConnected = false;
+  let isChatboxOpened = false;
+  let totalUnread = 0;
+  let anim,
+    isAnimPlaying = false;
+
+  const preventBack = () => {
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function () {
+      window.history.pushState(null, "", window.location.href);
+      if (!isChatboxOpened) {
+        var stayOnPage = confirm("Are you sure to exit the game?");
+        if (stayOnPage) {
+          window.location.href = BASE_URL;
+        }
+      } else {
+        $("#chat-modal").modal("hide");
+        isChatboxOpened = false;
+      }
+    };
+  };
+
+  const rand = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  const random_ex = (min, max, excluded) => {
+    let x = rand(min, max);
+    if (excluded.includes(x)) {
+      return random_ex(min, max, excluded);
+    } else {
+      return x;
+    }
+  };
+
+  const init = () => {
+    $(".cell").each((index, element) => {
+      let x = random_ex(1, 25, nums);
+      nums.push(x);
+      $(element).html(x);
+      cuts.push(0);
+    });
+    gObj.gMatrix = nums;
+    gObj.cMatrix = cuts;
+    gObj.gameStarted = true;
+    if (TYPE === "host") {
+      gObj.myChance = true;
+    } else {
+      gObj.myChance = false;
+    }
+    putData(gObj);
+  };
+
+  const resume = () => {
+    nums = gObj.gMatrix;
+    cuts = gObj.cMatrix;
+    $(".cell").each((index, element) => {
+      $(element).html(nums[index]);
+      if (cuts[index] == 1) {
+        $(element).removeClass("cll");
+        $(element).addClass("cut1");
+      } else if (cuts[index] == -1) {
+        $(element).removeClass("cll");
+        $(element).addClass("cut2");
+      }
+    });
+  };
+
+  const sendMsg = () => {
+    let msg = $("#message").val();
+    if (msg.length > 0) {
+      let content = `
+        <div class="chat-bubble me">
+          <div class="chat-h">${gObj.name}</div>
+          <div class="chat-msg">${msg}</div>
+        </div>
+        <span class="spacer">&nbsp;</span>`;
+      $("#chat-box").append(content);
+      $("#message").val("");
+      socket.emit("sendMessage", {
+        type: TYPE,
+        code: gObj.gameCode,
+        msg: msg,
+      });
+      let objDiv = document.getElementById("chat-box");
+      objDiv.scrollTop = objDiv.scrollHeight;
+    }
+  };
+
+  const showTooltipCpy = (message) => {
+    $("#cpy")
+      .tooltip("hide")
+      .attr("data-original-title", message)
+      .tooltip("show");
+    setTimeout(function () {
+      $("#cpy").tooltip("hide");
+    }, 3000);
+  };
+
+  const showTooltipVib = (message) => {
+    $("#vibrate-btn")
+      .tooltip("hide")
+      .attr("data-original-title", message)
+      .tooltip("show");
+    setTimeout(function () {
+      $("#vibrate-btn").tooltip("hide");
+    }, 3000);
+  };
+
+  const showTooltipMsg = (message) => {
+    $("#toggleChat")
+      .tooltip("hide")
+      .attr("data-original-title", message)
+      .tooltip("show");
+    setTimeout(function () {
+      $("#toggleChat").tooltip("hide");
+    }, 4000);
+  };
+
+  const initListeners = () => {
+    $(".cll").click((e) => {
+      if ($(e.delegateTarget).hasClass("cll") && gObj.myChance) {
+        a1.play();
+        let n = $(e.delegateTarget).html();
+        $(e.delegateTarget).removeClass("cll");
+        $(e.delegateTarget).addClass("cut1");
+        cuts[nums.indexOf(eval(n))] = 1;
+        gObj.cMatrix = cuts;
+        gObj.myChance = false;
+        putData(gObj);
+        socket.emit("cutNum", { num: n, type: TYPE, code: gObj.gameCode }); // both
+        $("#trnStts").html(`${gObj.pName}'s Turn`);
+        checkBB();
+      }
+    });
+
+    $("#endBtn").click(() => {
+      gObj = { name: gObj.name };
+      putData(gObj);
+      window.location.href = BASE_URL;
+    });
+
+    $("#toggleChat").click(() => {
+      if (isClientConnected || TYPE == "client") {
+        $("#chat-modal").modal("show");
+        $("#nBadge").hide();
+        isChatboxOpened = true;
+        totalUnread = 0;
+        setTimeout(() => {
+          let objDiv = document.getElementById("chat-box");
+          objDiv.scrollTop = objDiv.scrollHeight;
+        }, 400);
+      } else {
+        alert("Your partner is disconnected right now!");
+      }
+    });
+
+    $("#closeChat").click(() => {
+      isChatboxOpened = false;
+    });
+
+    $("#send-btn").click(() => {
+      sendMsg();
+    });
+
+    $("#vibrate-btn").click(() => {
+      $("#vibrate-btn").attr("disabled", true);
+      showTooltipVib(
+        "You just vibrated your partner's phone if vibration is supported!"
+      );
+      socket.emit("sendVibe", { type: TYPE, code: gObj.gameCode });
+      setTimeout(() => {
+        $("#vibrate-btn").attr("disabled", false);
+      }, 3000);
+    });
+
+    $("#message").keypress((key) => {
+      if (key.which == 13) {
+        sendMsg();
+      }
+    });
+
+    if (TYPE === "host") {
+      $("#restartBtn").click(() => {
+        if (isClientConnected) {
+          restartGame();
+        } else {
+          alert("Your partner is disconnected right now!");
+        }
+      });
+    }
+
+    if (TYPE == "host") {
+      window.addEventListener("unload", function (event) {
+        gObj = { name: gObj.name };
+        putData(gObj);
+      });
+    }
+  };
+
+  const initGame = () => {
+    if (gObj.gameStarted) {
+      $("#gCode").html(`${gObj.gameCode}`);
+      resume();
+    } else {
+      gObj.gameStarted = true;
+      putData(gObj);
+      init();
+    }
+    initListeners();
+  };
+
+  const calcBB = () => {
+    let winCrit = [
+      [0, 1, 2, 3, 4],
+      [5, 6, 7, 8, 9],
+      [10, 11, 12, 13, 14],
+      [15, 16, 17, 18, 19],
+      [20, 21, 22, 23, 24],
+      [0, 5, 10, 15, 20],
+      [1, 6, 11, 16, 21],
+      [2, 7, 12, 17, 22],
+      [3, 8, 13, 18, 23],
+      [4, 9, 14, 19, 24],
+      [0, 6, 12, 18, 24],
+      [4, 8, 12, 16, 20],
+    ];
+    let bbCnt = 0;
+    winCrit.forEach((crit) => {
+      let flg = false;
+      for (let i = 0; i < crit.length; i++) {
+        if (cuts[crit[i]] == -1 || cuts[crit[i]] == 1) {
+          flg = true;
+        } else {
+          flg = false;
+          break;
+        }
+      }
+      if (flg) {
+        if (bbCnt < 5) {
+          bbCnt += 1;
+        }
+      }
+    });
+    return bbCnt;
+  };
+
+  const checkBB = () => {
+    let bbCnt = calcBB();
+    updateBBar(1, bbCnt);
+    socket.emit("sendBB", { cnt: bbCnt, type: TYPE, code: gObj.gameCode });
+    if (bbCnt == 5) {
+      socket.emit("checkWin", {
+        type: TYPE,
+        code: gObj.gameCode,
+        bbCnt: bbCnt,
+      });
+      console.log("Check Win Emitted!");
+    }
+    console.log("BBCount:", bbCnt);
+  };
+
+  const updateBBar = (p, cnt) => {
+    let b = ["B", "I", "N", "G", "O"];
+    for (let i = 0; i < cnt; i++) {
+      document.getElementsByClassName(`bbp${p}`)[i].innerHTML = b[i];
+    }
+  };
+
+  const restartGame = () => {
+    nums = [];
+    cuts = [];
+    $(".cell").each((index, element) => {
+      if ($(element).hasClass("cut1")) {
+        $(element).removeClass("cut1");
+      } else if ($(element).hasClass("cut2")) {
+        $(element).removeClass("cut2");
+      }
+      $(element).addClass("cll");
+    });
+    init();
+    for (let i = 0; i < 5; i++) {
+      document.getElementsByClassName(`bbp1`)[i].innerHTML = "&nbsp;";
+      document.getElementsByClassName(`bbp2`)[i].innerHTML = "&nbsp;";
+    }
+    if (TYPE === "host") {
+      $("#trnStts").html("Your Turn");
+    } else {
+      $("#trnStts").html(`${gObj.pName}'s Turn`);
+    }
+    $("#table").show();
+    $("#pre").hide();
+    $("#end").hide();
+
+    if (TYPE === "host") {
+      socket.emit("askRestart", { code: gObj.gameCode }); // to client
+    }
+  };
+
+  const sendReact = (x) => {
+    $("#reaction-btn").popover("hide");
+    socket.emit("sendReact", { r: x, type: TYPE, code: gObj.gameCode });
+    $("#reaction-btn").attr("disabled", true);
+    setTimeout(() => {
+      $("#reaction-btn").attr("disabled", false);
+    }, 4000);
+  };
+
+  const showReact = (x) => {
+    if (isAnimPlaying) {
+      anim.destroy();
+    }
+    isAnimPlaying = true;
+    let reacts = ["heart", "like", "laugh", "sad", "wow", "angry"];
+    document.getElementById("r-container").style.display = "flex";
+    anim = lottie.loadAnimation({
+      container: document.getElementById("reaction"),
+      renderer: "svg",
+      loop: false,
+      autoplay: true,
+      path: `emojis/${reacts[eval(x)]}.json`,
+    });
+    anim.addEventListener("complete", () => {
+      document.getElementById("r-container").style.display = "none";
+      anim.destroy();
+      isAnimPlaying = false;
+    });
+  };
+
+  const initReactions = () => {
+    let buttons = [
+      "fa-heart",
+      "fa-thumbs-up",
+      "fa-grin-squint-tears",
+      "fa-sad-tear",
+      "fa-surprise",
+      "fa-angry",
+    ];
+    let content = "";
+    buttons.forEach((item, index) => {
+      content += `<button class="btn btn-primary btn-xs reacts" onclick="sendReact(${index})"><i class="fas ${item}"></i></button>`;
+    });
+    $("#reaction-btn").popover({
+      placement: "right",
+      html: true,
+      sanitize: false,
+      content: `<div class="btn-group">${content}</div>`,
+    });
+  };
+
+  $(document).ready(() => {
+    preventBack();
+    initReactions();
+
+    $("#cpy").tooltip({
+      trigger: "click",
+      placement: "bottom",
+    });
+
+    $("#vibrate-btn").tooltip({
+      trigger: "click",
+      placement: "top",
+    });
+
+    $("#toggleChat").tooltip({ placement: "top" });
+
+    let clipboard = new ClipboardJS("#cpy", {
+      text: () => {
+        var txt = $("#gCode").html();
+        showTooltipCpy("Code Copied!");
+        return txt;
+      },
+    });
+
+    gObj = getData();
+    if (!gObj) {
+      window.location.href = BASE_URL;
+    }
+    if (TYPE === "host") {
+      if (!gObj.gameStarted) {
+        $("#game").hide();
+        $("#trnStts").html("Your Turn");
+      } else {
+        if (gObj.myChance) {
+          $("#trnStts").html("Your Turn");
+        } else {
+          $("#trnStts").html(`${gObj.pName}'s' Turn`);
+        }
+      }
+    } else {
+      $("#pre").hide();
+    }
+    socket = io.connect(BASE_URL);
+    socket.on("connect", () => {
+      if (TYPE === "host") {
+        if (!gObj.gameStarted) {
+          socket.emit("reqCode", PIN);
+        } else {
+          initGame();
+        }
+      } else {
+        socket.emit("connectClient", CODE);
+        if (!gObj.gameStarted) {
+          gObj.gameCode = CODE;
+        } else {
+          initGame();
+        }
+      }
+    });
+
+    socket.on("clientConnected", (flg) => {
+      // Client
+      if (flg == "true") {
+        initGame();
+        socket.emit("setName", {
+          name: gObj.name,
+          code: gObj.gameCode,
+          type: "client",
+        });
+      } else {
+        alert("Can't connect to this game!");
+        window.location.href = BASE_URL;
+      }
+      console.log(flg);
+    });
+
+    socket.on("partnerConnected", (flg) => {
+      // host
+      $("#game").show();
+      $("#pre").hide();
+      socket.emit("setName", {
+        name: gObj.name,
+        code: gObj.gameCode,
+        type: "host",
+      });
+      isClientConnected = true;
+    });
+    socket.on("partnerReConnected", (flg) => {
+      // host
+      $("#game").show();
+      $("#pre").hide();
+      isClientConnected = true;
+    });
+
+    socket.on("getName", (name) => {
+      // both
+      gObj.pName = name;
+      putData(gObj);
+      if (TYPE === "client") {
+        $("#trnStts").html(`${name}'s Turn`);
+      }
+      $("#brnm").html(`${name}'s`);
+    });
+
+    socket.on("gameCode", (code) => {
+      // host
+      $("#gCode").html(`${code}`);
+      gObj.gameCode = code;
+      initGame();
+    });
+    socket.on("receivedCut", (num) => {
+      // both
+      a1.play();
+      let i = gObj.gMatrix.indexOf(eval(num));
+      let e = document.getElementsByClassName("cell")[i];
+      $(e).removeClass("cll");
+      $(e).addClass("cut2");
+      cuts[i] = -1;
+      gObj.cMatrix = cuts;
+      gObj.myChance = true;
+      putData(gObj);
+      $("#trnStts").html("Your Turn");
+      checkBB();
+    });
+    socket.on("receivedBB", (cnt) => {
+      updateBBar(2, cnt);
+    });
+    socket.on("exit", (flg) => {
+      // both
+      gObj = { name: gObj.name };
+      putData(gObj);
+      window.location.href = BASE_URL;
+    });
+    socket.on("pause", (flg) => {
+      // host
+      $("#msg").html(
+        "Client disconnected! Game is paused untill reconnection!"
+      );
+      $("#game").hide();
+      $("#pre").show();
+      isClientConnected = false;
+      if (isChatboxOpened) {
+        $("#chat-modal").modal("hide");
+        isChatboxOpened = false;
+      }
+    });
+    socket.on("askBB", (data) => {
+      if (data.host) {
+        data.client = calcBB();
+      } else {
+        data.host = calcBB();
+      }
+      console.log("Finalize win emitted!!");
+      socket.emit("finalizeWin", { code: gObj.gameCode, data: data });
+    });
+    socket.on("win", (flg) => {
+      $("#trnStts").html("");
+      $("#table").hide();
+      $("#pre").hide();
+      if (flg == 1) {
+        $("#end_msg").html("You Win!");
+        a2.play();
+      } else if (flg == 0) {
+        $("#end_msg").html("Match Draw!");
+        a3.play();
+      } else if (flg == -1) {
+        $("#end_msg").html(`${gObj.pName} Won!`);
+        a4.play();
+      }
+      $("#end").show("slow");
+    });
+
+    socket.on("askedRestart", (flg) => {
+      restartGame();
+    });
+
+    socket.on("msgReceived", (msg) => {
+      let content = `
+      <div class="chat-bubble other">
+        <div class="chat-h">${gObj.pName}</div>
+        <span class="chat-msg">${msg}</span>
+      </div>
+      <span class="spacer">&nbsp;</span>`;
+      $("#chat-box").append(content);
+      if (!isChatboxOpened) {
+        totalUnread += 1;
+        $("#nBadge").show();
+        $("#nBadge").html(totalUnread);
+        showTooltipMsg(msg);
+      }
+      let objDiv = document.getElementById("chat-box");
+      objDiv.scrollTop = objDiv.scrollHeight;
+    });
+
+    socket.on("gotVibe", (flg) => {
+      navigator.vibrate =
+        navigator.vibrate ||
+        navigator.webkitVibrate ||
+        navigator.mozVibrate ||
+        navigator.msVibrate;
+      if (navigator.vibrate) {
+        navigator.vibrate([2000]);
+      }
+    });
+
+    socket.on("gotReact", (x) => {
+      showReact(x);
+    });
+  });
+</script>

@@ -1,0 +1,114 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 text-center">
+      <div class="card mb-3">
+        <h3 class="card-header">Bingo Dual Player</h3>
+        <div class="card-body">
+          <h5 class="card-title">Welcome Onboard!</h5>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your name..."
+              id="nbingo_name"
+            />
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Code"
+                    id="gid"
+                  />
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" id="j_btn">
+                      <i class="fas fa-door-open"></i>&nbsp;Join
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 text-center align-middle">
+              <h1>OR</h1>
+            </div>
+            <div class="col-sm-5">
+              <button
+                type="button"
+                style="width: 100%"
+                class="btn btn-primary"
+                id="c_btn"
+              >
+                <i class="fas fa-plus-square"></i>&nbsp;Create Game
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          Made with <i class="fas fa-heart" style="color: red"></i> by Akansh
+          Sirohi
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(() => {
+    let data = getData();
+    if (data != null) {
+      $("#nbingo_name").val(data.name);
+    }
+    $("#nbingo_name").on("input", (e) => {
+      let d = getData();
+      if (d != null) {
+        d.name = e.delegateTarget.value;
+      } else {
+        d = {
+          name: e.delegateTarget.value,
+        };
+      }
+      putData(d);
+    });
+    $("#j_btn").click(() => {
+      let n = $("#nbingo_name").val();
+      if (n.length > 2) {
+        let gid = $("#gid").val();
+        gid = gid.toLowerCase();
+        let dd = getData();
+        if (dd != null) {
+          if (dd.gameStarted) {
+            if (dd.gameCode != gid) {
+              putData({ name: dd.name });
+            }
+          }
+        }
+        window.location.href = `/game?code=${gid}`;
+      } else {
+        alert("Please enter valid name!");
+      }
+    });
+    $("#c_btn").click(() => {
+      let n = $("#nbingo_name").val();
+      if (n.length > 2) {
+        let dd = getData();
+        if (dd.gameStarted) {
+          putData({ name: dd.name });
+        }
+        let gid = $("#gid").val();
+        if (gid.startsWith("$")) {
+          gid = gid.replace("$", "");
+          window.location.href = `/game?secret=${gid}`;
+        } else {
+          window.location.href = `/game`;
+        }
+      } else {
+        alert("Please enter valid name!");
+      }
+    });
+  });
+</script>

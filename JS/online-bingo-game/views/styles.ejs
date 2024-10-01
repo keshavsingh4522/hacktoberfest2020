@@ -1,0 +1,123 @@
+<style>
+  .table {
+    border: 2px solid #333;
+    border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+    max-width: 50rem;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .r {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .r:not(:last-child) {
+    border: 2px solid;
+    border-color: #ffffff00 #ffffff00 #333 #ffffff00;
+    border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  }
+  .cell:not(:last-child) {
+    border: 2px solid;
+    border-color: #ffffff00 #333 #ffffff00 #ffffff00;
+    border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  }
+  .cell {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+  }
+  .parent {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+  }
+  .cll:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  .cut1 {
+    background-image: url("assets/cut1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .cut2 {
+    background-image: url("assets/cut2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .fab-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  .fab-btn:hover {
+    box-shadow: 2px 2px 3px #999;
+    right: 31px;
+  }
+  .badge {
+    position: absolute;
+    bottom: 0;
+  }
+  .chat-box {
+    display: flex;
+    flex-flow: column;
+    height: 65vh;
+    max-height: 65vh;
+    overflow-y: auto;
+  }
+
+  .chat-bubble {
+    width: 70%;
+    max-width: 70%;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+    padding: 10px 0px 20px 0px;
+    height: max-content;
+    border-color: #333;
+    border-style: solid;
+    border-width: 2px;
+  }
+  .chat-h {
+    border-bottom-style: solid;
+    border-bottom-color: #333;
+    border-bottom-width: 2px;
+    border-radius: 7rem 8rem 8rem 8rem / 4rem 5rem 6rem 6rem;
+    padding-left: 20px;
+  }
+  .me {
+    align-self: flex-end;
+  }
+  .other {
+    align-self: flex-start;
+  }
+  .chat-msg {
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+  }
+  .r-container {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  .reaction {
+    height: 50vh;
+  }
+</style>
