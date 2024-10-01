@@ -3,9 +3,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+int main(void)      //Execution of every program start from main() function.
 {
-    int s,i,j,current;
+    int s,i,j,current;  //Variable declaration.
     cout<<"enter size of array :";
     cin>>s;
     int arr[s];
@@ -27,7 +27,7 @@ int main()
         j++;
         arr[j]=current;
     }
-    for(i=0;i<s;i++)
+    for(i=0;i<s;i++)  
     {
         cout<<arr[i]<<" ";
     }

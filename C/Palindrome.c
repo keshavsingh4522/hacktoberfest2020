@@ -14,7 +14,7 @@ bool isPalindrome(int a)
     return rev == backup;
 }
 
-int main()
+int main(void)      //Execution of each program start from main() function.
 {
     int n = 122;
 
