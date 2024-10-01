@@ -1,25 +1,47 @@
-# first install these packages
-# pip install numpy
-# pip install opencv-python
-# pip install PyAutoGUI
-
 import cv2
 import numpy as np
-import pyautogui
+from PIL import ImageGrab
 
-SCREEN_SIZE = (1920, 1080)
-fourcc = cv2.VideoWriter_fourcc(*"XVID")
-out = cv2.VideoWriter("Output.avi", fourcc, 20.0,(SCREEN_SIZE))
 
-while True:
-    img = pyautogui.screenshot()
-    frame = np.array(img)
-    frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
-    out.write(frame)
+def screenRec():
 
-    # if user press q exit
-    if cv2.waitKey(1) == ord("q"):
-        break
+    # defining the codec
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
 
-cv2.destroyAllWindows()
-out.release()
+    # defining frame rate of the output video
+    fps = 8.0
+
+    # outout video
+    out = cv2.VideoWriter('output.avi', fourcc, fps, (1366, 768))
+
+    while(True):
+
+        # take a snapshot of the screen using imagegrab
+        img = ImageGrab.grab()
+
+        # convert this image to numpy array
+        img_np = np.array(img)
+
+        # reads colors as BGR
+        frame = cv2.cvtColor(img_np, cv2.COLOR_BGR2RGB)
+
+        # DISPLAY this frames as video
+        win_title = "Screen Recorder"
+        cv2.imshow(win_title, frame)
+
+        # output the frame
+        out.write(frame)
+
+        # wait for 'q' key to stop recording (program)
+        if(cv2.waitKey(1) & 0XFF == ord('q')):
+            break
+
+    # close the window and release recording
+    out.release()
+
+    # de-allocate any associated memory usage
+    cv2.destroyAllWindows()
+
+
+# call screenrec function
+screenRec()
