@@ -1,24 +1,40 @@
-#include<stdio.h>
+// C program for implementation of Bubble sort
+#include <stdio.h>
+ void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+ 
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+   int i, j;
+   for (i = 0; i < n-1; i++)     
+ 
+       // Last i elements are already in place  
+       for (j = 0; j < n-i-1; j++)
+           if (arr[j] > arr[j+1])
+              swap(&arr[j], &arr[j+1]);
+}
+ 
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+ 
+// Driver program to test above functions
 int main()
 {
-   int n, temp, i, j;
-   printf ("Enter No of elements in the array \n");
-   scanf("%d",&n);
-   int number[n];
-   printf ("Enter the elements of array \n");
-   for(int i=0;i<n;i++)
-    scanf("%d",&number[i]);
-   for(i=n-2;i>=0;i--){
-      for(j=0;j<=i;j++){
-        if(number[j]>number[j+1]){
-           temp=number[j];
-           number[j]=number[j+1];
-           number[j+1]=temp;
-        }
-      }
-   }
-   printf("Sorted elements: ");
-   for(i=0;i<n;i++)
-      printf(" %d",number[i]);
-   return 0;
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
+    return 0;
 }
