@@ -5,18 +5,18 @@ using namespace std;
 
 int multiply(int x, int a[], int size)
 {
-    int carry = 0, i, p;
+    int c = 0, i, p;
 
     for (i = 0; i < size; ++i)
     {
-        p = a[i] * x + carry;
+        p = a[i] * x + c;
         a[i] = p % 10;
-        carry = p / 10;
+        c = p / 10;
     }
-    while (carry != 0)
+    while (c != 0)
     {
-        a[size] = carry % 10;
-        carry = carry / 10;
+        a[size] = c % 10;
+        carry = c / 10;
         size++;
     }
     return size;
