@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Utpal29/Weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Utpal29/Weather-app/issues"
+  },
+  "homepage": "https://github.com/Utpal29/Weather-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

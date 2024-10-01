@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico">
+    <title>Weather App</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="weather-side">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+                <h2 class="date-dayname"></h2>
+                <span class="date-day"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-map-pin">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="location" id="w-location"></span>
+            </div>
+            <div class="weather-container">
+                <img id="w-icon">
+                <h1 class="weather-temp" id="w-temp"></h1>
+                <h3 class="weather-desc" id="w-desc"></h3>
+            </div>
+        </div>
+        <div class="info-side">
+            <div class="today-info-container">
+                <div class="today-info">
+                    <div class="humidity data">
+                        <span class="title">HUMIDITY</span>
+                        <span class="value" id="w-humidity"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="wind data">
+                        <span class="title">WIND</span>
+                        <span class="value" id="w-wind"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="dewpoint data">
+                        <span class="title">DEWPOINT</span>
+                        <span class="value" id="w-dewpoint"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="feels-like data">
+                        <span class="title">FEELS LIKE</span>
+                        <span class="value " id="w-feels-like"></span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-container">
+                <button class="location-button" id="locationBtn"><span>Change location</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Chooose Location</h2>
+                <div class="line"></div>
+            </div>
+            <div class="modal-body">
+                <form id="w-form">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="close" class="close location-button">Close</button>
+                <button type="button" id="w-change-btn" class="location-button">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./storage.js"></script>
+    <script src="./weather.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

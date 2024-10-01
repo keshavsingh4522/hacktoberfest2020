@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+:root {
+    --gradient: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 1.25em;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #343d4b;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.container {
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    background-color: #222831;
+    color: #ffffff;
+    height: 400px;
+}
+
+.weather-side {
+    position: relative;
+    height: 100%;
+    border-radius: 25px;
+    background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+    width: 300px;
+    -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    -o-transition: transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    -webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+    transform: translateZ(0) scale(1.02) perspective(1000px);
+    float: left;
+}
+
+.weather-side:hover {
+    -webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+    transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: var(--gradient);
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+.date-container {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.date-dayname {
+    margin: 0;
+}
+
+.date-day {
+    display: block;
+}
+
+.location {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.location-icon {
+    display: inline-block;
+    height: 0.8em;
+    width: auto;
+    margin-right: 5px;
+}
+
+.weather-container {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+
+.weather-icon.feather {
+    height: 60px;
+    width: auto;
+}
+
+.weather-temp {
+    margin: 0;
+    font-weight: 700;
+    font-size: 4em;
+}
+
+.weather-desc {
+    margin: 0;
+}
+
+.info-side {
+    position: relative;
+    float: left;
+    height: 100%;
+    padding-top: 25px;
+}
+
+.today-info {
+    padding: 15px;
+    margin: 0 35px 25px 35px;
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.today-info>div .title {
+    float: left;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.today-info>div .value {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.data {
+    margin: 0rem;
+}
+
+.location-container {
+    padding: 25px 35px;
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+}
+
+.location-button {
+    outline: none;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-image: var(--gradient);
+    color: #ffffff;
+    font-weight: 700;
+    -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 200ms ease;
+    transition: -webkit-transform 200ms ease;
+    -o-transition: transform 200ms ease;
+    transition: transform 200ms ease;
+    transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.location-button:hover {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.location-button .feather {
+    height: 1em;
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Modal */
+
+.modal {
+    color: #fff;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #212730;
+    margin: auto;
+    padding: 0;
+    width: 650px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.modal-header {
+    padding: 1rem;
+    /* text-align: center; */
+}
+
+.line {
+    height: 0.1rem;
+    background: var(--gradient);
+    width: 100%;
+}
+
+.modal-body {
+    padding: 0 0 2rem 0;
+}
+
+.form {
+    width: 100%;
+}
+
+.form-group {
+    margin: 0.3rem;
+    text-align: left;
+}
+
+label {
+    margin-right: 2rem;
+}
+
+input {
+    float: right;
+}
+
+input:focus {
+    outline: 1.5px solid #212730;
+}
+
+.modal-footer {
+    padding-bottom: 1rem;
+    display: flex;
+}
+
+.modal-footer button {
+    margin: 0 3rem;
+    width: 10rem;
+}
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@media (max-width: 600px) {
+    .info-side {
+        float: none;
+        padding-top: 1.4rem;
+    }
+    .weather-side {
+        float: none;
+        /* clear: both; */
+    }
+    /* .container {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background-color: none;
+    } */
+
+    .location-container {
+        bottom: 7rem;
+    }
+
+    .weather-side:hover {
+        transform: none;
+    }
+
+    body {
+        align-items: start;
+        padding-top: 2rem;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .modal-footer button {
+        margin: 0.2rem 3rem;
+    }
+}
