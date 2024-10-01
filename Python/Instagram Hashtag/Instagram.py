@@ -37,7 +37,7 @@ def instagram():
     total_time = (end - start).total_seconds()
     print(f"\nDone!")
 
-    input(f"Total time taken : {total_time} seconds")
+    input(f"Total time taken is : {total_time} seconds")
 
 
 if __name__ == '__main__':
