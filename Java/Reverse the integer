@@ -1,0 +1,29 @@
+https://leetcode.com/problems/reverse-integer/
+
+class Solution {
+    public int reverse(int x) {
+         int number;
+        int answer;
+        int dup = x;
+        String str = "";
+        if ( x < 0) {
+            x = (~(x - 1));
+        }
+        if( x == 0) { return 0; }
+    while(x > 0) {
+        number = x % 10;
+        
+        str += number;
+        
+        x = x / 10;
+    }
+      try { 
+        answer = Integer.parseInt(str);
+      } catch(Exception e) {
+          answer = 0;
+      }
+        if(dup < 0) { answer  = (~(answer - 1)); }
+        return answer;
+    }
+}
+    
