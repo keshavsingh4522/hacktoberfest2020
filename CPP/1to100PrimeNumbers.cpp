@@ -2,13 +2,11 @@
 using namespace std;
 
 int main() {
-    
-    int i,j;
 
-    for(i=2;i<101;i++) {
-    bool x=true;
+    for(int i=2;i<=100;i++) {
+    bool x = true;
     
-    for (j=2;j<(i-1);j++) {
+    for (int j=2;j<(i-1);j++) {
 
     if(i%j==0) {
         x=false;
