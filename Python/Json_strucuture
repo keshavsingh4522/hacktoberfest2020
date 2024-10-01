@@ -1,0 +1,14 @@
+ {
+        "date": "2021-10-26",
+        "ep": "400",
+        "guests": [],
+        "hosts": [
+            "wes-bos",
+            "scott-tolinski"
+        ],
+        "keywords": [
+            "javascript"
+        ],
+       "permalink": "https://syntax.fm/show/289/hasty-treat-enums-in-js-graphql-and-typescript",
+        "title": "Enums in JS (GraphQL and Typescript)"
+    }
