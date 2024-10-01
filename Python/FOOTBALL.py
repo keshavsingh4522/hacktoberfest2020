@@ -33,6 +33,7 @@ def main():
         if (user_turn == 5 and computer_turn == 5):
             print ()
             #print (f"User total turns: {user_turn}", f"Computer total turns: {computer_turn}")
+       
             break
 
         #Declare winner
@@ -113,3 +114,4 @@ def goalkeeper_action(direction):
 
 if __name__ == "__main__":
     main()
+exit()
