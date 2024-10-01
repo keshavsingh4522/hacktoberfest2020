@@ -1,0 +1,178 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+    margin: 20px;
+}
+
+.arena {
+    width: 831px;
+    height: 422px;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+div.kotak {
+    margin: 75px 100px;
+    float: left;
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    cursor: auto;
+    background-size: 75px;
+}
+
+div#score {
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    border: 2px grey;
+    /* background-color: red; */
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    text-align: left;
+}
+
+
+
+
+div#reset {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 50px;
+    text-align: right;
+    background-color: red;
+    text-align: center;
+    border-radius: 15%;
+    color: white;
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+div#reset:hover {
+    background-color: rgb(236, 99, 99);
+}
+
+div#reset:active {
+    transform: scale(0.9);
+}
+
+.mole-img {
+    transition: .2s;
+}
+
+
+@keyframes downAnimation {
+    0% {top: 0%;}
+    100% {top: 100%;}
+}
+
+@keyframes biggerAnimation {
+    0% {transform: scale(1);}
+    50% {transform: scale(2);}
+    100% {transform: scale(1);}
+}
+
+
+
+body {
+    overflow: hidden;
+}
+
+.down {
+    animation-name: downAnimation;
+    animation-duration: .5s;
+    animation-direction: normal;
+}
+
+.bigger {
+    animation-name: biggerAnimation;
+    animation-duration: .5s;
+}
+
+.start {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000008c;
+    z-index: 200;
+    /* margin-top: 1000px; */
+    
+}
+
+.start p {
+    background-color: lawngreen;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.start p:hover {
+    filter: brightness(50%);
+}
