@@ -1,16 +1,21 @@
 #include<stdio.h>
 
+int sum(int n);
+
     int main(){
-       int a;
-       int i=0;
-       int c=0;
-       printf("enter the value of no till which required to be added\n");
-       scanf("%d",&a);
-       while (i<(a+1)){
-          c=(c+i);
-          i++;
-       }
-       printf("result is %d",c);
-       return 0;
+        int a;
+        printf("Enter the number till which the sum has to be calculated\n");
+        scanf("%d", &a);
+        printf("The sum of %d natural numbers is %d\n", a, sum(a));
+        return 0;
     }
+
+int sum(int n){
+if(n==0){
+    return 0;
+}
+    else{
+        return n * (n+1)/2;
+    }
+}
 
