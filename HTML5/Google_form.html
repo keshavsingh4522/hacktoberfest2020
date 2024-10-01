@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <br>
+        <h1>Custom HTML Forms to Google Sheet</h1>
+      <br>
+      <div id="form">
+        <form>
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control form-data" id="Name">
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control form-data" id="Email">
+          </div>
+          <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="text" class="form-control form-data" id="Age">
+          </div>
+          <div class="form-group">
+            <label for="Company">Company</label>
+            <input type="text" class="form-control form-data" id="Company">
+          </div>
+          <div class="form-group">
+            <label for="Mob">Mob</label>
+            <input type="text" class="form-control form-data" id="Mob">
+          </div>
+          <button type="button" class="btn btn-primary" onclick="send_data()">Submit</button>
+        </form>
+      </div>
+
+      <!-- Optional if you want to give a completion feedback! -->
+      <div id="completion-msg" style="display: none;">
+        Thank you for completing this form!
+      </div>
+
+    </div>
+
+    <script>
+      function send_data(){
+        var form_data = document.getElementsByClassName("form-data"); //retrieve filled form data
+        var i;
+        var data = [];
+        for(i=0; i<form_data.length; i++){
+          data.push(form_data[i].value);
+        }
+        google.script.run.saveData(data); // send to google app script
+        document.getElementById("form").style.display = "none"; // make form invisible
+        document.getElementById("completion-msg").style.display = "block"; // Optional if you want to give a completion feedback!
+      }
+    </script>
+
+  </body>
+</html>
