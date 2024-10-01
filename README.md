@@ -2,7 +2,7 @@
     <b>dont contribute in this repo, contribute only in below mentioned repo</b>
 </div>
 
-# Special Note For Everyone
+# </>Special Note For Everyone</>
 ```py
 '''
 always make more then 4 pull request
@@ -200,6 +200,7 @@ Steps for adding your name below
 
 Contributions of any kind welcome!
 
+Importent:
 >    NOTE: if you should be on the list of contributors but we forgot you, don't be shy and let us know!
 
 ## License
