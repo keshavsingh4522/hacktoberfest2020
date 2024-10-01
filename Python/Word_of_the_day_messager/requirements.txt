@@ -1,0 +1,8 @@
+random
+os
+sys
+logging
+twilio.rest
+PyDictionary 
+pronouncing
+word_dataset.txt
