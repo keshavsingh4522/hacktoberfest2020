@@ -1,0 +1,45 @@
+<html>
+<head>
+<title> Sorting </title>
+</head>
+<body>
+<script>
+function sort()
+{
+   var values=[];
+   var a=0,b=0;
+   for (a=0; a<5; a++)
+   {
+       values.push(Number(prompt("Enter item value at no. " + (a+1))));
+   }
+   document.write("<font face='arial' size='4'>Input");
+   document.write(" given by the user </font>");
+   document.write("<br><br>");
+   for (a=0;a<5; a++)
+   {
+       document.write("<font face='arial' size='4'> " +values[a] + "");
+   }
+   for (a = 0; a < ( 5 - 1 ); a++)
+   {
+       for (b = 0; b < 5 - a - 1; b++)
+       {
+           if (values[b] > values[b+1])
+           {
+               swap= values[b];
+               values[b]= values[b+1];
+               values[b+1] = swap;
+           }
+       }
+   }
+   document.write("<br><br>");
+   document.write("<font face='arial' size='4'>Sorted List of Numbers </font>");
+   document.write("<br><br>");
+   for (a=0; a<5; a++)
+   {
+       document.write("<font face='arial' size='4'> " + values[a]+"</font>");
+   }
+}
+</script>
+<button onclick="sort()">click to start accepting array</button>
+</body>
+</html>
