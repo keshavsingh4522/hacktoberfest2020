@@ -20,6 +20,9 @@ print('\n')
 
 length = int(input('Length of password: '))
 
+if(length<8):
+	print("While we will still generate the password it is recommended to have a password 8 characters or longer")
+
 n = 0
 password = ""
 index = len(characters)
