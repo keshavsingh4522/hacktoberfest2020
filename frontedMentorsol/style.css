@@ -1,0 +1,87 @@
+/* fontfamiliy  */
+/*
+
+font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif;
+
+ */
+ /* ### Primary */
+/*
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): h
+
+### Neutral
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
+
+*/
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(233, 47%, 7%);
+    color: hsl(0, 0%, 100%);
+}
+.container{
+    margin: 10% 6%;
+}
+.container-card{
+    background-color: hsl(244, 38%, 16%) ;
+    padding: 3%;
+    width: 45%;
+    border-radius: 10px 0px 0px 10px;
+}
+.heading-span{
+    color:hsl(277, 64%, 61%) ;
+}
+.heading-h2{
+    font-weight: 700;
+    font-size:2.3rem; 
+    margin: 2% 2% 2% 3%;
+}
+.heading-para{
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin: 6% 10% 10% 3%; 
+    line-height: 1.5;
+}
+.stats{
+    display: inline-block;
+    margin: 10% 3% 0% ;
+}
+.stats-h3{
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+.stats-h4{
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+.container-img{
+    border-radius: 0px 10px 10px 0px;
+    padding-left: 0px;
+    width: 45%;
+    background: url(images/image-header-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.above-img{
+    background-color:  #6b229e;
+    opacity: 0.6;
+    height: 100%;
+    width: 102%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+@media only screen and (max-width: 375px){
+    .container-card{
+        position: relative;
+        top: 12px;
+    }
+}
