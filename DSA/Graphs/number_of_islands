@@ -1,0 +1,41 @@
+class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        if (grid.empty() || grid[0].empty()) {
+            return 0;
+        }
+
+        int numIslands = 0;
+        int numRows = grid.size();
+        int numCols = grid[0].size();
+
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                if (grid[i][j] == '1') {
+                    numIslands++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+
+        return numIslands;
+    }
+
+private:
+    void dfs(vector<vector<char>>& grid, int row, int col) {
+        int numRows = grid.size();
+        int numCols = grid[0].size();
+
+        if (row < 0 || col < 0 || row >= numRows || col >= numCols || grid[row][col] == '0') {
+            return;
+        }
+
+        grid[row][col] = '0'; // Mark the current cell as visited
+
+        // Explore adjacent cells in all four directions
+        dfs(grid, row + 1, col);
+        dfs(grid, row - 1, col);
+        dfs(grid, row, col + 1);
+        dfs(grid, row, col - 1);
+    }
+};
