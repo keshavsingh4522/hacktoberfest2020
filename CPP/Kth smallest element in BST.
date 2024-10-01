@@ -1,0 +1,30 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int ans;
+    int c=0;
+    void kfind(TreeNode* root,int k){
+        if(!root)
+            return;
+        kfind(root->left,k);
+        if(k==++c){
+             ans=root->val;
+         return;
+        }
+        kfind(root->right,k);
+    }
+    int kthSmallest(TreeNode* root, int k) {
+          kfind(root,k);
+        return ans;
+    }
+};
