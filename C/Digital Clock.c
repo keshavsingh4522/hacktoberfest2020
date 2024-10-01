@@ -1,45 +1,42 @@
-#include <stdio.h>
-#include <time.h> //for sleep() function
-#include <unistd.h>
-#include <stdlib.h>
- 
-int main()
-{
-    int hour, minute, second;
-     
-    hour=minute=second=0;
- 
-    while(1)
-    {
-        //clear output screen
-        system("clear");
-         
-        //print time in HH : MM : SS format
-        printf("%02d : %02d : %02d ",hour,minute,second);
-         
-         //clear output buffer in gcc
-        fflush(stdout);
-         
-         //increase second
-        second++;
- 
-        //update hour, minute and second
-        if(second==60){
-            minute+=1;
-            second=0;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace DigitalClock_1._0 {
+    public partial class Form1: Form {
+        bool formatAm_PM;
+        public Form1() {
+            InitializeComponent();
         }
-        if(minute==60){
-            hour+=1;
-            minute=0;
+        private void Form1_Load(object sender, EventArgs e) {
+            timer1.Start();
         }
-        if(hour==24){
-            hour=0;
-            minute=0;
-            second=0;
+        private void timer1_Tick(object sender, EventArgs e) {
+            if (formatAm_PM == true) {
+                lbl24Time.Text = DateTime.Now.ToString("hh:mm");
+            } else {
+                lbl24Time.Text = DateTime.Now.ToString("HH:mm");
+            }
+            lblsec.Text = DateTime.Now.ToString("ss");
+            lblMonth.Text = DateTime.Now.ToString("MMM dd yyyy");
+            lblDay.Text = DateTime.Now.ToString("dddd");
         }
-         
-        sleep(1);   //wait till 1 second
+        private void btnClose_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+        private void btnChangeformat_Click(object sender, EventArgs e) {
+            if (btnChangeformat.Text == "12H") {
+                formatAm_PM = true;
+                btnChangeformat.Text = "24H";
+            } else {
+                formatAm_PM = false;
+                btnChangeformat.Text = "12H";
+            }
+        }
     }
- 
-    return 0;
 }
