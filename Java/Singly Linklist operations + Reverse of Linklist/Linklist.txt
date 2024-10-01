@@ -1,0 +1,147 @@
+						LINKLIST
+package LLlinkedlist;
+
+public class ll1 {
+// created a node class 
+	static class Node {
+		int data;
+		Node next;
+	}
+
+// linked_list class for (1.)insert   (2.)size    (3.)insert at    (4.) Many more. 
+	static class Linked_List {
+		// created a head pointer
+		static Node head;
+
+		public static void insert(int data) {
+			// created a new node with data given by user and next with null
+			Node node = new Node();
+			node.data = data;
+			node.next = null;
+
+// if LinkedList is empty then points head to it.			
+			if (head == null) {
+				head = node;
+
+			}
+
+// else temp variable to insert node at last.			
+			else {
+				Node n = head;
+				while (n.next != null) {
+					n = n.next;
+
+				}
+				n.next = node;
+			}
+
+		}
+
+		// insert at first
+
+		public static void insertAtFirst(int data) {
+			Node node = new Node();
+			node.data = data;
+			node.next = head;
+			head = node;
+
+		}
+
+		// Insert at given Index
+		public static void insertAt(int index, int data) {
+			Node node = new Node();
+			node.data = data;
+			Node n = head;
+			
+			
+			// Check If Index = 0 then we call for insert at first
+			if (index == 0) {
+				insertAtFirst(data);
+			} 
+			
+			// else call for Add at index
+			else {
+				for (int i = 0; i < index - 1; i++) {
+					n = n.next;
+				}
+				node.next = n.next;
+				n.next = node;
+
+			}
+		}
+// Method to display
+		public static void show() {
+			Node temp = head;
+			int size = 0;
+			while (temp.next != null) {
+				System.out.print(temp.data + " " + "->" + " ");
+				size++;
+				temp = temp.next;
+			}
+			System.out.println("SIZE" + "=" + size);
+		}
+		//to reverse a link list
+		
+	public static void reverse() {
+		Node pre = null;
+		Node current = head;
+		Node nxt ;
+		 while(current!=null) {
+		
+		//current = head;
+		nxt = current.next;
+		current.next= pre;
+		pre = current;
+		current = nxt;
+		
+		 }
+		 head = pre;
+		
+		
+		
+		
+		
+		
+	}
+	}
+	// calculate sum
+	public static long sum(Node head) {
+		long sum =0;
+		Node temp = head;
+		while(temp.next!=null) {
+		sum = (sum+temp.data)*10;
+		temp = temp.next;}
+		System.out.println("Sum ::" + sum);
+		return sum;
+		
+	}
+	
+	
+	
+// Driver code
+	public static void main(String[] args) {
+		Linked_List ll = new Linked_List();
+		Node head ;
+		ll.insert(1);
+		ll.insert(1);
+		ll.insert(2);
+		ll.insert(3);
+		ll.insert(4);
+		ll.insert(5);
+		ll.insert(6);
+		ll.insert(7);
+		ll.insert(8);
+		
+		ll.show();
+	//long s1=	ll.sum(head);
+		ll.reverse();
+		//System.out.println("reverse");
+		ll.show();
+
+		
+		
+		
+	}
+	}
+
+
