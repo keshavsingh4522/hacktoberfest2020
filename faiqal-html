@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML</title>
+</head>
+<body style="background-color: #a6c8ff; color: #2e3033;">
+	<h1><center>Introduce</center></h1>
+	<div align="center">
+	<img src="1.png" style="width: 10%; border-radius: 0px;;">
+	</div>
+	<h1>Nama : Muhammad Faiq Al Harist</h1>
+	<h1>Kelas : X RPL A</h1>
+	<h1>Alamat : Bekasi Regensi 2 Blok DD 9 No.36</h1>
+	<h1>Hobby : Berenang, bermain game.</h1>
+
+</body>
+</html>
