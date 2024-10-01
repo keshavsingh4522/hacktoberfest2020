@@ -5,14 +5,14 @@
 # Special Note For Everyone
 ```py
 '''
-always make more then 4 pull request
-lets you have made only 4 pull request to different projects
-but one project is excluded from hackoctoberfest event then your pull request will not be count and 
-then you have remains 3 valid pull request if these projects is not excluded.
-if you fail to make 4 pull request then you cant get swags or t-shirts.
+Always make more then 4 pull requests.
+Let us suppose you have made only 4 pull requests in different projects,
+but one project is excluded from hackoctoberfest event, then your pull request will not be counted and 
+you will have remaining 3 valid pull request if those projects are not excluded.
+If you fail to make 4 pull request then you will not be applicable to get swags or t-shirts.
 
-i will recommend you make pull request to your own repo which is very very saffest side for you..
-keep in mind that repo has hacktoberfest topic..
+I will recommend you to make pull requests to your own repo, which is the safest option for you...
+Keep in mind that repo has hacktoberfest topic included...
 '''
 ```
 
@@ -44,7 +44,7 @@ keep in mind that repo has hacktoberfest topic..
 📢 **Register [here](https://hacktoberfest.digitalocean.com) for Hacktoberfest and make four pull requests (PRs) between October 1st-31st to grab free SWAGS 🔥.**
 
 
-> Upload your code in this repository to particular section if folder is not present then create folder.
+> Upload your code in this repository to the particular section. If the folder is not present then create a new folder.
 > some more repos for contribution
 
 | Repository                                                  | Issues                                                                                                                                                           | Pull Requests                                                                                                                                                     | Forks                                                                                                                                                             |
@@ -60,7 +60,7 @@ keep in mind that repo has hacktoberfest topic..
 
 ## Rules
 
-- Don't use filthy words and be welcome for beginners and other people in this community.
+- Don't use filthy words and be welcoming for beginners and other people in this community.
 
 ---
 
