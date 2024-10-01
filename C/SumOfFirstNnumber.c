@@ -1,16 +1,15 @@
 #include<stdio.h>
-
-    int main(){
-       int a;
-       int i=0;
-       int c=0;
-       printf("enter the value of no till which required to be added\n");
-       scanf("%d",&a);
-       while (i<(a+1)){
-          c=(c+i);
-          i++;
-       }
-       printf("result is %d",c);
-       return 0;
-    }
-
+int sum(int n)
+{
+    if(n==1)
+    return 1;
+    else
+    return n+sum(n-1);
+}
+int main()
+{
+    int n;
+    printf("Enter the value of no till which required to be added\n\n");
+    scanf("%d",&n);
+    printf("The sum of first %d is %d",n,sum(n));
+}

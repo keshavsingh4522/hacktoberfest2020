@@ -1,24 +1,37 @@
 #include<stdio.h>
-int main()
+void swap(int *x,int *y)///swapping function
 {
-   int n, temp, i, j;
-   printf ("Enter No of elements in the array \n");
-   scanf("%d",&n);
-   int number[n];
-   printf ("Enter the elements of array \n");
-   for(int i=0;i<n;i++)
-    scanf("%d",&number[i]);
-   for(i=n-2;i>=0;i--){
-      for(j=0;j<=i;j++){
-        if(number[j]>number[j+1]){
-           temp=number[j];
-           number[j]=number[j+1];
-           number[j+1]=temp;
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}
+void bubblesort(int number[],int n)///Bubble sort function
+{
+   for(int i=0;i<n-1;i++)
+   {
+      for(int j=0;j<n-i-1;j++)
+      {
+        if(number[j]>number[j+1])
+        {
+          swap(&number[j],&number[j+1]);
         }
       }
    }
-   printf("Sorted elements: ");
-   for(i=0;i<n;i++)
-      printf(" %d",number[i]);
-   return 0;
+}
+int main()//main drive
+{
+    int n, temp, i, j;
+    printf ("Enter Number of data for array \n");//
+    scanf("%d",&n);
+    int number[n];
+    printf ("Enter the data of array \n");
+    for(int i=0;i<n;i++)
+    {
+       scanf("%d",&number[i]);
+    }
+    bubblesort(number,n);///bubblesort function call
+    printf("Sorted elements: ");
+    for(i=0;i<n;i++)
+    printf(" %d",number[i]);///sorted array print
 }
