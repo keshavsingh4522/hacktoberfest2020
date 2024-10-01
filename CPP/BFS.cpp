@@ -1,48 +1,42 @@
-#include<bits/stdc++.h> 
-#include<ext/pb_ds/assoc_container.hpp>
-#include<ext/pb_ds/tree_policy.hpp>
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
-const unsigned int M = 1000000007;
+#include<bits/stdc++.h>
+
 using namespace std;
-// Check
-using namespace __gnu_pbds;
-typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> T_set; // PBDS_set
-typedef tree<int,null_type,less_equal<int>,rb_tree_tag,tree_order_statistics_node_update> T_multiset; // PBDS_multiset
 
-void solve()
-{
-    int n ,m,u,v;
-    cin>>n>>m;
-    vector<list<int>> adj(n+1);
-    vector<bool> vis(n+1,false);
-    for(int i = 0; i < n ; i++ ){
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-    queue<int> temp;
-    temp.push(1);
-    vis[1] = true;
-    while(!temp.empty()){
-        int curr = temp.front();
-        cout<<curr<<" ";
-        temp.pop();
-        for(int elem : adj[curr]){
-            if(!vis[elem]){
-                temp.push(elem);
-                vis[elem] = true;
-             }
-        }
-    }
+void BFS(vector<int>adj[],int u,int v,bool visited[]){
+	
+	list<int>queue;
+	visited[u]=true;
+	queue.push_back(u);
+	while(!queue.empty()){
+		int s=queue.front();
+		cout<<s<<" ";
+		queue.pop_front();
 
+		   
+		for(auto x:adj[s]){
+			if(!visited[x]){
+				visited[x]=true;
+				queue.push_back(x);
+			}
+		}
+	}
 }
-int main()
-{
-ios_base::sync_with_stdio(false);
-cout.tie(NULL);
-cin.tie(NULL);
-solve();
-return 0;
+
+int main(){
+	int v,e;
+	cin>>v>>e;
+	vector<int>adj[v];
+	for(int i=0;i<e;i++)
+	{
+		int u,v;
+		cin>>u>>v;
+		adj[u].push_back(v);
+		//adj[v].push_back(u);
+	}
+	bool visited[v];
+	for(int i=0;i<v;i++){
+		visited[i]=false;
+	}
+	BFS(adj,2,v,visited);
+	
 }
