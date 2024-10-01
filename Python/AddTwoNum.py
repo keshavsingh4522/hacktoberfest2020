@@ -1,6 +1,6 @@
 # just change Add to sum two numbers wether in float or int
-num1 = 15.0
-num2 = 12.0
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: ")
 
 # change Add to sum 
 sum = num1 + num2 
