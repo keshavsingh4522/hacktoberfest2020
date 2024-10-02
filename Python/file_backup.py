@@ -4,8 +4,8 @@ import datetime
 import schedule
 import time
 
-source_dir = r'C:\Users\Rimmon Bhowmick\OneDrive\Desktop\Python File'
-destination_dir = r'C:\Users\Rimmon Bhowmick\OneDrive\Desktop\Backup'
+source_dir = r''
+destination_dir = r''
 
 def copy_folder_to_directory(source, dest):
     today = datetime.date.today()
@@ -18,7 +18,6 @@ def copy_folder_to_directory(source, dest):
         print(f'Folder Already exists in: {dest}')
     except Exception as e:
         print(f'Error copying folder: {e}')
-
 
 schedule.every().day.at("10:30").do(lambda: copy_folder_to_directory, source_dir, destination_dir)
 
