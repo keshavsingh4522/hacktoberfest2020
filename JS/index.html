@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category-Based Random Quote Generator</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="quote-box">
+      <p class="quote">"Select a category to generate a quote"</p>
+      <p class="source"></p>
+    </div>
+
+    <!-- Dropdown to select the category -->
+    <label for="category">Choose a category:</label>
+    <select id="category">
+      <option value="happiness">Happiness</option>
+      <option value="love">Love</option>
+      <option value="inspiration">Inspiration</option>
+      <option value="life">Life</option>
+      <option value="success">Success</option>
+    </select>
+
+    <!-- Button to generate a new quote -->
+    <button id="loadQuote">Generate Quote</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
