@@ -1,0 +1,119 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Amatic SC', cursive;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #7f56da;
+  }
+  
+  /* Quote box styling */
+  .quote-box {
+    margin-top: 20px;
+  }
+  
+  .quote {
+    font-size: 5.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .source {
+    font-size: 3.2rem;
+    font-style: bold;
+  }
+  
+  .citation {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #888;
+  }
+  
+/* Category label styling */
+label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  /* Category dropdown styling */
+  #category {
+    padding: 10px;
+    border: 2px solid #7f56da;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Change border color on focus */
+  #category:focus {
+    border-color: #6934c7;
+    outline: none;
+  }
+  
+  /* Button styling */
+  #loadQuote {
+    padding: 10px 20px;
+    background-color: #7f56da;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; 
+  }
+  
+  /* Button hover effect */
+  #loadQuote:hover {
+    background-color: #6934c7;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 600px) {
+    .category-container {
+      flex-direction: column;
+    }
+  
+    .category {
+      margin-bottom: 10px;
+    }
+  
+    .quote {
+      font-size: 4.5rem;
+    }
+  
+    .source {
+      font-size: rem;
+    }
+  }
+  
