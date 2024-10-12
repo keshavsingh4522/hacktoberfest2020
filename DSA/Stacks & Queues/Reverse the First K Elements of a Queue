@@ -1,0 +1,79 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+using namespace std;
+
+/*
+Problem Statement:
+------------------
+We are given a queue of numbers, and we need to reverse the first K elements in it.
+After reversing the first K elements, the rest of the queue should stay in the same order.
+
+Input:
+- A queue of integers.
+- An integer K that tells how many elements to reverse from the front of the queue.
+
+Output:
+- The queue after reversing the first K elements, while the rest stay the same.
+
+Example:
+---------
+Input:
+Queue: 1 2 3 4 5 6 7 8 9 10
+K: 5
+
+Output:
+Queue: 5 4 3 2 1 6 7 8 9 10
+*/
+
+void reverseFirstKElements(queue<int>& q, int K) {
+    // Check if K is valid, or if the queue is empty
+    if (q.empty() || K <= 0 || K > q.size()) {
+        return; // nothing to do if K is out of bounds or the queue is empty
+    }
+
+    stack<int> s; // we'll use a stack to reverse the first K elements
+
+    // Step 1: Push the first K elements from the queue into the stack
+    for (int i = 0; i < K; i++) {
+        s.push(q.front()); // push the front of the queue onto the stack
+        q.pop();           // remove the front element from the queue
+    }
+    
+    // Step 2: Put the elements from the stack back into the queue
+    // (they will be in reverse order now)
+    while (!s.empty()) {
+        q.push(s.top()); // push the top element of the stack to the queue
+        s.pop();         // remove the top element from the stack
+    }
+
+    // Step 3: Move the remaining elements (after the first K) to the back of the queue
+    int remainingSize = q.size() - K; // elements after the first K
+    for (int i = 0; i < remainingSize; i++) {
+        q.push(q.front()); // move front element to the back of the queue
+        q.pop();           // remove the front element
+    }
+}
+
+int main() {
+    queue<int> q;
+
+    // Add some numbers to the queue: 1 2 3 4 5 6 7 8 9 10
+    for (int i = 1; i <= 10; i++) {
+        q.push(i);
+    }
+
+    int K = 5; // We want to reverse the first 5 elements
+    reverseFirstKElements(q, K);
+
+    // Output the modified queue
+    cout << "Modified Queue: ";
+    while (!q.empty()) {
+        cout << q.front() << " "; // print the front element
+        q.pop();                  // remove the front element
+    }
+    cout << endl;
+
+    return 0;
+}
+
