@@ -221,4 +221,5 @@
 | Sparsh Shyam           | [@sparshstark](https://github.com/sparshstark)                | 1                                                            |
 | Kalkeshwar Yamsani     | [@kalkeshwar](https://github.com/kalkeshwar)			             | 1							                                             	|
 | Praggya Verma          | [@praggyaverma](https://github.com/praggyaverma)              | 1                                                            |
+| Avinash Kumar          | [@AvinashKumar0923](https://github.com/AvinashKumar0923)              | 1                                                            |
                                        
