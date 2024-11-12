@@ -1,0 +1,65 @@
+class Node {
+    int data;
+    Node prev, next;
+    Node(int data) {
+        this.data = data;
+        prev = next = null;
+    }
+}
+
+class DoublyLinkedList {
+    Node head;
+
+    DoublyLinkedList() {
+        head = null;
+    }
+
+    void insertAtEnd(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    void delete(int data) {
+        if (head == null) return;
+        Node temp = head;
+        while (temp != null && temp.data != data) {
+            temp = temp.next;
+        }
+        if (temp == null) return;
+        if (temp == head) head = temp.next;
+        if (temp.next != null) temp.next.prev = temp.prev;
+        if (temp.prev != null) temp.prev.next = temp.next;
+        temp = null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.insertAtEnd(10);
+        list.insertAtEnd(20);
+        list.insertAtEnd(30);
+        list.insertAtEnd(40);
+        list.display();
+        list.delete(20);
+        list.display();
+    }
+}
